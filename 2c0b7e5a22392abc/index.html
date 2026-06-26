@@ -1,942 +1,443 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Audit SEO - Aurelie Lenoir Photography</title>
-  <style>
-    :root {
-      --paper: #fbf7ef;
-      --cream: #fffdf8;
-      --ink: #2f2a25;
-      --muted: #74695d;
-      --line: #e2d6c6;
-      --sage: #6f7d68;
-      --rose: #b77f70;
-      --clay: #9c674d;
-      --gold: #c6a15b;
-      --dark: #26231f;
-      --soft: #f0e6d8;
-      --shadow: 0 18px 50px rgba(65, 48, 34, .13);
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Audit SEO complet - Aurélie Lenoir Photography</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Arsenal:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbf7ef; --cream:#fffdf8; --ink:#2f2a25; --muted:#74695d;
+    --line:#e2d6c6; --sage:#6f7d68; --sage-soft:#d3dbc8; --rose:#b77f70;
+    --clay:#9c674d; --clay-soft:#c7a491; --gold:#c6a15b; --dark:#26231f;
+    --soft:#f0e6d8; --good:#6f8a62; --warn:#c6975b; --bad:#bd6f63;
+    --shadow:0 18px 50px rgba(65,48,34,.13);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;background:var(--paper);color:var(--ink)}
+  body{margin:0;font-family:'Arsenal',system-ui,sans-serif;line-height:1.62;
+    background:linear-gradient(180deg,rgba(255,253,248,.55),rgba(251,247,239,.94) 42rem),var(--paper)}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration-color:rgba(156,103,77,.45);text-underline-offset:4px}
+  h1,h2,h3,h4,.serif{font-family:'Bellefair',Georgia,serif;font-weight:400;line-height:1.1;margin:0;letter-spacing:.3px}
 
-    * { box-sizing: border-box; }
+  /* HERO */
+  .hero{min-height:84vh;display:grid;place-items:end start;position:relative;
+    padding:32px clamp(18px,5vw,72px);color:#fffaf1;overflow:hidden;isolation:isolate}
+  .hero::before{content:"";position:absolute;inset:0;z-index:-2;
+    background-image:linear-gradient(90deg,rgba(26,21,17,.78),rgba(26,21,17,.5) 40%,rgba(26,21,17,.1) 78%),
+      linear-gradient(180deg,rgba(20,18,15,.2),rgba(20,18,15,.66)),
+      url("https://aurelielenoirphotography.com/wp-content/uploads/2025/04/natural-family-photoshoot-dollymount-dublin-1024x683.jpg");
+    background-size:cover;background-position:center;transform:scale(1.02)}
+  .hero::after{content:"";position:absolute;inset:auto 0 0;height:22vh;z-index:-1;
+    background:linear-gradient(180deg,transparent,var(--paper))}
+  .hero-inner{width:min(980px,100%);padding:10vh 0 12vh}
+  .kicker{margin:0 0 18px;font-size:.78rem;font-weight:700;text-transform:uppercase;
+    letter-spacing:.18em;color:rgba(255,250,241,.85)}
+  .hero h1{max-width:830px;font-size:clamp(3.2rem,8vw,7rem)}
+  .hero p{max-width:660px;margin:22px 0 0;font-size:clamp(1.05rem,1.45vw,1.32rem);color:rgba(255,250,241,.9)}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .pill{display:inline-flex;align-items:center;min-height:36px;padding:7px 14px;
+    border:1px solid rgba(255,250,241,.42);background:rgba(35,30,25,.24);
+    color:rgba(255,250,241,.94);font-size:.84rem;backdrop-filter:blur(8px)}
 
-    html {
-      scroll-behavior: smooth;
-      background: var(--paper);
-      color: var(--ink);
-    }
+  /* NAV */
+  .nav{position:sticky;top:0;z-index:10;display:flex;gap:10px;
+    padding:12px clamp(18px,5vw,72px);overflow-x:auto;
+    border-bottom:1px solid rgba(105,87,69,.18);background:rgba(251,247,239,.92);backdrop-filter:blur(14px)}
+  .nav a{flex:0 0 auto;padding:8px 13px;border:1px solid var(--line);
+    background:rgba(255,253,248,.72);color:var(--muted);font-size:.8rem;font-weight:700;
+    text-decoration:none;text-transform:uppercase;letter-spacing:.05em}
+  .nav a:hover{color:var(--clay);border-color:var(--clay-soft)}
 
-    body {
-      margin: 0;
-      font-family: "Inter", "Avenir Next", "Segoe UI", Arial, sans-serif;
-      line-height: 1.58;
-      background:
-        linear-gradient(180deg, rgba(255, 253, 248, .55), rgba(251, 247, 239, .94) 42rem),
-        var(--paper);
-    }
+  main{width:min(1180px,calc(100% - 36px));margin:0 auto;padding:48px 0 80px}
+  section{padding:clamp(42px,6vw,76px) 0;border-top:1px solid rgba(196,177,151,.5)}
+  section:first-child{border-top:0;padding-top:24px}
+  .section-head{display:grid;grid-template-columns:minmax(0,.9fr) minmax(260px,.55fr);
+    gap:30px;align-items:end;margin-bottom:30px}
+  .eyebrow{display:block;font-size:.74rem;font-weight:700;text-transform:uppercase;
+    letter-spacing:.13em;color:var(--sage);margin-bottom:10px}
+  h2{font-size:clamp(2rem,4.4vw,3.8rem);color:var(--dark)}
+  h3{margin-bottom:10px;font-size:1.5rem;color:var(--dark)}
+  .lead{margin:0;color:var(--muted);font-size:1.04rem}
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
+  .grid{display:grid;gap:18px}
+  .cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .card,.finding,.metric,.quote-box{border:1px solid var(--line);background:var(--cream)}
+  .card,.finding,.quote-box{padding:22px}
+  .metric{padding:20px;min-height:150px}
+  .metric strong{display:block;margin-bottom:4px;font-family:'Bellefair',serif;
+    font-size:clamp(2.2rem,4vw,3.2rem);line-height:1;color:var(--clay)}
+  .metric .eyebrow{color:var(--sage)}
+  .metric p,.card p,.finding p,.quote-box p{margin:8px 0 0;color:var(--muted);font-size:.96rem}
 
-    a {
-      color: inherit;
-      text-decoration-color: rgba(156, 103, 77, .45);
-      text-underline-offset: 4px;
-    }
+  /* SCORE */
+  .score{display:grid;grid-template-columns:minmax(210px,.42fr) 1fr;gap:28px;align-items:center;
+    padding:28px;border:1px solid var(--line);background:linear-gradient(135deg,#fffdf8,#f3eadc)}
+  .ring{position:relative;width:200px;height:200px;margin:0 auto}
+  .ring svg{transform:rotate(-90deg)}
+  .ring .val{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .ring .num{font-family:'Bellefair',serif;font-size:62px;line-height:1;color:var(--clay)}
+  .ring .den{font-size:12px;color:var(--muted);letter-spacing:1px}
+  .tag{display:inline-flex;margin:0 6px 8px 0;padding:5px 10px;background:var(--soft);
+    color:#655747;font-size:.78rem;font-weight:700}
 
-    .hero {
-      min-height: 86vh;
-      display: grid;
-      place-items: end start;
-      position: relative;
-      padding: 32px clamp(18px, 5vw, 72px);
-      color: #fffaf1;
-      overflow: hidden;
-      isolation: isolate;
-    }
+  /* category bars */
+  .cats{display:grid;gap:13px;margin-top:8px}
+  .catrow{display:grid;grid-template-columns:200px 1fr 46px;gap:14px;align-items:center}
+  .catrow .cn{font-family:'Bellefair',serif;font-size:1.05rem}
+  .catrow .cv{font-family:'Bellefair',serif;text-align:right;font-size:1.05rem}
+  .track{height:9px;border-radius:6px;background:#ece1d2;overflow:hidden}
+  .fill{height:100%;border-radius:6px}
+  .f-good{background:linear-gradient(90deg,var(--sage),#84a073)}
+  .f-mid{background:linear-gradient(90deg,#dcb87f,var(--gold))}
+  .f-low{background:linear-gradient(90deg,#cf9182,var(--bad))}
+  @media(max-width:640px){.catrow{grid-template-columns:130px 1fr 40px}.catrow .cn{font-size:.92rem}}
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-      background-image:
-        linear-gradient(90deg, rgba(26, 21, 17, .78) 0%, rgba(26, 21, 17, .54) 36%, rgba(26, 21, 17, .12) 76%),
-        linear-gradient(180deg, rgba(20, 18, 15, .2), rgba(20, 18, 15, .68)),
-        url("https://aurelielenoirphotography.com/wp-content/uploads/2025/04/natural-family-photoshoot-dollymount-dublin-1024x683.jpg");
-      background-size: cover;
-      background-position: center;
-      transform: scale(1.02);
-    }
+  /* priorities */
+  .priority{display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start;
+    padding:20px 0;border-top:1px solid var(--line)}
+  .priority:first-child{border-top:0;padding-top:4px}
+  .rank{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--clay);
+    color:var(--clay);font-family:'Bellefair',serif;font-size:1.3rem}
+  .note{margin-top:10px;padding:12px 15px;border-left:4px solid var(--clay);background:#f5ebdc;color:#5f5144;font-size:.94rem}
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0;
-      height: 22vh;
-      z-index: -1;
-      background: linear-gradient(180deg, transparent, var(--paper));
-    }
+  .status{display:inline-flex;padding:5px 10px;color:#fff;font-size:.7rem;font-weight:700;
+    text-transform:uppercase;letter-spacing:.08em}
+  .status.good{background:var(--sage)} .status.warn{background:var(--gold);color:#35280e} .status.risk{background:var(--rose)}
 
-    .hero-inner {
-      width: min(980px, 100%);
-      padding: 10vh 0 12vh;
-    }
+  table{width:100%;border-collapse:collapse;background:var(--cream);font-size:.9rem}
+  th,td{padding:12px 12px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+  th{color:var(--sage);font-family:'Bellefair',serif;font-size:.92rem;letter-spacing:.04em;background:#f4eadc;font-weight:400}
+  td{color:var(--muted)} td strong{color:var(--ink)}
 
-    .kicker {
-      margin: 0 0 18px;
-      font-size: .78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      color: rgba(255, 250, 241, .82);
-    }
+  .two-col{display:grid;grid-template-columns:minmax(0,.86fr) minmax(300px,.5fr);gap:24px}
+  .photo-strip{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .photo-strip img{width:100%;height:230px;object-fit:cover;border:1px solid rgba(255,253,248,.7)}
+  .photo-strip img:first-child{grid-column:1/-1;height:300px}
 
-    h1,
-    h2,
-    h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 500;
-      line-height: 1.08;
-      margin: 0;
-    }
+  .roadmap{display:grid;gap:16px}
+  .phase{display:grid;grid-template-columns:130px 1fr;gap:18px;padding:20px;border:1px solid var(--line);background:var(--cream)}
+  .phase .ph{display:grid;place-items:center;min-height:72px;border:1px solid var(--clay);
+    color:var(--clay);font-family:'Bellefair',serif;letter-spacing:.04em;font-size:1rem;text-align:center}
+  ul{margin:10px 0 0;padding-left:1.1rem;color:var(--muted)} li+li{margin-top:7px}
 
-    h1 {
-      max-width: 830px;
-      font-size: clamp(3.1rem, 8vw, 7.5rem);
-    }
+  .footer{margin-top:34px;padding:24px 0 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+  .source-list{display:grid;gap:9px;margin:0;padding:0;list-style:none;color:var(--muted);font-size:.92rem}
 
-    .hero p {
-      max-width: 650px;
-      margin: 24px 0 0;
-      font-size: clamp(1.05rem, 1.45vw, 1.35rem);
-      color: rgba(255, 250, 241, .88);
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 28px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      min-height: 36px;
-      padding: 7px 13px;
-      border: 1px solid rgba(255, 250, 241, .42);
-      background: rgba(35, 30, 25, .24);
-      color: rgba(255, 250, 241, .94);
-      font-size: .84rem;
-      backdrop-filter: blur(8px);
-    }
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      display: flex;
-      gap: 12px;
-      padding: 12px clamp(18px, 5vw, 72px);
-      overflow-x: auto;
-      border-bottom: 1px solid rgba(105, 87, 69, .18);
-      background: rgba(251, 247, 239, .9);
-      backdrop-filter: blur(14px);
-    }
-
-    .nav a {
-      flex: 0 0 auto;
-      padding: 8px 12px;
-      border: 1px solid var(--line);
-      background: rgba(255, 253, 248, .72);
-      color: var(--muted);
-      font-size: .82rem;
-      font-weight: 700;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-    }
-
-    main {
-      width: min(1180px, calc(100% - 36px));
-      margin: 0 auto;
-      padding: 48px 0 80px;
-    }
-
-    section {
-      margin: 0;
-      padding: clamp(42px, 6vw, 78px) 0;
-      border-top: 1px solid rgba(196, 177, 151, .5);
-    }
-
-    section:first-child {
-      border-top: 0;
-      padding-top: 20px;
-    }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: minmax(0, .9fr) minmax(260px, .55fr);
-      gap: 30px;
-      align-items: end;
-      margin-bottom: 28px;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 4.6vw, 4.1rem);
-      color: var(--dark);
-    }
-
-    h3 {
-      margin-bottom: 10px;
-      font-size: 1.45rem;
-      color: var(--dark);
-    }
-
-    .lead {
-      margin: 0;
-      color: var(--muted);
-      font-size: 1.04rem;
-    }
-
-    .grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    .grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
-    .card,
-    .finding,
-    .metric,
-    .quote-box {
-      border: 1px solid var(--line);
-      background: var(--cream);
-    }
-
-    .card,
-    .finding,
-    .quote-box {
-      padding: 22px;
-    }
-
-    .metric {
-      padding: 20px;
-      min-height: 146px;
-    }
-
-    .metric strong {
-      display: block;
-      margin-bottom: 4px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      line-height: 1;
-      color: var(--clay);
-    }
-
-    .metric span,
-    .eyebrow {
-      display: block;
-      font-size: .75rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .11em;
-      color: var(--sage);
-    }
-
-    .metric p,
-    .card p,
-    .finding p,
-    .quote-box p {
-      margin: 8px 0 0;
-      color: var(--muted);
-    }
-
-    .score {
-      display: grid;
-      grid-template-columns: minmax(210px, .45fr) 1fr;
-      gap: 24px;
-      align-items: center;
-      padding: 24px;
-      border: 1px solid var(--line);
-      background: linear-gradient(135deg, #fffdf8 0%, #f3eadc 100%);
-    }
-
-    .score-number {
-      aspect-ratio: 1;
-      display: grid;
-      place-items: center;
-      border: 2px solid var(--clay);
-      border-radius: 50%;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3.2rem, 8vw, 6rem);
-      color: var(--clay);
-      background: rgba(255, 253, 248, .72);
-    }
-
-    .priority {
-      display: grid;
-      grid-template-columns: 52px 1fr;
-      gap: 15px;
-      align-items: start;
-      padding: 18px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .priority:first-child {
-      border-top: 0;
-      padding-top: 0;
-    }
-
-    .rank {
-      display: grid;
-      place-items: center;
-      width: 42px;
-      height: 42px;
-      border: 1px solid var(--clay);
-      color: var(--clay);
-      font-weight: 800;
-    }
-
-    .tag {
-      display: inline-flex;
-      margin: 0 6px 8px 0;
-      padding: 5px 9px;
-      background: var(--soft);
-      color: #655747;
-      font-size: .78rem;
-      font-weight: 700;
-    }
-
-    .status {
-      display: inline-flex;
-      padding: 5px 9px;
-      color: #fff;
-      font-size: .72rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-
-    .status.good { background: var(--sage); }
-    .status.warn { background: var(--gold); color: #35280e; }
-    .status.risk { background: var(--rose); }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      overflow: hidden;
-      background: var(--cream);
-      font-size: .93rem;
-    }
-
-    th,
-    td {
-      padding: 13px 12px;
-      border-bottom: 1px solid var(--line);
-      vertical-align: top;
-      text-align: left;
-    }
-
-    th {
-      color: var(--sage);
-      font-size: .73rem;
-      text-transform: uppercase;
-      letter-spacing: .09em;
-      background: #f4eadc;
-    }
-
-    td {
-      color: var(--muted);
-    }
-
-    td strong {
-      color: var(--ink);
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, .86fr) minmax(300px, .5fr);
-      gap: 22px;
-    }
-
-    .photo-strip {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .photo-strip img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-      border: 1px solid rgba(255, 253, 248, .7);
-    }
-
-    .photo-strip img:first-child {
-      grid-column: 1 / -1;
-      height: 310px;
-    }
-
-    .roadmap {
-      counter-reset: phase;
-      display: grid;
-      gap: 16px;
-    }
-
-    .phase {
-      counter-increment: phase;
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 18px;
-      padding: 20px;
-      border: 1px solid var(--line);
-      background: var(--cream);
-    }
-
-    .phase::before {
-      content: "Phase " counter(phase);
-      display: grid;
-      place-items: center;
-      min-height: 72px;
-      border: 1px solid var(--clay);
-      color: var(--clay);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      font-size: .8rem;
-    }
-
-    ul {
-      margin: 10px 0 0;
-      padding-left: 1.1rem;
-      color: var(--muted);
-    }
-
-    li + li { margin-top: 7px; }
-
-    .note {
-      padding: 14px 16px;
-      border-left: 4px solid var(--clay);
-      background: #f5ebdc;
-      color: #5f5144;
-    }
-
-    .source-list {
-      display: grid;
-      gap: 9px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      color: var(--muted);
-      font-size: .92rem;
-    }
-
-    .footer {
-      margin-top: 34px;
-      padding: 24px 0 0;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: .9rem;
-    }
-
-    @media (max-width: 900px) {
-      .section-head,
-      .score,
-      .two-col,
-      .phase {
-        grid-template-columns: 1fr;
-      }
-
-      .grid.cols-3,
-      .grid.cols-2 {
-        grid-template-columns: 1fr;
-      }
-
-      .score-number {
-        width: min(260px, 100%);
-      }
-
-      .hero {
-        min-height: 82vh;
-      }
-
-      .photo-strip img,
-      .photo-strip img:first-child {
-        height: 220px;
-      }
-    }
-
-    @media print {
-      body { background: #fff; }
-      .hero { min-height: auto; color: var(--ink); }
-      .hero::before,
-      .hero::after,
-      .nav { display: none; }
-      section { box-shadow: none; break-inside: avoid; }
-      a { text-decoration: none; }
-    }
-  </style>
+  @media(max-width:900px){
+    .section-head,.score,.two-col,.phase,.cols-3,.cols-2{grid-template-columns:1fr}
+    .ring{width:170px;height:170px}
+    .photo-strip img,.photo-strip img:first-child{height:210px}
+  }
+  @media print{
+    body{background:#fff}
+    .hero{min-height:auto;color:var(--ink)} .hero::before,.hero::after,.nav{display:none}
+    section{break-inside:avoid} a{text-decoration:none}
+  }
+</style>
 </head>
 <body>
   <header class="hero">
     <div class="hero-inner">
-      <p class="kicker">Audit SEO presentable - 25 juin 2026</p>
-      <h1>Aurelie Lenoir Photography</h1>
-      <p>Lecture SEO du site aurelielenoirphotography.com : positionnement, architecture, contenus, indexation et actions prioritaires pour developper les demandes qualifiees autour de la photographie de famille a Dublin.</p>
+      <p class="kicker">Audit SEO interne - document de travail - 26 juin 2026</p>
+      <h1>Aurélie Lenoir Photography</h1>
+      <p>Lecture SEO complète du site aurelielenoirphotography.com : positionnement, technique, contenus, données structurées et plan d'action prioritaire pour développer les demandes qualifiées autour de la photographie de famille à Dublin.</p>
       <div class="hero-meta">
-        <span class="pill">Site WordPress</span>
+        <span class="pill">WordPress + Yoast</span>
         <span class="pill">Photographie documentaire</span>
-        <span class="pill">Dublin, Ireland</span>
-        <span class="pill">Audit base sur 8 pages + sitemap + robots</span>
+        <span class="pill">Dublin, Irlande</span>
+        <span class="pill">92 URLs analysées</span>
       </div>
     </div>
   </header>
 
   <nav class="nav" aria-label="Sommaire">
-    <a href="#resume">Resume</a>
-    <a href="#priorites">Priorites</a>
+    <a href="#resume">Résumé</a>
+    <a href="#scores">Scores</a>
+    <a href="#priorites">Priorités</a>
     <a href="#technique">Technique</a>
     <a href="#contenus">Contenus</a>
-    <a href="#mots-cles">Mots-cles</a>
+    <a href="#motscles">Mots-clés</a>
     <a href="#pages">Pages</a>
     <a href="#roadmap">Roadmap</a>
+    <a href="#questions">Questions</a>
     <a href="#sources">Sources</a>
   </nav>
 
   <main>
+    <!-- RESUME -->
     <section id="resume">
       <div class="section-head">
         <div>
           <span class="eyebrow">Diagnostic court</span>
-          <h2>Un site deja solide, avec un vrai potentiel de croissance locale.</h2>
+          <h2>Un site déjà solide, avec un vrai potentiel de croissance locale.</h2>
         </div>
-        <p class="lead">Le site a une belle coherence editoriale, beaucoup de contenu utile, des pages de service deja ciblees et une identite claire : photographie de famille naturelle, documentaire, a domicile, a Dublin.</p>
+        <p class="lead">Belle cohérence éditoriale, beaucoup de contenu utile, des pages de service ciblées et une identité claire : photographie de famille naturelle, documentaire, à domicile, à Dublin.</p>
       </div>
 
       <div class="score">
-        <div class="score-number">74</div>
+        <div class="ring">
+          <svg width="200" height="200" viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="86" fill="none" stroke="#e7ded5" stroke-width="15"/>
+            <circle cx="100" cy="100" r="86" fill="none" stroke="#9c674d" stroke-width="15"
+              stroke-linecap="round" stroke-dasharray="540.4" stroke-dashoffset="140.5"/>
+          </svg>
+          <div class="val"><span class="num">74</span><span class="den">/ 100</span></div>
+        </div>
         <div>
-          <h3>Score SEO estime : bon socle, marge forte sur architecture et conversion</h3>
-          <p>Le socle est sain : pages indexables, sitemap present, metas renseignees, contenu long et specialise. Les gains les plus rapides viendront de la correction des liens internes anciens, de la consolidation des pages par intention, de l'ajout de schemas locaux et d'un maillage plus direct du blog vers les pages commerciales.</p>
+          <h3>Bon socle, marge forte sur les données structurées et la conversion</h3>
+          <p>Le socle est sain : pages indexables, sitemap présent, balises méta renseignées, contenu long et spécialisé. Les gains les plus rapides viendront du schema local, des signaux de contact, du nettoyage des liens internes anciens et d'un maillage plus direct du blog vers les pages commerciales.</p>
           <div style="margin-top:16px">
             <span class="tag">Indexation ouverte</span>
             <span class="tag">Contenu riche</span>
             <span class="tag">Niche claire</span>
-            <span class="tag">Liens internes a nettoyer</span>
-            <span class="tag">Schema local a renforcer</span>
+            <span class="tag">Liens internes à nettoyer</span>
+            <span class="tag">Schema local à créer</span>
           </div>
         </div>
       </div>
 
       <div class="grid cols-3" style="margin-top:18px">
-        <div class="metric">
-          <strong>80</strong>
-          <span>URLs trouvees</span>
-          <p>La cartographie Firecrawl remonte environ 80 pages, surtout des articles et pages de service.</p>
-        </div>
-        <div class="metric">
-          <strong>2</strong>
-          <span>Sitemaps principaux</span>
-          <p>Le sitemap index pointe vers les sitemaps des pages et des articles.</p>
-        </div>
-        <div class="metric">
-          <strong>0</strong>
-          <span>Blocage robots</span>
-          <p>Le fichier robots.txt n'interdit pas le crawl et declare le sitemap Yoast.</p>
-        </div>
+        <div class="metric"><strong>92</strong><span class="eyebrow">URLs indexables</span><p>28 pages + 64 articles, cartographiés via les sitemaps Yoast.</p></div>
+        <div class="metric"><strong>86<span style="font-size:1.3rem">/100</span></strong><span class="eyebrow">santé technique (SeRanking)</span><p>Crawl de 102 pages le 26/06 : 4 erreurs, 94 avertissements. Technique saine, leviers ailleurs.</p></div>
+        <div class="metric"><strong>6 254</strong><span class="eyebrow">mots sur l'accueil</span><p>Contenu dense et substantiel, malgré une page très visuelle.</p></div>
       </div>
+      <p class="note" style="margin-top:14px"><strong>Deux scores, deux lectures :</strong> le <strong>74/100</strong> est notre score SEO global (technique + contenu + schema + local + perf + IA), le <strong>86/100</strong> est le score de santé technique pur de SeRanking. La technique est bonne ; l'écart vient surtout des données structurées, du local et de la conversion.</p>
     </section>
 
+    <!-- SCORES -->
+    <section id="scores">
+      <div class="section-head">
+        <div><span class="eyebrow">Le score en détail</span><h2>Sept dimensions, pondérées par impact.</h2></div>
+        <p class="lead">Plus la barre est remplie, plus le domaine est sain. Le total pondéré donne 74/100.</p>
+      </div>
+      <div class="cats">
+        <div class="catrow"><span class="cn">Contenu &amp; E-E-A-T</span><div class="track"><div class="fill f-good" style="width:85%"></div></div><span class="cv">85</span></div>
+        <div class="catrow"><span class="cn">SEO On-Page</span><div class="track"><div class="fill f-good" style="width:88%"></div></div><span class="cv">88</span></div>
+        <div class="catrow"><span class="cn">SEO Technique</span><div class="track"><div class="fill f-good" style="width:78%"></div></div><span class="cv">78</span></div>
+        <div class="catrow"><span class="cn">Images</span><div class="track"><div class="fill f-mid" style="width:70%"></div></div><span class="cv">70</span></div>
+        <div class="catrow"><span class="cn">Lisibilité IA</span><div class="track"><div class="fill f-mid" style="width:60%"></div></div><span class="cv">60</span></div>
+        <div class="catrow"><span class="cn">Performance (estimée)</span><div class="track"><div class="fill f-mid" style="width:62%"></div></div><span class="cv">62</span></div>
+        <div class="catrow"><span class="cn">Données structurées</span><div class="track"><div class="fill f-low" style="width:45%"></div></div><span class="cv">45</span></div>
+      </div>
+      <p class="note" style="margin-top:18px"><strong>Note méthodo :</strong> la performance n'a pas pu être mesurée en données réelles (quota Google PageSpeed atteint le jour de l'analyse). Le score est une estimation prudente basée sur le poids des images et la stack technique, à confirmer par un test PageSpeed dédié.</p>
+    </section>
+
+    <!-- PRIORITES -->
     <section id="priorites">
       <div class="section-head">
-        <div>
-          <span class="eyebrow">A presenter en rendez-vous</span>
-          <h2>Les 7 chantiers qui auront le plus d'impact.</h2>
-        </div>
-        <p class="lead">Ces priorites sont classees selon l'impact probable sur l'acquisition organique et la facilite de mise en oeuvre dans WordPress.</p>
+        <div><span class="eyebrow">À présenter en rendez-vous</span><h2>Les 8 chantiers à plus fort impact.</h2></div>
+        <p class="lead">Classés selon l'impact probable sur l'acquisition organique et la facilité de mise en oeuvre dans WordPress.</p>
       </div>
 
-      <div class="priority">
-        <div class="rank">1</div>
-        <div>
-          <h3>Nettoyer les liens internes obsoletes et le lien de demo externe</h3>
-          <p>La page d'accueil contient des liens vers d'anciennes variantes comme <strong>/home-family-session/</strong> et <strong>/baby-photography/</strong>, alors que le menu cible les versions <strong>/home-family-session-dublin/</strong> et <strong>/baby-photography-dublin/</strong>. Un lien externe vers <strong>thedesignspacedemo.co/paloma-divi/contact/#</strong> apparait aussi dans les liens extraits.</p>
-          <p class="note">Action : remplacer les liens dans les blocs de l'accueil, verifier les redirections 301 des anciennes URLs, supprimer tout lien de demo.</p>
-        </div>
-      </div>
+      <div class="priority"><div class="rank">1</div><div>
+        <h3>Créer le schema LocalBusiness / Photographer + coordonnées de contact</h3>
+        <p>Pour une photographe locale, l'absence de données structurées <strong>LocalBusiness</strong> (téléphone, zone de service, géolocalisation) prive le site de sa meilleure carte pour le pack local. Aucune coordonnée directe (téléphone, e-mail, zone d'adresse) n'est aujourd'hui visible : le contact passe uniquement par formulaire.</p>
+        <p class="note">Action : publier un schema LocalBusiness/ProfessionalService (nom, zone Dublin, téléphone, horaires, sameAs réseaux) et afficher un moyen de contact direct.</p>
+      </div></div>
 
-      <div class="priority">
-        <div class="rank">2</div>
-        <div>
-          <h3>Sortir les pages sans valeur SEO du sitemap</h3>
-          <p>Le sitemap des pages inclut notamment <strong>/thank-you-form/</strong>, <strong>/schools-form/</strong> et des pages formulaire/newsletter. Ces pages peuvent capter du crawl sans apporter de trafic qualifie.</p>
-          <p class="note">Action : noindex pour les pages de confirmation, formulaires purs et pages utilitaires non destinees a la recherche.</p>
-        </div>
-      </div>
+      <div class="priority"><div class="rank">2</div><div>
+        <h3>Ajouter le schema Person et les signaux d'auteur (E-E-A-T)</h3>
+        <p>La page À propos raconte bien l'histoire d'Aurélie, mais aucune donnée <strong>Person</strong> n'est exposée. Google et les moteurs IA ne relient pas explicitement l'autrice à son expertise.</p>
+        <p class="note">Action : schema Person lié à l'Organization, et signature d'auteur sur les articles de blog.</p>
+      </div></div>
 
-      <div class="priority">
-        <div class="rank">3</div>
-        <div>
-          <h3>Renforcer les pages de service avec FAQs et preuves locales</h3>
-          <p>Les pages <strong>Newborn</strong>, <strong>Baby</strong>, <strong>Home Family</strong> et <strong>Vacation Photographer Dublin</strong> ont deja le bon socle. Elles peuvent gagner en pertinence avec des FAQs par intention, des quartiers desservis, des lieux de shooting et des liens vers temoignages/pricing/contact.</p>
-        </div>
-      </div>
+      <div class="priority"><div class="rank">3</div><div>
+        <h3>Nettoyer le maillage interne (70 liens vers des redirections)</h3>
+        <p>SeRanking détecte <strong>70 liens internes</strong> qui pointent vers des pages en redirection 3XX, et <strong>4 pages orphelines</strong> sans lien entrant. La page d'accueil pointe vers d'anciennes variantes (<strong>/baby-photography/</strong>) au lieu des versions à jour (<strong>/baby-photography-dublin/</strong>). Un lien de démo externe (<strong>thedesignspacedemo.co</strong>) traine aussi.</p>
+        <p class="note">Action : remplacer les liens internes par les URLs finales, relier les pages orphelines, supprimer le lien de démo.</p>
+      </div></div>
 
-      <div class="priority">
-        <div class="rank">4</div>
-        <div>
-          <h3>Creer une architecture en hubs</h3>
-          <p>Le blog est riche, mais il doit pousser plus clairement les offres. Exemple : hub "Family photographer Dublin" relie a home session, outdoor, day in the life, vacation, pricing, FAQ et articles guides.</p>
-        </div>
-      </div>
+      <div class="priority"><div class="rank">4</div><div>
+        <h3>Auditer le contenu IA du blog (risque Helpful Content)</h3>
+        <p>Un article ressort à <strong>97% généré par IA</strong> (SurferSEO). Sur 64 articles, un blog massivement IA peut déclencher les politiques Helpful Content / spam de Google et peser sur tout le domaine. Il faut mesurer l'ampleur avant d'agir.</p>
+        <p class="note">Action : scanner le blog (échantillon puis exhaustif), réécrire/humaniser ou dépublier les pages les plus à risque, prioriser celles qui captent du trafic.</p>
+      </div></div>
 
-      <div class="priority">
-        <div class="rank">5</div>
-        <div>
-          <h3>Ajouter les donnees structurees adaptees</h3>
-          <p>Priorite aux schemas <strong>LocalBusiness/Photographer</strong>, <strong>Service</strong>, <strong>FAQPage</strong>, <strong>BreadcrumbList</strong> et, sur les articles guides, <strong>Article</strong> enrichi. Objectif : clarifier pour Google l'activite, la zone geographique, les services et les preuves.</p>
-        </div>
-      </div>
+      <div class="priority"><div class="rank">5</div><div>
+        <h3>Baliser les pages argent : Service / Offer + FAQPage</h3>
+        <p>Les pages Tarifs et FAQ sont d'excellentes pages de conversion, mais sans balisage <strong>Service</strong>, <strong>Offer</strong> ni <strong>FAQPage</strong>. On perd les résultats enrichis et les citations dans les réponses IA.</p>
+        <p class="note">Action : baliser les prestations (Service/Offer) et convertir la FAQ en schema FAQPage.</p>
+      </div></div>
 
-      <div class="priority">
-        <div class="rank">6</div>
-        <div>
-          <h3>Optimiser la performance image sans perdre l'emotion</h3>
-          <p>Le site s'appuie naturellement sur beaucoup de photos : 69 balises image detectees sur l'accueil, 69 sur la page blog, 34 sur le guide. C'est logique pour une photographe, mais il faut surveiller le poids, le lazy loading, les dimensions, WebP/AVIF et le choix de l'image hero.</p>
-        </div>
-      </div>
+      <div class="priority"><div class="rank">6</div><div>
+        <h3>Sortir les pages sans valeur SEO du parcours d'indexation</h3>
+        <p>Le sitemap inclut des pages utilitaires (<strong>/thank-you-form/</strong>, <strong>/schools-form/</strong>, formulaires, newsletter) qui captent du crawl sans apporter de trafic qualifié.</p>
+        <p class="note">Action : noindex sur les pages de confirmation, formulaires purs et pages utilitaires non destinées à la recherche.</p>
+      </div></div>
 
-      <div class="priority">
-        <div class="rank">7</div>
-        <div>
-          <h3>Exploiter Search Console pour trier les contenus</h3>
-          <p>L'audit montre de nombreuses pages informationnelles. La prochaine decision doit venir des donnees : requetes qui impressionnent sans clic, pages qui attirent mais ne convertissent pas, articles a consolider ou rediriger.</p>
-        </div>
-      </div>
+      <div class="priority"><div class="rank">7</div><div>
+        <h3>Optimiser les images sans perdre l'émotion</h3>
+        <p>Site très visuel par nature : 45 images sur l'accueil, dont 42 en lazy-load et 93% avec un alt (bon). Mais <strong>100% des images sont en JPEG</strong> : aucune image nouvelle génération (WebP/AVIF). C'est le principal levier de vitesse, surtout sur mobile.</p>
+        <p class="note">Action : conversion WebP/AVIF, dimensions responsives, et confirmation des Core Web Vitals.</p>
+      </div></div>
+
+      <div class="priority"><div class="rank">8</div><div>
+        <h3>Créer une architecture en hubs et exploiter Search Console</h3>
+        <p>Le blog (64 articles) est riche mais doit pousser plus clairement les offres : un hub "Family photographer Dublin" reliant home session, outdoor, day in the life, vacation, pricing, FAQ. La priorisation finale doit venir des données GSC (requêtes à fort potentiel, pages à consolider).</p>
+      </div></div>
     </section>
 
+    <!-- TECHNIQUE -->
     <section id="technique">
       <div class="section-head">
-        <div>
-          <span class="eyebrow">Technique & indexation</span>
-          <h2>Le site est crawlable, mais quelques signaux doivent etre resserres.</h2>
-        </div>
-        <p class="lead">Le diagnostic technique n'indique pas de blocage majeur. Les recommandations portent surtout sur la qualite du crawl et la coherence des URLs.</p>
+        <div><span class="eyebrow">Technique &amp; indexation - crawl SeRanking du 26/06</span><h2>Le site est crawlable, quelques signaux à resserrer.</h2></div>
+        <p class="lead">Score de santé technique <strong>86/100</strong> sur 102 pages crawlées : 4 erreurs, 94 avertissements, 165 remarques, 104 contrôles réussis. Pas de blocage majeur ; les chantiers portent sur le maillage interne, le schema et la sécurité.</p>
       </div>
-
       <div class="grid cols-2">
-        <div class="finding">
-          <span class="status good">OK</span>
-          <h3 style="margin-top:12px">Robots.txt ouvert</h3>
-          <p>Le fichier robots.txt contient <strong>Disallow:</strong> vide et declare <strong>https://aurelielenoirphotography.com/sitemap_index.xml</strong>. C'est correct pour l'indexation.</p>
-        </div>
-        <div class="finding">
-          <span class="status good">OK</span>
-          <h3 style="margin-top:12px">Sitemap Yoast present</h3>
-          <p>Le sitemap index renvoie vers <strong>post-sitemap.xml</strong> et <strong>page-sitemap.xml</strong>. Les pages commerciales recentes y figurent bien.</p>
-        </div>
-        <div class="finding">
-          <span class="status warn">A verifier</span>
-          <h3 style="margin-top:12px">Canonicals auto-referencees</h3>
-          <p>Les metadonnees extraites indiquent des URLs Open Graph propres, mais les balises canonical ne ressortent pas dans l'extraction. A verifier dans Yoast / source HTML afin d'avoir une canonical auto-referencee sur chaque page indexable.</p>
-        </div>
-        <div class="finding">
-          <span class="status risk">Prioritaire</span>
-          <h3 style="margin-top:12px">Pages utilitaires indexables</h3>
-          <p>Les pages de type thank-you/formulaire ne devraient pas etre dans le parcours SEO principal. Les passer en noindex libere le crawl pour les pages qui vendent ou eduquent.</p>
-        </div>
+        <div class="finding"><span class="status good">OK</span><h3 style="margin-top:12px">Sécurité HTTPS &amp; crawl</h3><p>Certificat valide, pas de contenu mixte, pas d'erreur 4XX/5XX, robots.txt et sitemaps propres. Les fondations d'indexation sont saines.</p></div>
+        <div class="finding"><span class="status risk">Prioritaire</span><h3 style="margin-top:12px">70 liens internes vers des redirections</h3><p>SeRanking détecte <strong>70 liens internes pointant vers des pages en redirection 3XX</strong> et <strong>4 pages sans aucun lien interne entrant</strong> (orphelines). C'est le principal frein technique : il dilue le maillage et le budget de crawl.</p></div>
+        <div class="finding"><span class="status risk">Prioritaire</span><h3 style="margin-top:12px">Données structurées locales absentes</h3><p>Le schema se limite à Organization, WebSite et BreadcrumbList. Pas de LocalBusiness, Person, Service, FAQ ni Review : la plus grosse opportunité du site.</p></div>
+        <div class="finding"><span class="status warn">À corriger</span><h3 style="margin-top:12px">On-page : titres, H1, images</h3><p><strong>16 titres trop longs</strong>, 2 descriptions manquantes, <strong>1 H1 manquant</strong> (page preschool), 26 pages où Title = H1, <strong>14 images sans texte alternatif</strong> et 2 images trop lourdes. Des correctifs rapides et nombreux.</p></div>
+        <div class="finding"><span class="status warn">À corriger</span><h3 style="margin-top:12px">En-têtes de sécurité absents</h3><p>Aucun en-tête de sécurité HTTP (HSTS, X-Content-Type-Options, Referrer-Policy, CSP). Sans impact direct sur le classement mais c'est un signal de qualité et de confiance.</p></div>
+        <div class="finding"><span class="status warn">À surveiller</span><h3 style="margin-top:12px">Contenu IA à auditer</h3><p>Un article du blog ressort à <strong>97% généré par IA</strong> (détecté via SurferSEO). Sur 64 articles, c'est un risque Helpful Content de Google à mesurer sur l'ensemble du blog. Audit IA complet à intégrer.</p></div>
       </div>
     </section>
 
+    <!-- CONTENUS -->
     <section id="contenus">
       <div class="two-col">
         <div>
-          <span class="eyebrow">Contenu & positionnement</span>
-          <h2>La marque a deja un angle fort : documentaire, tendre, sans poses forcees.</h2>
-          <p class="lead" style="margin-top:18px">Ce positionnement est le meilleur levier. Il faut le traduire plus systematiquement en SEO : requetes locales, situations de vie, objections des parents, lieux de Dublin, comparaison avec le studio, resultats tangibles comme albums et prints.</p>
-
+          <span class="eyebrow">Contenu &amp; positionnement</span>
+          <h2>Un angle fort : documentaire, tendre, sans poses forcées.</h2>
+          <p class="lead" style="margin-top:18px">Ce positionnement est le meilleur levier. Il faut le traduire plus systématiquement en SEO : requêtes locales, situations de vie, objections des parents, lieux de Dublin, comparaison avec le studio, livrables tangibles (albums, tirages).</p>
           <div class="grid cols-2" style="margin-top:22px">
-            <div class="card">
-              <h3>Ce qui marche deja</h3>
-              <ul>
-                <li>Un ton humain, rassurant et differentiant.</li>
-                <li>Des pages de service claires par type de seance.</li>
-                <li>Beaucoup de contenus blog repondant aux questions des parents.</li>
-                <li>Des preuves : temoignages, publications, portfolios, cas concrets.</li>
-              </ul>
-            </div>
-            <div class="card">
-              <h3>Ce qui manque pour convertir le trafic</h3>
-              <ul>
-                <li>Des blocs FAQ courts et balises sur les pages argent.</li>
-                <li>Des liens internes plus systematiques depuis chaque article vers l'offre pertinente.</li>
-                <li>Des pages locales structurees par quartier ou situation.</li>
-                <li>Des CTA plus contextualises selon l'intention de lecture.</li>
-              </ul>
-            </div>
+            <div class="card"><h3>Ce qui marche déjà</h3><ul>
+              <li>Un ton humain, rassurant et différenciant.</li>
+              <li>Des pages de service claires par type de séance.</li>
+              <li>64 articles répondant aux questions des parents.</li>
+              <li>Des preuves : témoignages, portfolios, cas concrets.</li>
+            </ul></div>
+            <div class="card"><h3>Ce qui manque pour convertir</h3><ul>
+              <li>Des blocs FAQ courts et balisés sur les pages argent.</li>
+              <li>Un maillage interne article vers offre plus systématique.</li>
+              <li>Des pages locales structurées par quartier.</li>
+              <li>Des CTA contextualisés selon l'intention de lecture.</li>
+            </ul></div>
           </div>
         </div>
-
-        <div class="photo-strip" aria-label="Inspiration visuelle du site audite">
-          <img src="https://aurelielenoirphotography.com/wp-content/uploads/2025/11/DublinfamilyphotographerAurelieLenoir-scaled.jpg" alt="Famille qui rit pendant une seance photo a Dublin">
-          <img src="https://aurelielenoirphotography.com/wp-content/uploads/2025/11/Newborn-photography-Dublin2.jpg" alt="Seance photo nouveau-ne a Dublin">
-          <img src="https://aurelielenoirphotography.com/wp-content/uploads/2025/08/Vacation-photographer-Dublin18-1536x1024.jpg" alt="Famille en voyage a Dublin">
+        <div class="photo-strip" aria-label="Visuels du site audité">
+          <img src="https://aurelielenoirphotography.com/wp-content/uploads/2025/11/DublinfamilyphotographerAurelieLenoir-scaled.jpg" alt="Famille qui rit pendant une séance photo à Dublin">
+          <img src="https://aurelielenoirphotography.com/wp-content/uploads/2025/11/Newborn-photography-Dublin2.jpg" alt="Séance photo nouveau-né à Dublin">
+          <img src="https://aurelielenoirphotography.com/wp-content/uploads/2025/08/Vacation-photographer-Dublin18-1536x1024.jpg" alt="Famille en voyage à Dublin">
         </div>
       </div>
     </section>
 
-    <section id="mots-cles">
+    <!-- MOTS-CLES -->
+    <section id="motscles">
       <div class="section-head">
-        <div>
-          <span class="eyebrow">Mots-cles & opportunites</span>
-          <h2>Organiser le site par intentions, pas seulement par articles.</h2>
-        </div>
-        <p class="lead">Les recherches Firecrawl montrent un environnement concurrentiel actif sur "family photographer Dublin", "newborn photography Dublin" et les variantes naturelles/a domicile. A confirmer ensuite avec Google Search Console et un outil de volumes.</p>
+        <div><span class="eyebrow">Mots-clés &amp; opportunités</span><h2>Organiser le site par intentions, pas seulement par articles.</h2></div>
+        <p class="lead">Environnement concurrentiel actif sur "family photographer Dublin", "newborn photography Dublin" et les variantes naturelles/à domicile. Volumes à confirmer avec Search Console.</p>
       </div>
-
       <div class="grid cols-3">
-        <div class="card">
-          <h3>Hub principal</h3>
-          <p><strong>Family photographer Dublin</strong></p>
-          <p>Page cible : accueil + page services. Angles : documentaire, naturel, unposed, relaxed, busy parents, Dublin family photos.</p>
-          <div>
-            <span class="tag">family photographer Dublin</span>
-            <span class="tag">Dublin family photoshoot</span>
-            <span class="tag">documentary family photographer</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Hub naissance</h3>
-          <p><strong>Newborn / baby photography Dublin</strong></p>
-          <p>Page cible : newborn + baby. Angles : in-home, relaxed, baby-led, no studio, first weeks, siblings.</p>
-          <div>
-            <span class="tag">newborn photography Dublin</span>
-            <span class="tag">in home newborn photos</span>
-            <span class="tag">baby photographer Dublin</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Hub visiteurs</h3>
-          <p><strong>Vacation photographer Dublin</strong></p>
-          <p>Page cible : vacation. Angles : visiting Dublin with kids, family vacation photos, best photo spots, rainy day plan.</p>
-          <div>
-            <span class="tag">vacation photographer Dublin</span>
-            <span class="tag">family photos in Dublin</span>
-            <span class="tag">Dublin photo spots</span>
-          </div>
-        </div>
+        <div class="card"><h3>Hub principal</h3><p><strong>Family photographer Dublin</strong></p><p>Cible : accueil + services. Angles : documentaire, naturel, unposed, busy parents.</p>
+          <div><span class="tag">family photographer Dublin</span><span class="tag">Dublin family photoshoot</span><span class="tag">documentary family photographer</span></div></div>
+        <div class="card"><h3>Hub naissance</h3><p><strong>Newborn / baby photography Dublin</strong></p><p>Cible : newborn + baby. Angles : in-home, relaxed, baby-led, no studio, siblings.</p>
+          <div><span class="tag">newborn photography Dublin</span><span class="tag">in home newborn photos</span><span class="tag">baby photographer Dublin</span></div></div>
+        <div class="card"><h3>Hub visiteurs</h3><p><strong>Vacation photographer Dublin</strong></p><p>Cible : vacation. Angles : visiting Dublin with kids, best photo spots, rainy day plan.</p>
+          <div><span class="tag">vacation photographer Dublin</span><span class="tag">family photos in Dublin</span><span class="tag">Dublin photo spots</span></div></div>
       </div>
-
       <div class="quote-box" style="margin-top:18px">
-        <h3>Idees de contenus a forte intention</h3>
+        <h3>Idées de contenus à forte intention</h3>
         <ul>
-          <li><strong>Best places for family photos in Dublin</strong> : hub local reliant Sandymount, St Stephen's Green, Phoenix Park, Dollymount, Howth, city centre.</li>
-          <li><strong>In-home newborn photography vs studio newborn photography in Dublin</strong> : page comparative pour capter les parents qui hesitent.</li>
-          <li><strong>How much does family photography cost in Dublin?</strong> : contenu transparent reliant pricing, process, prints et contact.</li>
+          <li><strong>Best places for family photos in Dublin</strong> : hub local reliant Sandymount, St Stephen's Green, Phoenix Park, Dollymount, Howth.</li>
+          <li><strong>In-home vs studio newborn photography in Dublin</strong> : page comparative pour capter les parents qui hésitent.</li>
+          <li><strong>How much does family photography cost in Dublin?</strong> : contenu transparent reliant pricing, process et contact.</li>
           <li><strong>Family photographer in Dublin 8 / Dublin 15 / Castleknock / Clonsilla</strong> : pages locales sobres si la demande existe dans GSC.</li>
         </ul>
       </div>
     </section>
 
+    <!-- PAGES -->
     <section id="pages">
       <div class="section-head">
-        <div>
-          <span class="eyebrow">Pages analysees</span>
-          <h2>Etat on-page des pages echantillonnees.</h2>
-        </div>
-        <p class="lead">Les titres et descriptions sont globalement bons. Les points a surveiller : titres trop generiques, page sans H1 detecte, images lourdes/repetitives et maillage interne.</p>
+        <div><span class="eyebrow">Pages analysées</span><h2>État on-page des pages échantillonnées.</h2></div>
+        <p class="lead">Titres et descriptions globalement bons. Points à surveiller : titres trop génériques, H1 à vérifier, images et maillage interne.</p>
       </div>
-
-      <div style="overflow-x:auto">
-        <table>
-          <thead>
-            <tr>
-              <th>Page</th>
-              <th>Title</th>
-              <th>H1</th>
-              <th>Volume</th>
-              <th>Images</th>
-              <th>Action conseillee</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Accueil</strong><br><a href="https://aurelielenoirphotography.com/">/</a></td>
-              <td>Family photographer Dublin | Aurelie Lenoir<br><span class="status good">44 caracteres</span></td>
-              <td>Dublin family photographer</td>
-              <td>~1 942 mots</td>
-              <td>69 balises img, 3 alt vides detectes</td>
-              <td>Corriger anciens liens, alleger les repetitions de galeries, renforcer le lien vers pricing/contact.</td>
-            </tr>
-            <tr>
-              <td><strong>Newborn</strong><br><a href="https://aurelielenoirphotography.com/newborn-photography-dublin/">/newborn-photography-dublin/</a></td>
-              <td>Newborn photography Dublin | Relaxed In-Home Photos<br><span class="status good">51 caracteres</span></td>
-              <td>Newborn Photography In Dublin</td>
-              <td>~1 661 mots</td>
-              <td>31 balises img, alt OK dans l'echantillon</td>
-              <td>Ajouter FAQ, schema Service, liens vers articles newborn et pricing.</td>
-            </tr>
-            <tr>
-              <td><strong>Baby</strong><br><a href="https://aurelielenoirphotography.com/baby-photography-dublin/">/baby-photography-dublin/</a></td>
-              <td>Baby Photography Dublin - relaxed in-home baby photos<br><span class="status good">55 caracteres</span></td>
-              <td>Baby Photography Dublin</td>
-              <td>~1 349 mots</td>
-              <td>23 balises img, alt OK dans l'echantillon</td>
-              <td>Clarifier difference baby vs newborn, relier aux seances famille a domicile.</td>
-            </tr>
-            <tr>
-              <td><strong>Home family</strong><br><a href="https://aurelielenoirphotography.com/home-family-session-dublin/">/home-family-session-dublin/</a></td>
-              <td>Home Family Session Dublin - relaxed and unposed photography<br><span class="status warn">62 caracteres</span></td>
-              <td>Home Family Session Dublin</td>
-              <td>~1 668 mots</td>
-              <td>34 balises img, 1 alt vide detecte</td>
-              <td>Raccourcir title, ajouter quartiers et objections : maison petite, lumiere, enfants timides.</td>
-            </tr>
-            <tr>
-              <td><strong>Vacation</strong><br><a href="https://aurelielenoirphotography.com/vacation-photographer-dublin-fun-relaxed-family-photo-sessions/">/vacation-photographer-dublin.../</a></td>
-              <td>Vacation Photographer Dublin - Fun & Relaxed Family Photo Sessions<br><span class="status warn">68 caracteres</span></td>
-              <td>Vacation Photographer Dublin</td>
-              <td>~1 168 mots</td>
-              <td>22 balises img, alt OK dans l'echantillon</td>
-              <td>Creer un bloc "photo spots in Dublin" + FAQ visiteurs + liens depuis articles tourisme/famille.</td>
-            </tr>
-            <tr>
-              <td><strong>Guide famille</strong><br><a href="https://aurelielenoirphotography.com/ultimate-guide-to-family-photography-in-dublin/">/ultimate-guide-to-family-photography-in-dublin/</a></td>
-              <td>Ultimate Guide to Family Photography in Dublin | Aurelie Lenoir Photography<br><span class="status warn">75 caracteres</span></td>
-              <td>Ultimate Guide to Family Photography in Dublin</td>
-              <td>~2 377 mots</td>
-              <td>34 balises img, 2 alt vides detectes</td>
-              <td>Faire de cette page un pilier avec sommaire, liens vers services, FAQs et mise a jour annuelle.</td>
-            </tr>
-            <tr>
-              <td><strong>Blog</strong><br><a href="https://aurelielenoirphotography.com/blog/">/blog/</a></td>
-              <td>Blog | Aurelie Lenoir<br><span class="status risk">trop generique</span></td>
-              <td>BLOG</td>
-              <td>~2 988 mots</td>
-              <td>69 balises img, alt OK dans l'echantillon</td>
-              <td>Renommer la page autour de "Family photography tips in Dublin" et organiser par categories.</td>
-            </tr>
-            <tr>
-              <td><strong>Preschool</strong><br><a href="https://aurelielenoirphotography.com/preschool-photographer-dublin/">/preschool-photographer-dublin/</a></td>
-              <td>Preschool Photographer in Dublin | Aurelie Lenoir Photography<br><span class="status warn">61 caracteres</span></td>
-              <td>Non detecte dans l'extraction</td>
-              <td>~1 148 mots</td>
-              <td>12 balises img, 3 alt vides detectes</td>
-              <td>Verifier le H1 visible/HTML, ajouter cas d'usage B2B : website, prospectus, parents, creches.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <div style="overflow-x:auto"><table>
+        <thead><tr><th>Page</th><th>Titre</th><th>État</th><th>Action conseillée</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Accueil</strong><br>/</td><td>Family photographer Dublin | Aurélie Lenoir</td><td><span class="status good">44 car.</span></td><td>Corriger les anciens liens, renforcer le lien vers tarifs/contact.</td></tr>
+          <tr><td><strong>Tarifs</strong><br>/family-photography-pricing/</td><td>Family Photography Pricing | Aurelie Lenoir <span style="color:var(--bad)">(accent manquant)</span></td><td><span class="status warn">à baliser</span></td><td>Uniformiser "Aurélie", ajouter schema Service/Offer.</td></tr>
+          <tr><td><strong>Newborn</strong><br>/newborn-photography-dublin/</td><td>Newborn photography Dublin | Relaxed In-Home Photos</td><td><span class="status good">51 car.</span></td><td>Ajouter FAQ, schema Service, liens vers articles et tarifs.</td></tr>
+          <tr><td><strong>Home family</strong><br>/home-family-session-dublin/</td><td>Home Family Session Dublin - relaxed and unposed photography</td><td><span class="status warn">62 car.</span></td><td>Raccourcir le titre, ajouter quartiers et objections.</td></tr>
+          <tr><td><strong>Guide famille</strong><br>/ultimate-guide.../</td><td>Ultimate Guide to Family Photography in Dublin | Aurélie Lenoir</td><td><span class="status warn">75 car.</span></td><td>En faire une page pilier avec sommaire et liens vers services.</td></tr>
+          <tr><td><strong>Blog</strong><br>/blog/</td><td>Blog | Aurélie Lenoir</td><td><span class="status risk">générique</span></td><td>Renommer autour de "Family photography tips in Dublin", catégoriser.</td></tr>
+        </tbody>
+      </table></div>
     </section>
 
+    <!-- ROADMAP -->
     <section id="roadmap">
       <div class="section-head">
-        <div>
-          <span class="eyebrow">Plan d'action</span>
-          <h2>Roadmap 30 / 60 / 90 jours.</h2>
-        </div>
-        <p class="lead">Un plan simple a presenter : d'abord les corrections rapides, ensuite la consolidation editoriale, puis l'expansion locale.</p>
+        <div><span class="eyebrow">Plan d'action</span><h2>Roadmap 30 / 60 / 90 jours.</h2></div>
+        <p class="lead">D'abord les corrections rapides, puis la consolidation éditoriale, puis l'expansion locale.</p>
       </div>
-
       <div class="roadmap">
-        <div class="phase">
-          <div>
-            <h3>0-30 jours : nettoyer et securiser</h3>
-            <ul>
-              <li>Corriger liens internes anciens et lien de demo externe.</li>
-              <li>Noindex des pages de confirmation/formulaires sans valeur SEO.</li>
-              <li>Verifier canonicals, H1 preschool, alt vides, redirections 301.</li>
-              <li>Compresser les images les plus lourdes des pages money.</li>
-              <li>Connecter les objectifs de conversion dans GA4/Search Console.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="phase">
-          <div>
-            <h3>30-60 jours : consolider les pages qui vendent</h3>
-            <ul>
-              <li>Ajouter FAQs + schema FAQ sur Newborn, Baby, Home Family, Vacation.</li>
-              <li>Creer des blocs de preuve : avis, "as seen in", lieux, livrables prints/albums.</li>
-              <li>Mettre en place les schemas LocalBusiness, Service et BreadcrumbList.</li>
-              <li>Revoir les titles trop longs ou generiques, notamment Blog et Guide.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="phase">
-          <div>
-            <h3>60-90 jours : creer la croissance</h3>
-            <ul>
-              <li>Transformer le guide famille en page pilier avec liens vers toutes les offres.</li>
-              <li>Publier 3 a 5 contenus a intention forte : prix, lieux, comparaison studio vs domicile.</li>
-              <li>Tester des pages locales si Search Console montre des impressions par quartier.</li>
-              <li>Optimiser Google Business Profile, avis, citations locales et backlinks partenaires.</li>
-            </ul>
-          </div>
-        </div>
+        <div class="phase"><div class="ph">Phase 1<br>0-30 j</div><div><h3 style="font-size:1.25rem">Nettoyer et sécuriser</h3><ul>
+          <li>Schema LocalBusiness + coordonnées de contact visibles.</li>
+          <li>Corriger les 70 liens internes vers redirections + relier les pages orphelines.</li>
+          <li>Scanner le blog pour le contenu IA et traiter les pages les plus à risque.</li>
+          <li>Noindex des pages de confirmation et formulaires.</li>
+          <li>En-têtes de sécurité, 14 alts manquants, titres trop longs, cohérence "Aurélie".</li>
+        </ul></div></div>
+        <div class="phase"><div class="ph">Phase 2<br>30-60 j</div><div><h3 style="font-size:1.25rem">Consolider les pages qui vendent</h3><ul>
+          <li>Schema Person + signature d'auteur sur le blog.</li>
+          <li>FAQ + FAQPage sur Newborn, Baby, Home Family, Vacation.</li>
+          <li>Schema Service/Offer sur la page Tarifs.</li>
+          <li>Conversion des images en WebP/AVIF + mesure des Core Web Vitals.</li>
+        </ul></div></div>
+        <div class="phase"><div class="ph">Phase 3<br>60-90 j</div><div><h3 style="font-size:1.25rem">Créer la croissance</h3><ul>
+          <li>Transformer le guide famille en page pilier.</li>
+          <li>Publier 3 à 5 contenus à forte intention (prix, lieux, comparaisons).</li>
+          <li>Pages locales par quartier si GSC montre la demande.</li>
+          <li>Google Business Profile, avis, citations locales, backlinks partenaires.</li>
+        </ul></div></div>
       </div>
     </section>
 
-    <section>
+    <!-- QUESTIONS -->
+    <section id="questions">
       <div class="section-head">
-        <div>
-          <span class="eyebrow">Questions utiles pour le responsable du site</span>
-          <h2>Ce qu'il faut demander pendant l'echange.</h2>
-        </div>
-        <p class="lead">Ces questions permettent de passer d'un audit a un plan vraiment operationnel.</p>
+        <div><span class="eyebrow">Pour l'échange avec la cliente</span><h2>Ce qu'il faut demander pendant le rendez-vous.</h2></div>
+        <p class="lead">Ces questions permettent de passer d'un audit à un plan vraiment opérationnel.</p>
       </div>
-
       <div class="grid cols-2">
-        <div class="card">
-          <h3>Donnees</h3>
-          <ul>
-            <li>Quelles pages generent le plus de demandes via le formulaire ?</li>
-            <li>Quelles requetes Search Console ont beaucoup d'impressions mais peu de clics ?</li>
-            <li>Quel service est le plus rentable : newborn, family, vacation, preschool, proposal ?</li>
-            <li>Y a-t-il des saisons fortes a Dublin pour les reservations ?</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Positionnement</h3>
-          <ul>
-            <li>Quels quartiers ou zones de Dublin sont prioritaires commercialement ?</li>
-            <li>Quels concurrents reviennent souvent dans les appels clients ?</li>
-            <li>La photographe veut-elle pousser davantage les prints/albums ou les fichiers numeriques ?</li>
-            <li>Quelles objections clients reviennent le plus avant reservation ?</li>
-          </ul>
-        </div>
+        <div class="card"><h3>Données</h3><ul>
+          <li>Quelles pages génèrent le plus de demandes via formulaire ?</li>
+          <li>Accès Search Console possible pour voir les vraies requêtes ?</li>
+          <li>Quel service est le plus rentable : newborn, family, vacation, proposal ?</li>
+          <li>Y a-t-il des saisons fortes à Dublin pour les réservations ?</li>
+        </ul></div>
+        <div class="card"><h3>Positionnement</h3><ul>
+          <li>Quels quartiers de Dublin sont prioritaires commercialement ?</li>
+          <li>Quels concurrents reviennent dans les appels clients ?</li>
+          <li>Plutôt pousser les tirages/albums ou les fichiers numériques ?</li>
+          <li>Quelles objections reviennent le plus avant réservation ?</li>
+        </ul></div>
       </div>
     </section>
 
+    <!-- SOURCES -->
     <section id="sources">
       <div class="section-head">
-        <div>
-          <span class="eyebrow">Sources consultees</span>
-          <h2>Base de l'audit.</h2>
-        </div>
-        <p class="lead">Audit realise avec Firecrawl le 25 juin 2026. Les donnees de performance, volumes exacts et conversions doivent etre confirmees avec Google Search Console, GA4 et l'admin WordPress.</p>
+        <div><span class="eyebrow">Sources consultées</span><h2>Base de l'audit.</h2></div>
+        <p class="lead">Audit réalisé le 26 juin 2026 : analyse on-page (homepage, Tarifs, À propos), sitemaps, robots, en-têtes HTTP, JSON-LD, crawl technique complet SeRanking (102 pages) et détection de contenu IA (SurferSEO). Volumes exacts et conversions à confirmer avec Search Console, GA4 et l'admin WordPress.</p>
       </div>
-
       <ul class="source-list">
         <li><a href="https://aurelielenoirphotography.com/">Page d'accueil</a></li>
-        <li><a href="https://aurelielenoirphotography.com/blog/">Blog</a></li>
-        <li><a href="https://aurelielenoirphotography.com/newborn-photography-dublin/">Newborn photography Dublin</a></li>
-        <li><a href="https://aurelielenoirphotography.com/baby-photography-dublin/">Baby photography Dublin</a></li>
-        <li><a href="https://aurelielenoirphotography.com/home-family-session-dublin/">Home family session Dublin</a></li>
-        <li><a href="https://aurelielenoirphotography.com/vacation-photographer-dublin-fun-relaxed-family-photo-sessions/">Vacation photographer Dublin</a></li>
-        <li><a href="https://aurelielenoirphotography.com/ultimate-guide-to-family-photography-in-dublin/">Ultimate guide to family photography in Dublin</a></li>
-        <li><a href="https://aurelielenoirphotography.com/preschool-photographer-dublin/">Preschool photographer Dublin</a></li>
-        <li><a href="https://aurelielenoirphotography.com/robots.txt">robots.txt</a> et <a href="https://aurelielenoirphotography.com/sitemap_index.xml">sitemap_index.xml</a></li>
+        <li><a href="https://aurelielenoirphotography.com/family-photography-pricing/">Tarifs</a> · <a href="https://aurelielenoirphotography.com/about-me/">À propos</a></li>
+        <li><a href="https://aurelielenoirphotography.com/robots.txt">robots.txt</a> et <a href="https://aurelielenoirphotography.com/sitemap_index.xml">sitemap_index.xml</a> (28 pages + 64 articles)</li>
+        <li>Crawl technique SeRanking du 26/06/2026 (102 pages, score 86/100) · détection IA SurferSEO</li>
       </ul>
-
       <div class="footer">
-        Fichier prepare pour une discussion strategique SEO. Priorite recommandee : commencer par les corrections rapides qui ameliorent le crawl et la confiance, puis structurer les contenus par intention commerciale.
+        Document de travail interne - préparé pour la discussion stratégique SEO. Priorité recommandée : commencer par les signaux locaux (schema + contact) et les corrections rapides, puis structurer les contenus par intention commerciale.
       </div>
     </section>
   </main>

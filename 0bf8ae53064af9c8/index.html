@@ -1,396 +1,225 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Étude SEO - Aurélie Lenoir Photography</title>
+<title>Aperçu SEO - Aurélie Lenoir Photography</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Arsenal:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
-    --cream:#fbf9f7;
-    --cream-2:#f4efe9;
-    --clay:#c7a491;
-    --clay-deep:#a8836f;
-    --sage:#d3dbc8;
-    --sage-deep:#9aa888;
-    --ink:#2e2a26;
-    --ink-soft:#5a544e;
-    --line:#e7ded5;
-    --white:#ffffff;
-    --good:#7a9a6d;
-    --warn:#cE9a5b;
-    --bad:#c4756a;
-    --shadow:0 18px 50px -28px rgba(75,55,40,.45);
+    --paper:#fbf7ef; --cream:#fffdf8; --ink:#2f2a25; --muted:#74695d;
+    --line:#e2d6c6; --sage:#6f7d68; --sage-soft:#d3dbc8; --rose:#b77f70;
+    --clay:#9c674d; --clay-soft:#c7a491; --gold:#c6a15b; --dark:#26231f;
+    --soft:#f0e6d8; --good:#6f8a62; --warn:#c6975b;
+    --shadow:0 18px 50px rgba(65,48,34,.13);
   }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    font-family:'Arsenal',system-ui,sans-serif;
-    background:var(--cream);
-    color:var(--ink);
-    line-height:1.7;
-    font-size:16px;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3,h4,.serif{font-family:'Bellefair',Georgia,serif;font-weight:400;letter-spacing:.4px}
-  .wrap{max-width:980px;margin:0 auto;padding:0 28px}
-  a{color:var(--clay-deep)}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;background:var(--paper);color:var(--ink)}
+  body{margin:0;font-family:'Arsenal',system-ui,sans-serif;line-height:1.62;
+    background:linear-gradient(180deg,rgba(255,253,248,.55),rgba(251,247,239,.94) 42rem),var(--paper)}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  h1,h2,h3,h4,.serif{font-family:'Bellefair',Georgia,serif;font-weight:400;line-height:1.1;margin:0;letter-spacing:.3px}
 
-  /* ---------- Cover ---------- */
-  .cover{
-    background:linear-gradient(180deg,var(--cream) 0%,var(--cream-2) 100%);
-    border-bottom:1px solid var(--line);
-    padding:74px 0 60px;
-    text-align:center;
-  }
-  .eyebrow{
-    font-size:13px;letter-spacing:3.5px;text-transform:uppercase;
-    color:var(--clay-deep);margin-bottom:22px;
-  }
-  .cover h1{font-size:54px;line-height:1.05;margin-bottom:6px}
-  .cover .sub{font-size:20px;color:var(--ink-soft);font-style:italic;margin-bottom:30px}
-  .cover .meta{font-size:13.5px;color:var(--ink-soft);letter-spacing:.5px}
-  .cover .meta span{margin:0 10px}
+  .hero{min-height:82vh;display:grid;place-items:end start;position:relative;
+    padding:32px clamp(18px,5vw,72px);color:#fffaf1;overflow:hidden;isolation:isolate}
+  .hero::before{content:"";position:absolute;inset:0;z-index:-2;
+    background-image:linear-gradient(90deg,rgba(26,21,17,.74),rgba(26,21,17,.46) 42%,rgba(26,21,17,.08) 80%),
+      linear-gradient(180deg,rgba(20,18,15,.18),rgba(20,18,15,.62)),
+      url("https://aurelielenoirphotography.com/wp-content/uploads/2025/04/natural-family-photoshoot-dollymount-dublin-1024x683.jpg");
+    background-size:cover;background-position:center;transform:scale(1.02)}
+  .hero::after{content:"";position:absolute;inset:auto 0 0;height:22vh;z-index:-1;
+    background:linear-gradient(180deg,transparent,var(--paper))}
+  .hero-inner{width:min(980px,100%);padding:9vh 0 11vh}
+  .kicker{margin:0 0 18px;font-size:.78rem;font-weight:700;text-transform:uppercase;
+    letter-spacing:.18em;color:rgba(255,250,241,.85)}
+  .hero h1{max-width:830px;font-size:clamp(3.2rem,8vw,7rem)}
+  .hero p{max-width:640px;margin:22px 0 0;font-size:clamp(1.05rem,1.45vw,1.32rem);color:rgba(255,250,241,.9)}
+  .hero-link{color:#fffaf1;font-weight:700;text-decoration:underline;
+    text-decoration-color:rgba(199,164,145,.85);text-underline-offset:4px;text-decoration-thickness:1.5px}
+  .hero-link:hover{text-decoration-color:#fffaf1}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .pill{display:inline-flex;align-items:center;min-height:36px;padding:7px 14px;
+    border:1px solid rgba(255,250,241,.42);background:rgba(35,30,25,.24);
+    color:rgba(255,250,241,.94);font-size:.84rem;backdrop-filter:blur(8px)}
 
-  /* ---------- Score ring ---------- */
-  .score-band{padding:54px 0;text-align:center}
-  .ring-wrap{display:flex;flex-wrap:wrap;gap:46px;align-items:center;justify-content:center}
-  .ring{position:relative;width:200px;height:200px;flex:0 0 auto}
+  main{width:min(1060px,calc(100% - 36px));margin:0 auto;padding:48px 0 40px}
+  section{padding:clamp(40px,6vw,72px) 0;border-top:1px solid rgba(196,177,151,.5)}
+  section:first-child{border-top:0;padding-top:24px}
+  .section-head{margin-bottom:30px;max-width:760px}
+  .eyebrow{display:block;font-size:.74rem;font-weight:700;text-transform:uppercase;
+    letter-spacing:.13em;color:var(--sage);margin-bottom:10px}
+  h2{font-size:clamp(2rem,4.4vw,3.6rem);color:var(--dark)}
+  h3{margin-bottom:8px;font-size:1.45rem;color:var(--dark)}
+  .lead{margin:14px 0 0;color:var(--muted);font-size:1.05rem;max-width:680px}
+
+  .grid{display:grid;gap:18px}
+  .cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .card,.metric{border:1px solid var(--line);background:var(--cream);padding:22px}
+  .metric strong{display:block;margin-bottom:4px;font-family:'Bellefair',serif;
+    font-size:clamp(2.2rem,4vw,3rem);line-height:1;color:var(--clay)}
+  .metric .eyebrow{color:var(--sage);margin:0}
+  .card p,.metric p{margin:8px 0 0;color:var(--muted);font-size:.97rem}
+
+  .score{display:grid;grid-template-columns:minmax(210px,.42fr) 1fr;gap:28px;align-items:center;
+    padding:28px;border:1px solid var(--line);background:linear-gradient(135deg,#fffdf8,#f3eadc)}
+  .ring{position:relative;width:200px;height:200px;margin:0 auto}
   .ring svg{transform:rotate(-90deg)}
-  .ring .val{
-    position:absolute;inset:0;display:flex;flex-direction:column;
-    align-items:center;justify-content:center;
+  .ring .val{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .ring .num{font-family:'Bellefair',serif;font-size:62px;line-height:1;color:var(--clay)}
+  .ring .den{font-size:12px;color:var(--muted);letter-spacing:1px}
+  .tag{display:inline-flex;margin:0 6px 8px 0;padding:5px 11px;background:var(--sage-soft);
+    color:#3f5130;font-size:.8rem;font-weight:700}
+
+  .lever{display:grid;grid-template-columns:46px 1fr;gap:16px;align-items:center;
+    padding:18px 0;border-top:1px solid var(--line)}
+  .lever:first-child{border-top:0;padding-top:2px}
+  .ldot{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;
+    border:1px solid var(--clay-soft);color:var(--clay);font-family:'Bellefair',serif;font-size:1.2rem}
+  .lever h3{margin:0;font-size:1.2rem}
+  .lever p{margin:3px 0 0;color:var(--muted);font-size:.95rem}
+
+  .strength{display:flex;gap:12px;align-items:flex-start}
+  .strength .ic{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--sage-soft);
+    display:grid;place-items:center;color:#3f5130;font-weight:700;font-size:.9rem}
+
+  .cta{margin-top:10px;padding:clamp(28px,5vw,48px);border:1px solid var(--line);
+    background:linear-gradient(135deg,#f3eadc,#fffdf8);text-align:center}
+  .cta h2{font-size:clamp(1.8rem,3.6vw,2.8rem)}
+  .cta p{max-width:560px;margin:14px auto 0;color:var(--muted)}
+  .cta .btn{display:inline-block;margin-top:22px;padding:14px 30px;background:var(--clay);
+    color:#fffaf1;font-weight:700;text-decoration:none;letter-spacing:.03em;font-size:.95rem}
+  .cta .btn:hover{background:#854f37}
+
+  .footer{margin-top:30px;padding:24px 0 0;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem;text-align:center}
+
+  @media(max-width:900px){
+    .section-head{max-width:none}
+    .score,.cols-3,.cols-2{grid-template-columns:1fr}
+    .ring{width:170px;height:170px}
   }
-  .ring .num{font-family:'Bellefair',serif;font-size:62px;line-height:1;color:var(--ink)}
-  .ring .den{font-size:13px;color:var(--ink-soft);letter-spacing:1px}
-  .score-verdict{max-width:430px;text-align:left}
-  .score-verdict h2{font-size:30px;margin-bottom:12px}
-  .score-verdict p{color:var(--ink-soft);font-size:15.5px}
-  .pill{
-    display:inline-block;font-size:12.5px;letter-spacing:.5px;
-    padding:4px 13px;border-radius:30px;margin-top:14px;
-    background:var(--sage);color:#41512f;font-weight:700;
-  }
-
-  /* ---------- Section ---------- */
-  section{padding:30px 0}
-  .section-title{display:flex;align-items:baseline;gap:14px;margin:18px 0 26px}
-  .section-title .n{
-    font-family:'Bellefair',serif;font-size:22px;color:var(--clay);
-    border:1px solid var(--clay);border-radius:50%;width:42px;height:42px;
-    display:flex;align-items:center;justify-content:center;flex:0 0 auto;
-  }
-  .section-title h2{font-size:32px}
-  .lead{color:var(--ink-soft);font-size:16px;margin-bottom:8px}
-
-  /* ---------- Category bars ---------- */
-  .cats{display:grid;gap:16px;margin-top:10px}
-  .cat{
-    background:var(--white);border:1px solid var(--line);border-radius:14px;
-    padding:18px 22px;box-shadow:var(--shadow);
-  }
-  .cat .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
-  .cat .name{font-family:'Bellefair',serif;font-size:21px}
-  .cat .pct{font-family:'Bellefair',serif;font-size:21px}
-  .cat .weight{font-size:12px;color:var(--ink-soft);letter-spacing:.5px}
-  .track{height:9px;border-radius:6px;background:var(--cream-2);overflow:hidden}
-  .fill{height:100%;border-radius:6px}
-  .f-good{background:linear-gradient(90deg,var(--sage-deep),var(--good))}
-  .f-mid{background:linear-gradient(90deg,#e0c79a,var(--warn))}
-  .f-low{background:linear-gradient(90deg,#dca08f,var(--bad))}
-
-  /* ---------- Cards / findings ---------- */
-  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-  @media(max-width:720px){.grid2{grid-template-columns:1fr}}
-  .card{
-    background:var(--white);border:1px solid var(--line);border-radius:14px;
-    padding:22px 24px;box-shadow:var(--shadow);
-  }
-  .card h3{font-size:22px;margin-bottom:6px}
-  .card .tag{
-    font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:700;
-    padding:3px 10px;border-radius:20px;display:inline-block;margin-bottom:12px;
-  }
-  .t-crit{background:#f3dad5;color:#a23f31}
-  .t-high{background:#f6e6cf;color:#9a6a23}
-  .t-med{background:#e6ecdc;color:#4f6238}
-  .t-win{background:var(--sage);color:#3f5130}
-  .card p{font-size:14.5px;color:var(--ink-soft)}
-  .card .fix{margin-top:12px;font-size:13.5px;color:var(--ink);border-left:3px solid var(--clay);padding-left:12px}
-
-  ul.clean{list-style:none;display:grid;gap:11px;margin-top:6px}
-  ul.clean li{position:relative;padding-left:30px;font-size:15px;color:var(--ink-soft)}
-  ul.clean li::before{
-    content:"";position:absolute;left:6px;top:9px;width:8px;height:8px;
-    border-radius:50%;background:var(--clay);
-  }
-  ul.clean li.ok::before{background:var(--good)}
-  ul.clean li.no::before{background:var(--bad)}
-  ul.clean li b{color:var(--ink)}
-
-  /* ---------- Table ---------- */
-  table{width:100%;border-collapse:collapse;margin-top:8px;font-size:14px;
-    background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-  th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line)}
-  th{background:var(--cream-2);font-family:'Bellefair',serif;font-size:15px;font-weight:400;letter-spacing:.3px}
-  tr:last-child td{border-bottom:none}
-  td .prio{font-weight:700;font-size:12px;padding:2px 9px;border-radius:14px}
-
-  .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:6px}
-  @media(max-width:720px){.stat-row{grid-template-columns:1fr 1fr}}
-  .stat{background:var(--white);border:1px solid var(--line);border-radius:14px;
-    padding:18px;text-align:center;box-shadow:var(--shadow)}
-  .stat .big{font-family:'Bellefair',serif;font-size:38px;color:var(--clay-deep);line-height:1}
-  .stat .lbl{font-size:12.5px;color:var(--ink-soft);letter-spacing:.5px;margin-top:6px}
-
-  .note{background:var(--sage);border-radius:14px;padding:18px 22px;font-size:14.5px;color:#3f5130;margin-top:18px}
-  .note b{color:#2f3f22}
-
-  hr.soft{border:none;border-top:1px solid var(--line);margin:34px 0}
-
-  footer{
-    background:var(--cream-2);border-top:1px solid var(--line);
-    text-align:center;padding:38px 0;margin-top:30px;
-    font-size:13.5px;color:var(--ink-soft);letter-spacing:.4px;
-  }
-  footer .serif{font-size:24px;color:var(--ink);display:block;margin-bottom:6px}
-
   @media print{
     body{background:#fff}
-    .cat,.card,.stat,table{box-shadow:none}
-    .cover{padding-top:30px}
+    .hero{min-height:auto;color:var(--ink)} .hero::before,.hero::after{display:none}
+    section{break-inside:avoid} a{text-decoration:none}
   }
 </style>
 </head>
 <body>
-
-<!-- ============ COVER ============ -->
-<header class="cover">
-  <div class="wrap">
-    <div class="eyebrow">Étude SEO &amp; recommandations</div>
-    <h1>Aurélie Lenoir Photography</h1>
-    <p class="sub">Dublin family photographer - aurelielenoirphotography.com</p>
-    <p class="meta">
-      <span>Analyse du 25 juin 2026</span>·
-      <span>92 URLs analysées</span>·
-      <span>WordPress + Yoast</span>
-    </p>
-  </div>
-</header>
-
-<!-- ============ SCORE ============ -->
-<div class="score-band">
-  <div class="wrap ring-wrap">
-    <div class="ring">
-      <svg width="200" height="200" viewBox="0 0 200 200">
-        <circle cx="100" cy="100" r="86" fill="none" stroke="#e7ded5" stroke-width="16"/>
-        <circle cx="100" cy="100" r="86" fill="none" stroke="#c7a491" stroke-width="16"
-          stroke-linecap="round" stroke-dasharray="540.4"
-          stroke-dashoffset="140.5"/>
-      </svg>
-      <div class="val"><span class="num">74</span><span class="den">/ 100</span></div>
-    </div>
-    <div class="score-verdict">
-      <h2>Une base solide, prête à décoller</h2>
-      <p>Le site part d'excellentes fondations : contenu riche et localisé, fondamentaux on-page propres,
-      structure claire. Les gains les plus rapides se situent sur les <b>données structurées (schema local)</b>,
-      les <b>signaux de contact local (NAP)</b> et l'<b>optimisation des images</b>. Ce sont des leviers
-      à fort impact et à faible effort.</p>
-      <span class="pill">Niveau : bon - marge de progression nette</span>
-    </div>
-  </div>
-</div>
-
-<div class="wrap">
-
-  <!-- ============ SCORES BY CATEGORY ============ -->
-  <section>
-    <div class="section-title"><span class="n">1</span><h2>Le score en détail</h2></div>
-    <p class="lead">Sept dimensions, pondérées selon leur impact sur le référencement. Plus la barre est remplie, plus le domaine est sain.</p>
-    <div class="cats">
-      <div class="cat">
-        <div class="top"><span class="name">Contenu &amp; E-E-A-T</span><span><span class="weight">poids 23% · </span><span class="pct">85</span></span></div>
-        <div class="track"><div class="fill f-good" style="width:85%"></div></div>
-      </div>
-      <div class="cat">
-        <div class="top"><span class="name">SEO On-Page</span><span><span class="weight">poids 20% · </span><span class="pct">88</span></span></div>
-        <div class="track"><div class="fill f-good" style="width:88%"></div></div>
-      </div>
-      <div class="cat">
-        <div class="top"><span class="name">SEO Technique</span><span><span class="weight">poids 22% · </span><span class="pct">78</span></span></div>
-        <div class="track"><div class="fill f-good" style="width:78%"></div></div>
-      </div>
-      <div class="cat">
-        <div class="top"><span class="name">Images</span><span><span class="weight">poids 5% · </span><span class="pct">70</span></span></div>
-        <div class="track"><div class="fill f-mid" style="width:70%"></div></div>
-      </div>
-      <div class="cat">
-        <div class="top"><span class="name">Lisibilité IA (AI Search)</span><span><span class="weight">poids 10% · </span><span class="pct">60</span></span></div>
-        <div class="track"><div class="fill f-mid" style="width:60%"></div></div>
-      </div>
-      <div class="cat">
-        <div class="top"><span class="name">Performance (estimée)</span><span><span class="weight">poids 10% · </span><span class="pct">62</span></span></div>
-        <div class="track"><div class="fill f-mid" style="width:62%"></div></div>
-      </div>
-      <div class="cat">
-        <div class="top"><span class="name">Données structurées (Schema)</span><span><span class="weight">poids 10% · </span><span class="pct">45</span></span></div>
-        <div class="track"><div class="fill f-low" style="width:45%"></div></div>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="kicker">Aperçu SEO - juin 2026</p>
+      <h1>Aurélie Lenoir Photography</h1>
+      <p>Un premier regard sur la performance de votre site <a href="https://aurelielenoirphotography.com/" target="_blank" rel="noopener" class="hero-link">aurelielenoirphotography.com</a> dans Google, et le potentiel de croissance qui s'offre à vous pour gagner en visibilité auprès des familles de Dublin.</p>
+      <div class="hero-meta">
+        <span class="pill">Analyse de 92 pages</span>
+        <span class="pill">Visibilité locale</span>
+        <span class="pill">Dublin</span>
       </div>
     </div>
-    <div class="note"><b>À noter :</b> la performance n'a pas pu être mesurée en données réelles (quota Google PageSpeed atteint le jour de l'analyse) - le score est une estimation prudente basée sur le poids des images et de la stack technique. À confirmer avec un test PageSpeed dédié.</div>
-  </section>
+  </header>
 
-  <hr class="soft">
-
-  <!-- ============ SNAPSHOT ============ -->
-  <section>
-    <div class="section-title"><span class="n">2</span><h2>Le site en un coup d'œil</h2></div>
-    <div class="stat-row">
-      <div class="stat"><div class="big">92</div><div class="lbl">pages &amp; articles indexables</div></div>
-      <div class="stat"><div class="big">64</div><div class="lbl">articles de blog</div></div>
-      <div class="stat"><div class="big">6 254</div><div class="lbl">mots sur la page d'accueil</div></div>
-      <div class="stat"><div class="big">93%</div><div class="lbl">images avec texte alternatif</div></div>
-    </div>
-    <div class="grid2" style="margin-top:18px">
-      <div class="card">
-        <h3>Ce qui est déjà très bien</h3>
-        <ul class="clean">
-          <li class="ok"><b>Contenu local riche</b> : des dizaines de pages ciblant « family photographer Dublin » et ses quartiers (Sandymount, Castleknock, Inchicore…).</li>
-          <li class="ok"><b>Fondamentaux on-page propres</b> : titres, méta-descriptions, balise canonique, Open Graph, un seul H1 par page.</li>
-          <li class="ok"><b>HTTPS, sitemap &amp; robots.txt</b> bien configurés (Yoast). Site mobile-friendly.</li>
-          <li class="ok"><b>Images optimisées côté chargement</b> : 93% ont un alt, 42 images en lazy-load.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Ce qui freine la croissance</h3>
-        <ul class="clean">
-          <li class="no"><b>Pas de schema local</b> (LocalBusiness, Person, Service, FAQ, Avis).</li>
-          <li class="no"><b>Aucune coordonnée locale visible</b> : ni téléphone, ni e-mail, ni zone d'adresse exploitable (contact uniquement par formulaire).</li>
-          <li class="no"><b>Images au format JPEG uniquement</b> : aucune image nouvelle génération (WebP/AVIF).</li>
-          <li class="no"><b>En-têtes de sécurité absents</b> (HSTS, CSP…) - signal de confiance manquant.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <hr class="soft">
-
-  <!-- ============ TOP PRIORITIES ============ -->
-  <section>
-    <div class="section-title"><span class="n">3</span><h2>Les 5 priorités</h2></div>
-    <p class="lead">Classées par impact sur les positions Google et le trafic local. L'ordre recommandé pour la mise en œuvre.</p>
-
-    <div class="grid2">
-      <div class="card">
-        <span class="tag t-crit">Priorité 1 · Local</span>
-        <h3>Ajouter le schema <i>LocalBusiness</i> + coordonnées</h3>
-        <p>Pour une photographe locale à Dublin, l'absence de données structurées <i>LocalBusiness</i> (avec téléphone, zone de service, géolocalisation) prive le site de sa meilleure carte pour le « pack local » et les résultats de proximité.</p>
-        <div class="fix"><b>Action :</b> publier un schema LocalBusiness / ProfessionalService (nom, zone Dublin, téléphone, horaires, sameAs) + afficher un moyen de contact direct visible.</div>
+  <main>
+    <!-- SCORE -->
+    <section>
+      <div class="section-head">
+        <span class="eyebrow">Votre score de santé SEO</span>
+        <h2>Une très belle base, prête à passer à la vitesse supérieure.</h2>
+        <p class="lead">Votre site a déjà fait le plus difficile : un contenu riche, sincère et bien écrit, une identité claire et une structure soignée. Il lui manque surtout quelques signaux que Google et les moteurs de recherche utilisent pour mieux vous comprendre et vous mettre en avant localement.</p>
       </div>
 
-      <div class="card">
-        <span class="tag t-crit">Priorité 2 · Confiance</span>
-        <h3>Schema <i>Person</i> &amp; signaux E-E-A-T</h3>
-        <p>La page « About » raconte bien l'histoire d'Aurélie, mais aucune donnée <i>Person</i> n'est exposée. Google et les moteurs IA ne relient pas explicitement l'autrice à son expertise.</p>
-        <div class="fix"><b>Action :</b> ajouter un schema Person (nom, métier, sameAs réseaux) lié à l'Organization, et signer les articles de blog par l'autrice.</div>
+      <div class="score">
+        <div class="ring">
+          <svg width="200" height="200" viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="86" fill="none" stroke="#e7ded5" stroke-width="15"/>
+            <circle cx="100" cy="100" r="86" fill="none" stroke="#9c674d" stroke-width="15"
+              stroke-linecap="round" stroke-dasharray="540.4" stroke-dashoffset="140.5"/>
+          </svg>
+          <div class="val"><span class="num">74</span><span class="den">/ 100</span></div>
+        </div>
+        <div>
+          <h3>Bon socle, avec une marge de progression nette</h3>
+          <p style="color:var(--muted)">Le score reflète un site sain et bien construit, mais qui n'exploite pas encore tout son potentiel de visibilité. La bonne nouvelle : les leviers de croissance les plus efficaces sont aussi parmi les plus rapides à mettre en place.</p>
+          <div style="margin-top:16px">
+            <span class="tag">Contenu riche</span>
+            <span class="tag">Niche claire</span>
+            <span class="tag">Bonnes fondations</span>
+            <span class="tag">Visibilité locale à renforcer</span>
+          </div>
+        </div>
       </div>
 
-      <div class="card">
-        <span class="tag t-high">Priorité 3 · Conversion</span>
-        <h3>Schema <i>Service</i> / <i>Offer</i> sur Pricing &amp; FAQ</h3>
-        <p>Les pages Tarifs et FAQ sont d'excellentes pages « argent » mais sans balisage <i>Service</i>, <i>Offer</i> ni <i>FAQPage</i> - on perd les résultats enrichis et les citations dans les réponses IA.</p>
-        <div class="fix"><b>Action :</b> baliser les prestations (Offer/Service) et transformer la FAQ en schema FAQPage pour gagner des extraits enrichis.</div>
+      <div class="grid cols-3" style="margin-top:18px">
+        <div class="metric"><strong>92</strong><span class="eyebrow">pages publiées</span><p>Un volume de contenu déjà conséquent, surtout autour de la photo de famille.</p></div>
+        <div class="metric"><strong>64</strong><span class="eyebrow">articles de blog</span><p>Une vraie bibliothèque de conseils qui répond aux questions des parents.</p></div>
+        <div class="metric"><strong>86<span style="font-size:1.3rem">/100</span></strong><span class="eyebrow">santé technique</span><p>Crawl complet de 102 pages : des fondations techniques saines, peu d'erreurs bloquantes.</p></div>
+      </div>
+    </section>
+
+    <!-- FORCES -->
+    <section>
+      <div class="section-head">
+        <span class="eyebrow">Ce qui fonctionne déjà très bien</span>
+        <h2>Vos atouts.</h2>
+      </div>
+      <div class="grid cols-2">
+        <div class="card"><div class="strength"><span class="ic">✓</span><div><h3 style="font-size:1.2rem">Un positionnement unique et attachant</h3><p>Votre approche documentaire, naturelle et sans poses forcées est un vrai facteur de différenciation. C'est exactement ce que recherchent les familles aujourd'hui.</p></div></div></div>
+        <div class="card"><div class="strength"><span class="ic">✓</span><div><h3 style="font-size:1.2rem">Un contenu abondant et utile</h3><p>Des dizaines de pages et d'articles qui rassurent les parents et répondent à leurs questions. C'est une base précieuse pour le référencement.</p></div></div></div>
+        <div class="card"><div class="strength"><span class="ic">✓</span><div><h3 style="font-size:1.2rem">Des fondations techniques saines</h3><p>Site sécurisé, adapté au mobile, bien structuré et correctement lisible par Google. Aucun blocage majeur à l'indexation.</p></div></div></div>
+        <div class="card"><div class="strength"><span class="ic">✓</span><div><h3 style="font-size:1.2rem">Des pages de service ciblées</h3><p>Newborn, famille à domicile, vacances : vos offres sont déjà claires et bien identifiées, prêtes à être renforcées.</p></div></div></div>
+      </div>
+    </section>
+
+    <!-- LEVIERS (teasing, sans le "comment") -->
+    <section>
+      <div class="section-head">
+        <span class="eyebrow">Là où se trouve la croissance</span>
+        <h2>Les leviers identifiés.</h2>
+        <p class="lead">L'analyse a fait ressortir plusieurs opportunités concrètes pour gagner en visibilité, attirer plus de demandes qualifiées et convertir davantage de visiteurs. En voici les grandes lignes.</p>
       </div>
 
-      <div class="card">
-        <span class="tag t-high">Priorité 4 · Performance</span>
-        <h3>Passer les images en WebP/AVIF</h3>
-        <p>Site très visuel (photographe) mais 100% des images sont en JPEG. C'est le principal levier de vitesse, surtout sur mobile - un facteur de classement direct.</p>
-        <div class="fix"><b>Action :</b> conversion WebP/AVIF (plugin ou CDN images), dimensions responsives, et confirmer les Core Web Vitals via PageSpeed.</div>
+      <div class="lever"><div class="ldot">1</div><div>
+        <h3>Renforcer votre visibilité locale à Dublin</h3>
+        <p>Plusieurs signaux qui aident Google à vous positionner sur les recherches locales sont aujourd'hui absents ou incomplets. C'est le levier au plus fort potentiel immédiat.</p>
+      </div></div>
+      <div class="lever"><div class="ldot">2</div><div>
+        <h3>Mieux faire reconnaître votre expertise</h3>
+        <p>Votre histoire et votre savoir-faire méritent d'être plus clairement compris par les moteurs de recherche et les nouvelles IA de recherche.</p>
+      </div></div>
+      <div class="lever"><div class="ldot">3</div><div>
+        <h3>Transformer le trafic en demandes</h3>
+        <p>Vos pages les plus stratégiques (services, tarifs) peuvent gagner en performance et en résultats enrichis dans Google, pour mieux convertir les visiteurs en réservations.</p>
+      </div></div>
+      <div class="lever"><div class="ldot">4</div><div>
+        <h3>Accélérer et fluidifier le site</h3>
+        <p>Sur un site aussi visuel, l'optimisation des images est un levier direct de vitesse et de confort, en particulier sur mobile.</p>
+      </div></div>
+      <div class="lever"><div class="ldot">5</div><div>
+        <h3>Mieux relier vos contenus entre eux</h3>
+        <p>Votre riche bibliothèque d'articles peut travailler bien plus efficacement au service de vos offres, pour guider chaque visiteur vers la bonne page.</p>
+      </div></div>
+      <div class="lever"><div class="ldot">6</div><div>
+        <h3>Sécuriser la qualité de votre blog aux yeux de Google</h3>
+        <p>Un point de vigilance important a été repéré sur le contenu de certains articles : un sujet sensible que Google surveille de près et qu'il vaut mieux traiter en amont pour protéger l'ensemble du site.</p>
+      </div></div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+      <div class="cta">
+        <span class="eyebrow">Et maintenant ?</span>
+        <h2>Passons de l'aperçu au plan d'action.</h2>
+        <p>Cet aperçu ne montre qu'une partie de l'analyse. Le détail complet, chiffré et priorisé, ainsi qu'une feuille de route sur 90 jours, sont prêts à être présentés et mis en oeuvre. Discutons de la façon dont nous pouvons faire grandir votre visibilité ensemble.</p>
+        <a class="btn" href="#">Planifions un échange</a>
       </div>
-
-      <div class="card">
-        <span class="tag t-med">Priorité 5 · Technique</span>
-        <h3>Ajouter les en-têtes de sécurité</h3>
-        <p>Aucun en-tête de sécurité (HSTS, X-Content-Type-Options, Referrer-Policy…). Sans impact direct sur le classement, mais c'est un signal de qualité « Best Practices » et de confiance.</p>
-        <div class="fix"><b>Action :</b> activer HSTS + en-têtes standards via Apache/.htaccess ou le CDN.</div>
+      <div class="footer">
+        Aperçu SEO préparé pour Aurélie Lenoir Photography - juin 2026. Analyse basée sur le contenu public du site ; les données de positionnement et de trafic seront affinées avec un accès à Google Search Console.
       </div>
-
-      <div class="card" style="background:var(--cream-2)">
-        <span class="tag t-win">Gains rapides bonus</span>
-        <h3>Petits réglages, vrai effet</h3>
-        <ul class="clean" style="margin-top:4px">
-          <li>Uniformiser le nom de marque : « Aurelie » sans accent sur la page Pricing → « Aurélie ».</li>
-          <li>Ajouter les 3 alt manquants (sur 45 images).</li>
-          <li>Créer un fichier <b>llms.txt</b> pour guider les moteurs IA.</li>
-          <li>Ajouter un maillage interne depuis le blog vers les pages services/tarifs.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <hr class="soft">
-
-  <!-- ============ ACTION PLAN TABLE ============ -->
-  <section>
-    <div class="section-title"><span class="n">4</span><h2>Plan d'action</h2></div>
-    <p class="lead">Une feuille de route en trois temps, du plus impactant au confort.</p>
-    <table>
-      <thead>
-        <tr><th style="width:42%">Action</th><th>Catégorie</th><th>Impact</th><th>Effort</th><th>Priorité</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Schema LocalBusiness + coordonnées de contact</td><td>Local SEO</td><td>Élevé</td><td>Faible</td><td><span class="prio t-crit">Critique</span></td></tr>
-        <tr><td>Schema Person + signature d'auteur sur le blog</td><td>E-E-A-T</td><td>Élevé</td><td>Faible</td><td><span class="prio t-crit">Critique</span></td></tr>
-        <tr><td>Schema Service/Offer (Pricing) + FAQPage</td><td>Rich results</td><td>Élevé</td><td>Moyen</td><td><span class="prio t-high">Haute</span></td></tr>
-        <tr><td>Conversion images WebP/AVIF + Core Web Vitals</td><td>Performance</td><td>Élevé</td><td>Moyen</td><td><span class="prio t-high">Haute</span></td></tr>
-        <tr><td>En-têtes de sécurité (HSTS, CSP, etc.)</td><td>Technique</td><td>Moyen</td><td>Faible</td><td><span class="prio t-med">Moyenne</span></td></tr>
-        <tr><td>Maillage interne blog → pages services</td><td>On-Page</td><td>Moyen</td><td>Moyen</td><td><span class="prio t-med">Moyenne</span></td></tr>
-        <tr><td>llms.txt + cohérence de marque + alts manquants</td><td>Détails</td><td>Faible</td><td>Faible</td><td><span class="prio t-win">Bonus</span></td></tr>
-      </tbody>
-    </table>
-    <div class="note"><b>Le fil rouge :</b> ce site a déjà fait le plus dur - un contenu local abondant et bien écrit. Il manque surtout la « couche de signaux » que Google et les IA lisent pour <i>comprendre</i> et <i>faire confiance</i> : données structurées locales, identité de l'autrice, et balisage des prestations. Des chantiers ciblés, rapides, à fort retour.</div>
-  </section>
-
-  <hr class="soft">
-
-  <!-- ============ METHOD ============ -->
-  <section>
-    <div class="section-title"><span class="n">5</span><h2>Méthodologie &amp; portée</h2></div>
-    <div class="grid2">
-      <div class="card">
-        <h3>Ce qui a été analysé</h3>
-        <ul class="clean">
-          <li>Cartographie complète via les sitemaps (28 pages + 64 articles).</li>
-          <li>Audit on-page de la page d'accueil, Pricing et About.</li>
-          <li>robots.txt, balises canoniques, Open Graph, en-têtes HTTP &amp; sécurité.</li>
-          <li>Données structurées (JSON-LD), audit images, signaux locaux (NAP), lisibilité IA.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Limites &amp; suite possible</h3>
-        <ul class="clean">
-          <li><b>Performance réelle</b> : à mesurer (quota PageSpeed atteint ce jour-là).</li>
-          <li><b>Positions &amp; trafic</b> : nécessitent un accès Google Search Console au site.</li>
-          <li><b>Backlinks &amp; concurrence</b> : analyse complémentaire disponible sur demande.</li>
-          <li>Idéal : un accès GSC/Analytics pour transformer cette étude en suivi mensuel.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-</div>
-
-<footer>
-  <div class="wrap">
-    <span class="serif">Étude SEO - Aurélie Lenoir Photography</span>
-    Préparée pour échange avec le responsable du site · Juin 2026<br>
-    Document de travail - données collectées le 25/06/2026
-  </div>
-</footer>
-
+    </section>
+  </main>
 </body>
 </html>
