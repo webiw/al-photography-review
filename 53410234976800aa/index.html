@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Kick-off SEO - Aurélie Lenoir Photography</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Arsenal:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbf7ef; --cream:#fffdf8; --ink:#2f2a25; --muted:#74695d;
+    --line:#e2d6c6; --sage:#6f7d68; --sage-soft:#d3dbc8; --rose:#b77f70;
+    --clay:#9c674d; --clay-soft:#c7a491; --gold:#c6a15b; --dark:#26231f;
+    --soft:#f0e6d8; --good:#6f8a62; --warn:#c6975b;
+    --shadow:0 18px 50px rgba(65,48,34,.13);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;background:var(--paper);color:var(--ink)}
+  body{margin:0;font-family:'Arsenal',system-ui,sans-serif;line-height:1.62;
+    background:linear-gradient(180deg,rgba(255,253,248,.55),rgba(251,247,239,.94) 42rem),var(--paper)}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  h1,h2,h3,h4,.serif{font-family:'Bellefair',Georgia,serif;font-weight:400;line-height:1.1;margin:0;letter-spacing:.3px}
+
+  .hero{min-height:72vh;display:grid;place-items:end start;position:relative;
+    padding:32px clamp(18px,5vw,72px);color:#fffaf1;overflow:hidden;isolation:isolate}
+  .hero::before{content:"";position:absolute;inset:0;z-index:-2;
+    background-image:linear-gradient(90deg,rgba(26,21,17,.74),rgba(26,21,17,.46) 42%,rgba(26,21,17,.08) 80%),
+      linear-gradient(180deg,rgba(20,18,15,.18),rgba(20,18,15,.62)),
+      url("https://aurelielenoirphotography.com/wp-content/uploads/2025/04/natural-family-photoshoot-dollymount-dublin-1024x683.jpg");
+    background-size:cover;background-position:center;transform:scale(1.02)}
+  .hero::after{content:"";position:absolute;inset:auto 0 0;height:22vh;z-index:-1;
+    background:linear-gradient(180deg,transparent,var(--paper))}
+  .hero-inner{width:min(980px,100%);padding:9vh 0 11vh}
+  .kicker{margin:0 0 18px;font-size:.78rem;font-weight:700;text-transform:uppercase;
+    letter-spacing:.18em;color:rgba(255,250,241,.85)}
+  .hero h1{max-width:830px;font-size:clamp(2.8rem,7vw,5.6rem)}
+  .hero p{max-width:640px;margin:22px 0 0;font-size:clamp(1.05rem,1.45vw,1.32rem);color:rgba(255,250,241,.9)}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .pill{display:inline-flex;align-items:center;min-height:36px;padding:7px 14px;
+    border:1px solid rgba(255,250,241,.42);background:rgba(35,30,25,.24);
+    color:rgba(255,250,241,.94);font-size:.84rem;backdrop-filter:blur(8px)}
+
+  main{width:min(1060px,calc(100% - 36px));margin:0 auto;padding:48px 0 40px}
+  section{padding:clamp(40px,6vw,72px) 0;border-top:1px solid rgba(196,177,151,.5)}
+  section:first-child{border-top:0;padding-top:24px}
+  .section-head{margin-bottom:30px;max-width:760px}
+  .eyebrow{display:block;font-size:.74rem;font-weight:700;text-transform:uppercase;
+    letter-spacing:.13em;color:var(--sage);margin-bottom:10px}
+  h2{font-size:clamp(2rem,4.4vw,3.4rem);color:var(--dark)}
+  h3{margin-bottom:8px;font-size:1.45rem;color:var(--dark)}
+  .lead{margin:14px 0 0;color:var(--muted);font-size:1.05rem;max-width:680px}
+
+  .grid{display:grid;gap:18px}
+  .cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .card,.metric{border:1px solid var(--line);background:var(--cream);padding:22px}
+  .metric strong{display:block;margin-bottom:4px;font-family:'Bellefair',serif;
+    font-size:clamp(2rem,3.6vw,2.8rem);line-height:1;color:var(--clay)}
+  .metric.good strong{color:var(--good)}
+  .metric.alert strong{color:#a23f31}
+  .metric .eyebrow{color:var(--sage);margin:0}
+  .card p,.metric p{margin:8px 0 0;color:var(--muted);font-size:.97rem}
+
+  .tag{display:inline-flex;margin:0 6px 8px 0;padding:5px 11px;background:var(--sage-soft);
+    color:#3f5130;font-size:.8rem;font-weight:700}
+  .tag.red{background:#f0d6cf;color:#9a3f31}
+  .tag.gold{background:#f0e4c9;color:#7d5c1e}
+
+  .lever{display:grid;grid-template-columns:46px 1fr;gap:16px;align-items:center;
+    padding:18px 0;border-top:1px solid var(--line)}
+  .lever:first-child{border-top:0;padding-top:2px}
+  .ldot{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;
+    border:1px solid var(--clay-soft);color:var(--clay);font-family:'Bellefair',serif;font-size:1.2rem}
+  .ldot.alert{border-color:#bd6f63;color:#a23f31;background:#f7e7e2;font-weight:700}
+  .ldot.check{border-color:var(--sage);color:#3f5130;background:var(--sage-soft);font-weight:700}
+  .lever h3{margin:0;font-size:1.2rem}
+  .lever p{margin:3px 0 0;color:var(--muted);font-size:.95rem}
+
+  .strength{display:flex;gap:12px;align-items:flex-start}
+  .strength .ic{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--sage-soft);
+    display:grid;place-items:center;color:#3f5130;font-weight:700;font-size:.9rem}
+
+  table.data{width:100%;border-collapse:collapse;background:var(--cream);border:1px solid var(--line);font-size:.95rem}
+  table.data th{font-family:'Arsenal',sans-serif;font-size:.74rem;font-weight:700;text-transform:uppercase;
+    letter-spacing:.1em;color:var(--sage);text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);background:#f6efe3}
+  table.data td{padding:11px 16px;border-bottom:1px solid var(--line);color:var(--ink);vertical-align:top}
+  table.data tr:last-child td{border-bottom:0}
+  table.data td.num{font-family:'Bellefair',serif;font-size:1.15rem;color:var(--clay);white-space:nowrap}
+  table.data td .sub{display:block;color:var(--muted);font-size:.85rem}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .panel{border:1px solid var(--line);background:var(--cream);padding:24px}
+  .panel.goodbg{background:linear-gradient(135deg,#fffdf8,#eef2e6)}
+  .panel.badbg{background:linear-gradient(135deg,#fffdf8,#f7e9e3)}
+  .panel h3{font-size:1.25rem}
+  .panel ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:.95rem}
+  .panel ul li{margin-bottom:7px}
+  .bignum{font-family:'Bellefair',serif;font-size:clamp(2.4rem,4.4vw,3.4rem);line-height:1;color:var(--clay)}
+  .panel.goodbg .bignum{color:var(--good)}
+  .panel.badbg .bignum{color:#a23f31}
+
+  .qa{border:1px solid var(--line);background:var(--cream);padding:20px 22px;margin-bottom:12px}
+  .qa h3{font-size:1.15rem}
+  .qa p{margin:6px 0 0;color:var(--muted);font-size:.93rem}
+  .qa .why{color:var(--sage);font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em}
+
+  .cta{margin-top:10px;padding:clamp(28px,5vw,48px);border:1px solid var(--line);
+    background:linear-gradient(135deg,#f3eadc,#fffdf8);text-align:center}
+  .cta h2{font-size:clamp(1.8rem,3.6vw,2.8rem)}
+  .cta p{max-width:560px;margin:14px auto 0;color:var(--muted)}
+
+  .footer{margin-top:30px;padding:24px 0 0;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem;text-align:center}
+
+  @media(max-width:900px){
+    .section-head{max-width:none}
+    .cols-3,.cols-2,.cols-4,.split{grid-template-columns:1fr}
+    table.data{font-size:.87rem}
+  }
+  @media print{
+    body{background:#fff}
+    .hero{min-height:auto;color:var(--ink)} .hero::before,.hero::after{display:none}
+    section{break-inside:avoid} a{text-decoration:none}
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="kicker">Kick-off SEO - 6 juillet 2026</p>
+      <h1>Le Mois 1 est déjà lancé.</h1>
+      <p>Grâce aux accès que vous nous avez transmis, nous avons pu analyser vos données réelles : Search Console, Analytics sur 18 mois, un audit technique complet du site et l'analyse de votre profil de liens. Voici ce que vos chiffres nous disent, et ce qu'on en fait.</p>
+      <div class="hero-meta">
+        <span class="pill">Search Console - 90 jours</span>
+        <span class="pill">Analytics - 18 mois</span>
+        <span class="pill">Audit technique - ce matin</span>
+        <span class="pill">Profil de liens - 70 liens analysés</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- POINT DE DEPART -->
+    <section>
+      <div class="section-head">
+        <span class="eyebrow">Le point de départ</span>
+        <h2>Où en est le site aujourd'hui.</h2>
+        <p class="lead">Ces chiffres constituent la ligne de base : c'est par rapport à eux que nous mesurerons les progrès chaque mois. Ils confirment le diagnostic partagé lors de notre premier échange : le site convertit bien, mais il n'est pas encore assez visible.</p>
+      </div>
+      <div class="grid cols-4">
+        <div class="metric"><strong>138</strong><span class="eyebrow">clics Google / 90 j</span><p>34 370 impressions : Google vous montre déjà, mais trop loin pour être cliquée.</p></div>
+        <div class="metric"><strong>21,4</strong><span class="eyebrow">position moyenne</span><p>Page 2-3 en moyenne. L'objectif : faire monter les requêtes business en page 1.</p></div>
+        <div class="metric alert"><strong>8<span style="font-size:1.2rem">/100</span></strong><span class="eyebrow">autorité du domaine</span><p>Votre intuition était juste : c'est le principal frein, confirmé par les données.</p></div>
+        <div class="metric good"><strong>149</strong><span class="eyebrow">demandes de contact / 18 mois</span><p>Depuis l'Irlande. La conversion fonctionne : le goulot, c'est la visibilité.</p></div>
+      </div>
+    </section>
+
+    <!-- DECOUVERTES ANALYTICS -->
+    <section>
+      <div class="section-head">
+        <span class="eyebrow">Analyse de vos données Analytics - 18 mois</span>
+        <h2>Trois découvertes importantes.</h2>
+        <p class="lead">Avant de parler d'optimisations, il faut savoir lire vos chiffres correctement. Voici ce que l'analyse de janvier 2025 à aujourd'hui révèle.</p>
+      </div>
+
+      <div class="lever"><div class="ldot alert">1</div><div>
+        <h3>Une grande partie de votre trafic affiché... n'existe pas</h3>
+        <p>Sur le dernier mois, environ 3 visiteurs sur 4 sont des robots (majoritairement depuis Singapour, en trafic « Direct »). Vos vrais visiteurs qualifiés sont bien moins nombreux que ce que le tableau de bord affiche. Nous allons mettre en place un filtrage pour que vos rapports reflètent la réalité. Bonne nouvelle : vos vrais chiffres sont plus modestes, mais bien plus cohérents, et donc pilotables.</p>
+      </div></div>
+
+      <div class="lever"><div class="ldot check">2</div><div>
+        <h3>Le trafic Google est de très loin votre meilleur canal</h3>
+        <p>Les visiteurs venant de la recherche Google restent presque une minute sur le site (57 s en moyenne) avec un taux d'engagement de 65 %, le meilleur de tous vos canaux. À l'inverse, vos campagnes payantes sur les réseaux sociaux ont généré près de 900 visites pour zéro demande de contact et 0,2 seconde d'attention moyenne. Chaque euro investi dans le référencement naturel travaille mieux que dans la publicité sociale actuelle.</p>
+      </div></div>
+
+      <div class="lever"><div class="ldot check">3</div><div>
+        <h3>Vos pages locales de quartier sont vos meilleures vendeuses</h3>
+        <p>Votre page « Clonsilla / Castleknock / Blanchardstown » transforme presque 15 % de ses visites en demande de contact, dix fois mieux que la moyenne du site. Le modèle fonctionne : nous allons le dupliquer sur d'autres quartiers stratégiques de Dublin. C'est un des leviers les plus rentables identifiés.</p>
+      </div></div>
+
+      <div style="margin-top:26px">
+        <table class="data">
+          <tr><th>Canal d'acquisition</th><th>Sessions</th><th>Engagement</th><th>Demandes de contact</th></tr>
+          <tr><td>Recherche Google (organique)<span class="sub">Le canal le plus qualitatif</span></td><td class="num">1 026</td><td class="num">65 %</td><td class="num">65</td></tr>
+          <tr><td>Réseaux sociaux (organique)</td><td class="num">1 061</td><td class="num">58 %</td><td class="num">112</td></tr>
+          <tr><td>Publicité réseaux sociaux<span class="sub">Aucune conversion mesurée</span></td><td class="num">897</td><td class="num">3 %</td><td class="num">0</td></tr>
+          <tr><td>Accès direct<span class="sub">Fortement pollué par les robots</span></td><td class="num">5 445</td><td class="num">13 %</td><td class="num">178</td></tr>
+          <tr><td>Sites référents</td><td class="num">209</td><td class="num">62 %</td><td class="num">25</td></tr>
+        </table>
+        <p style="color:var(--muted);font-size:.88rem;margin-top:10px">Données Analytics, janvier 2025 - juillet 2026. À noter aussi : les premières visites venant d'assistants IA (ChatGPT, Perplexity) commencent à apparaître, depuis Dublin et Cork.</p>
+      </div>
+    </section>
+
+    <!-- OPPORTUNITES GSC -->
+    <section>
+      <div class="section-head">
+        <span class="eyebrow">Analyse Search Console</span>
+        <h2>Les opportunités déjà repérées.</h2>
+        <p class="lead">Vos meilleures pistes de croissance sont déjà dans vos données. Nous n'avons rien inventé : nous avons lu ce que Google vous dit déjà.</p>
+      </div>
+      <div class="grid cols-2">
+        <div class="card"><div class="strength"><span class="ic">→</span><div><h3 style="font-size:1.2rem">Un quick-win à portée de main</h3><p>« Family photography dublin » est déjà en position 15 avec 324 affichages... et 0 clic. Un travail sur le titre et la description de la page peut débloquer du trafic rapidement, sans rien reconstruire.</p></div></div></div>
+        <div class="card"><div class="strength"><span class="ic">→</span><div><h3 style="font-size:1.2rem">Le modèle « page de quartier » validé</h3><p>Clonsilla / Castleknock : 4,6 % de taux de clic dans Google. Sandymount : 3,9 %. Ces pages surperforment tout le reste. Nous allons créer leurs jumelles sur d'autres quartiers prioritaires.</p></div></div></div>
+        <div class="card"><div class="strength"><span class="ic">→</span><div><h3 style="font-size:1.2rem">Votre guide pilier existe déjà</h3><p>Le « Ultimate Guide to Family Photography in Dublin » génère déjà 2 068 affichages (position 22). Pas besoin de le créer : il faut le restructurer et le renforcer par le maillage interne pour le faire monter.</p></div></div></div>
+        <div class="card"><div class="strength"><span class="ic">→</span><div><h3 style="font-size:1.2rem">La page Newborn, principal potentiel inexploité</h3><p>2 360 affichages dans Google mais seulement 2 clics. C'est votre service le plus sous-performant par rapport à sa demande : un chantier prioritaire du trimestre.</p></div></div></div>
+      </div>
+    </section>
+
+    <!-- AUDIT TECHNIQUE -->
+    <section>
+      <div class="section-head">
+        <span class="eyebrow">Audit technique - réalisé ce matin</span>
+        <h2>Le diagnostic complet du site.</h2>
+        <p class="lead">Un crawl complet du site a été effectué ce matin. La bonne nouvelle : pas d'erreur bloquante, les fondations sont saines. Mais plusieurs chantiers concrets vont libérer de la performance.</p>
+      </div>
+      <div class="grid cols-3">
+        <div class="metric alert"><strong>70</strong><span class="eyebrow">liens internes vers redirections</span><p>Des liens qui font des détours sur quasi toutes les pages : de l'autorité perdue en route. Correction prévue au Mois 2.</p></div>
+        <div class="metric alert"><strong>4</strong><span class="eyebrow">pages orphelines</span><p>Dont la page Preschool, invisible : aucun lien interne n'y mène, et son titre principal est manquant. Si ce service compte pour vous, elle est prioritaire.</p></div>
+        <div class="metric"><strong>14</strong><span class="eyebrow">images sans texte alternatif</span><p>Dont la page d'accueil et des pages services. Pour un site de photographe, chaque image doit travailler pour votre référencement.</p></div>
+        <div class="metric"><strong>26</strong><span class="eyebrow">pages titre / H1 identiques</span><p>Une occasion manquée de viser deux formulations, et un signal de sur-optimisation aux yeux de Google. Facile à corriger.</p></div>
+        <div class="metric"><strong>16</strong><span class="eyebrow">titres trop longs</span><p>Coupés dans les résultats Google, dont des pages business (Vacation, Ultimate Guide). À réécrire avec les bons mots-clés.</p></div>
+        <div class="metric"><strong>92</strong><span class="eyebrow">pages au chargement freiné</span><p>Fichiers de style non compressés : cela participe au temps de chargement mobile de 4,8 s constaté. Optimisation prévue.</p></div>
+      </div>
+    </section>
+
+    <!-- BACKLINKS -->
+    <section>
+      <div class="section-head">
+        <span class="eyebrow">Analyse de votre profil de liens</span>
+        <h2>70 liens analysés : le vrai visage de votre autorité.</h2>
+        <p class="lead">C'était votre intuition principale, et l'analyse croisée de deux sources la confirme et la nuance : sur 38 sites qui pointent vers le vôtre, 11 sont réels et pertinents, 27 sont du bruit généré par des robots. La bonne nouvelle : les 11 vrais liens dessinent déjà exactement les familles de liens qu'il faut multiplier.</p>
+      </div>
+      <div class="split">
+        <div class="panel goodbg">
+          <span class="bignum">11</span>
+          <h3 style="margin-top:8px">domaines réels, en 4 familles à développer</h3>
+          <ul>
+            <li><strong>Média communautaire français</strong> - Le Petit Journal Dublin : un article « Où prendre les plus belles photos de votre séjour à Dublin ». La preuve que la presse communautaire vous ouvre ses portes.</li>
+            <li><strong>Citations locales irlandaises</strong> - Golden Pages (fiche + pages catégories photographes Dublin) et Phonebook.ie : le socle de la visibilité locale, à compléter.</li>
+            <li><strong>Communautés photo de niche</strong> - Fearless Photographers, Inspiration Photographers, This is Reportage: Family (profil + sélection « Favourite Moments 2025 »).</li>
+            <li><strong>Communauté famille + éditorial</strong> - The Family Edit (fiche, article de blog, espace membres) et un article invité chez une photographe (jodiblodgettphotography.com). S'y ajoutent vos profils Pinterest et Linktree, et votre ancien site en redirection.</li>
+          </ul>
+        </div>
+        <div class="panel badbg">
+          <span class="bignum">27</span>
+          <h3 style="margin-top:8px">domaines robots, sans valeur</h3>
+          <ul>
+            <li>Réseaux automatiques de type « domain report » et « SEO stats », sans aucun rapport avec votre activité.</li>
+            <li>La plupart sont neutres (sans transmission d'autorité) : pas de panique, mais une surveillance et un nettoyage sélectif s'imposent.</li>
+            <li>Aucune action risquée : nous documenterons chaque décision, comme convenu.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="lead" style="margin-top:22px">Ce que ça veut dire : votre profil de liens n'est pas vide, il est embryonnaire mais sain dans sa partie réelle. Presse communautaire, annuaires locaux, communautés photo et famille : ces 4 familles existent déjà et il « suffit » de les densifier. La stratégie des mois 4 à 6 (partenaires locaux, communautés de parents, événements comme le 14 juillet) s'appuie exactement sur ces fondations, avec votre validation à chaque étape.</p>
+    </section>
+
+    <!-- QUESTIONS -->
+    <section>
+      <div class="section-head">
+        <span class="eyebrow">Ce dont nous avons besoin de vous</span>
+        <h2>Vos réponses orientent le plan.</h2>
+        <p class="lead">Cinq questions business, et un point d'accès. Vos réponses nous permettent de concentrer chaque heure de travail là où elle rapporte le plus.</p>
+      </div>
+
+      <div class="qa"><span class="why">Priorités</span><h3>Quels services voulez-vous développer en priorité ?</h3><p>Family, newborn, baby, vacation, preschool ? Cela détermine les pages sur lesquelles nous concentrons l'effort dès ce mois-ci - notamment la page Preschool, aujourd'hui invisible.</p></div>
+      <div class="qa"><span class="why">Zones</span><h3>Quels quartiers de Dublin sont les plus intéressants commercialement ?</h3><p>Vos pages de quartier convertissent dix fois mieux que la moyenne. Nous voulons créer les suivantes au bon endroit : Malahide ? Dalkey ? Howth ? Blackrock ? Dundrum ?</p></div>
+      <div class="qa"><span class="why">Saisonnalité</span><h3>Quelles sont vos périodes fortes de réservation ?</h3><p>Pour caler le calendrier de contenu et les campagnes locales sur vos vrais pics d'activité (rentrée, Noël, printemps ?).</p></div>
+      <div class="qa"><span class="why">Liens</span><h3>Avez-vous déjà obtenu ou tenté des backlinks ?</h3><p>Annuaires, articles, mentions presse, échanges avec d'autres sites : pour ne rien refaire en double et compléter notre analyse.</p></div>
+      <div class="qa"><span class="why">Partenaires</span><h3>Quels partenaires réels avez-vous autour de vous ?</h3><p>Lieux, événements, écoles ou crèches, communautés (françaises, expats, parents), prestataires bébé et famille (doulas, yoga prénatal, boutiques...). Ce sont nos premières opportunités de liens propres.</p></div>
+      <div class="qa"><span class="why">Accès</span><h3>Le lien d'accès WordPress a expiré : pouvez-vous le renvoyer ?</h3><p>C'est le dernier accès manquant pour lancer les corrections techniques du Mois 2.</p></div>
+    </section>
+
+    <!-- PROCHAINES ETAPES -->
+    <section>
+      <div class="section-head">
+        <span class="eyebrow">Les 4 prochaines semaines</span>
+        <h2>La suite du Mois 1.</h2>
+      </div>
+      <div class="lever"><div class="ldot">1</div><div>
+        <h3>Cartographie complète de vos 60+ contenus</h3>
+        <p>Chaque article est classé par intention de recherche et rattaché à un pilier : garder, fusionner, rediriger ou renforcer. Fin des contenus qui se concurrencent entre eux.</p>
+      </div></div>
+      <div class="lever"><div class="ldot">2</div><div>
+        <h3>Plan de maillage interne autour des pages business</h3>
+        <p>Correction des 70 liens qui font des détours, rattachement des pages orphelines, et organisation des articles pour qu'ils poussent vos pages de réservation.</p>
+      </div></div>
+      <div class="lever"><div class="ldot">3</div><div>
+        <h3>Assainissement des données et du profil de liens</h3>
+        <p>Filtrage du trafic robot dans Analytics pour des rapports fiables, et plan de surveillance des liens indésirables. Chaque décision documentée.</p>
+      </div></div>
+      <div class="lever"><div class="ldot">4</div><div>
+        <h3>Premier reporting mensuel</h3>
+        <p>Un format simple et transparent : actions menées, résultats observés, priorités du mois suivant. Livré chaque mois avec un point ensemble.</p>
+      </div></div>
+
+      <div class="cta">
+        <span class="eyebrow">En résumé</span>
+        <h2>Le diagnostic est posé, les leviers sont identifiés.</h2>
+        <p>Le site a de vraies bases, la conversion fonctionne, et vos données montrent exactement où concentrer l'effort. Les 6 prochains mois servent à transformer ce potentiel en visibilité, avec transparence et validation à chaque étape.</p>
+      </div>
+      <div class="footer">
+        Kick-off SEO préparé pour Aurélie Lenoir Photography - 6 juillet 2026. Sources : Google Search Console (90 jours), Google Analytics (janvier 2025 - juillet 2026), audit technique complet du site et analyse du profil de liens réalisés le 6 juillet 2026.
+      </div>
+    </section>
+  </main>
+</body>
+</html>
