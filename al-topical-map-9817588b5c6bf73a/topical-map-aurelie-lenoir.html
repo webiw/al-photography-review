@@ -156,7 +156,7 @@
   <header class="top">
     <div>
       <h1>Topical Map - Aurélie Lenoir Photography</h1>
-      <div class="sub">Semantic map of aurelielenoirphotography.com - 8 pillars, <span id="nclu"></span> clusters, real GSC data (impressions, positions) crossed with the SE Ranking Ireland database (search volume, difficulty). Generated 24/07/2026.</div>
+      <div class="sub">Semantic map of aurelielenoirphotography.com - 8 pillars, <span id="nclu"></span> clusters, real GSC data (impressions, positions) crossed with the SE Ranking Ireland database (search volume, difficulty). <b>GSC data: 10 May to 9 August 2026, cumulative over the 3 months.</b> Updated 11/08/2026.</div>
     </div>
     <div style="display:flex;gap:8px;align-items:center">
       <a class="btn" href="action-plan-aurelie-lenoir.html" style="text-decoration:none">Action plan &#8594;</a>
@@ -204,8 +204,9 @@
   </div>
 
   <footer>
-    Sources: Google Search Console (July 2026 export, real impressions and positions) + SE Ranking Ireland database (monthly volume, KD difficulty, intent). Clusters with no SE Ranking volume (local long tail) are weighted by their GSC impressions.
-    Statuses: covered-strong = existing page at average position 10 or better; to optimise = positions 11 to 30; covered-weak = beyond 30; to create = no dedicated page.
+    Sources: Google Search Console, data period <b>10 May to 9 August 2026</b> (exported 11/08/2026), real impressions and positions, cumulative over the whole 3 months and not comparable to a single-month view. SE Ranking Ireland database (base <b>ie</b>) for monthly volume, KD difficulty and intent, snapshot of 11/08/2026. Clusters with no SE Ranking volume (local long tail) are weighted by their GSC impressions.
+    Impressions are shown as two separate GSC views of the same period, page impressions and query impressions, because they measure the same traffic from two angles and adding them would double count. The segment size in the sunburst does add them, deliberately, as a demand proxy.
+    Statuses come from the average GSC position of the cluster target page: covered-strong = 10 or better; to optimise = 11 to 30; covered-weak = beyond 30; to create = no dedicated page.
     Intents: L = local, C = commercial, I = informational, T = transactional.
   </footer>
 </div>
@@ -258,123 +259,123 @@ const P = [
    kws: [keyword, SE Ranking IE volume, GSC impressions, GSC position, KD, intent] */
 const C = [
 /* FAMILY */
-{id:'c1',p:'fam',n:'Hub - Family photographer Dublin',st:'opt',pr:1,pos:22,pimp:2537,
+{id:'c1',p:'fam',n:'Hub - Family photographer Dublin',st:'opt',pr:1,pos:14,pimp:2993,
  url:'/family-photography-dublin/',
- urls:['/family-photography-dublin/','/dublin-family-photoshoot/ (2,047 imp)','/best-family-photographer/ (464 imp)','/ (home, 1,769 imp)'],
+ urls:['/family-photography-dublin/','/dublin-family-photoshoot/ (2,950 imp)','/best-family-photographer/ (39 imp)','/ (home, 1,794 imp)'],
  cann:true,
  act:'Major cannibalisation: 4 URLs compete for the "family photographer dublin" queries. Consolidate into a single hub, redirect the duplicates, and point all internal links to it.',
- kws:[["family photographer dublin",210,365,34.4,14,"LC"],["dublin family photographer",210,186,22.3,13,"LC"],["family photographers dublin",210,14,18.2,9,"LC"],["family photoshoot dublin",90,252,27.5,16,"LC"],["family photography dublin",20,324,15.1,13,"LC"],["family portrait dublin",20,114,49.7,14,"LC"],["best family photographer dublin",10,35,36.5,19,"LC"],["family photos dublin",null,26,38.3,null,"LC"]]},
-{id:'c2',p:'fam',n:'In-home family session',st:'faible',pr:2,pos:45,pimp:1204,
+ kws:[["family photographer dublin",210,451,33.3,4,"LC"],["dublin family photographer",210,258,21.6,17,"LC"],["family photographers dublin",210,109,19.2,11,"LC"],["family photoshoot dublin",90,367,21.6,12,"LC"],["family photography dublin",20,418,13.6,14,"LC"],["family portrait dublin",20,198,44.4,16,"LC"],["best family photographer dublin",10,124,22.7,17,"LC"],["family photos dublin",null,22,45.1,null,"LC"]]},
+{id:'c2',p:'fam',n:'In-home family session',st:'faible',pr:2,pos:48,pimp:2196,
  url:'/home-family-session-dublin/',
- urls:['/home-family-session-dublin/ (807 imp)','/in-home-photo-session/','/natural-family-photography-at-home/ (386 imp)'],
+ urls:['/home-family-session-dublin/ (1,079 imp)','/in-home-photo-session/','/natural-family-photography-at-home/ (1,107 imp)'],
  cann:true,
  act:'3 pages share the "at-home session" intent. Merge into a single service page and target "at home family photoshoot dublin".',
- kws:[["family photoshoot at home",10,44,34.3,11,"LC"],["at home family photoshoot",null,37,45.4,null,"LC"],["in home photoshoot dublin",null,14,45.6,null,"LC"],["in home photographer dublin",null,11,45.1,null,"LC"],["in home photography dublin",null,5,56.2,null,"LC"]]},
-{id:'c3',p:'fam',n:'Outdoor family session',st:'opt',pr:3,pos:29,pimp:199,
+ kws:[["family photoshoot at home",10,139,29.5,11,"LC"],["at home family photoshoot",null,50,55,null,"LC"],["in home photoshoot dublin",null,10,46.2,null,"LC"],["in home photographer dublin",null,10,52.1,null,"LC"],["in home photography dublin",null,5,62,null,"LC"]]},
+{id:'c3',p:'fam',n:'Outdoor family session',st:'faible',pr:3,pos:51,pimp:182,
  url:'/outdoor-photo-session/',urls:['/outdoor-photo-session/'],
- act:'Existing page stuck on page 3. Enrich with locations (link out to the Locations pillar) and target "outdoor family photoshoot dublin".',
- kws:[["relaxed outdoor family photography",null,97,22.6,null,"LC"],["outdoor family photoshoot dublin",null,23,41.5,null,"LC"],["outdoor family photography",null,19,21.5,null,"LC"],["outdoor family photographer dublin",null,16,58.9,null,"LC"]]},
-{id:'c4',p:'fam',n:'Grandparents & multi-generation',st:'opt',pr:2,pos:14,pimp:1931,
- url:'/grandparents-family-photo-session/',urls:['/grandparents-family-photo-session/ (1,931 imp)'],
- act:'1,931 impressions at position 13.9: one optimisation away from the top 10. Add "extended family" and "3 generations" sections (real uncovered GSC demand).',
- kws:[["grandparents and grandchildren photo shoot",null,18,20,null,"LC"],["extended family photoshoot dublin",null,10,58.9,null,"LC"],["family reunion photoshoot dublin",null,9,51.2,null,"LC"],["family photo with grandparents",null,3,19.3,null,"I"],["multi-generation family photos dublin",null,2,57.5,null,"LC"],["generational family photography dublin",null,3,83.3,null,"LC"]]},
-{id:'c5',p:'fam',n:'Solo mum & LGBT families',st:'fort',pr:3,pos:7,pimp:220,
+ act:'The page has slipped to position 51 while the cluster keywords sit around 21. Enrich with locations (link out to the Locations pillar) and target "outdoor family photoshoot dublin".',
+ kws:[["relaxed outdoor family photography",null,87,21.4,null,"LC"],["outdoor family photoshoot dublin",null,12,61,null,"LC"],["outdoor family photography",10,112,21.1,11,"LC"],["outdoor family photographer dublin",null,15,62.2,null,"LC"]]},
+{id:'c4',p:'fam',n:'Grandparents & multi-generation',st:'opt',pr:2,pos:13,pimp:1629,
+ url:'/grandparents-family-photo-session/',urls:['/grandparents-family-photo-session/ (1,629 imp)'],
+ act:'1,629 impressions at position 13.2: one optimisation away from the top 10. Add "extended family" and "3 generations" sections (real uncovered GSC demand).',
+ kws:[["grandparents and grandchildren photo shoot",null,10,18.8,null,"LC"],["extended family photoshoot dublin",null,6,58.2,null,"LC"],["family reunion photoshoot dublin",null,7,50.3,null,"LC"],["family photo with grandparents",null,1,20,null,"I"],["multi-generation family photos dublin",null,null,null,null,"LC"],["generational family photography dublin",null,2,41,null,"LC"]]},
+{id:'c5',p:'fam',n:'Solo mum & LGBT families',st:'fort',pr:3,pos:7,pimp:142,
  url:'/solo-mum-family-photo-session-dublin/',urls:['/solo-mum-family-photo-session-dublin/'],
- act:'Position 7.3, differentiating niche. Maintain and link from the family hub.',
- kws:[["lgbt family photographer dublin",null,10,10,null,"LC"],["solo family photo",null,2,7.5,null,"I"],["photography tips for single parents",null,2,6.5,null,"I"]]},
-{id:'c6',p:'fam',n:'Siblings',st:'fort',pr:3,pos:9,pimp:369,
+ act:'Position 6.8, differentiating niche. Maintain and link from the family hub.',
+ kws:[["lgbt family photographer dublin",null,10,10,null,"LC"],["solo family photo",null,1,4,null,"I"],["photography tips for single parents",null,null,null,null,"I"]]},
+{id:'c6',p:'fam',n:'Siblings',st:'fort',pr:3,pos:10,pimp:210,
  url:'/sibling-photo-session/',urls:['/sibling-photo-session/'],
- act:'Position 9.1. Add a local variant "sibling photoshoot dublin" in the H1/content (106 imp at position 22).',
- kws:[["sibling photoshoot dublin",null,106,22.6,null,"LC"],["siblings photoshoot dublin",null,9,45.2,null,"LC"],["siblings photography dublin",null,6,42.7,null,"LC"]]},
-{id:'c7',p:'fam',n:'Family session pricing',st:'opt',pr:2,pos:28,pimp:421,
- url:'/family-photography-pricing/',urls:['/family-photography-pricing/ (421 imp, 5 clicks)'],
- act:'Page already converts (CTR 1.2%). Restructure as a pricing page + price FAQ to move below position 20.',
- kws:[["family photography prices dublin",10,16,22.1,8,"LC"],["family photography prices",10,12,41,3,"I"],["family photography pricing",null,11,33.6,null,"I"],["family photoshoot packages",null,12,50.3,null,"LC"],["family photographer prices",null,1,22,null,"I"]]},
+ act:'Position 10.0. Add a local variant "sibling photoshoot dublin" in the H1/content (100 imp at position 18.1).',
+ kws:[["sibling photoshoot dublin",null,100,18.1,null,"LC"],["siblings photoshoot dublin",null,7,43.6,null,"LC"],["siblings photography dublin",null,5,46.4,null,"LC"]]},
+{id:'c7',p:'fam',n:'Family session pricing',st:'faible',pr:2,pos:40,pimp:700,
+ url:'/family-photography-pricing/',urls:['/family-photography-pricing/ (700 imp, 2 clicks)'],
+ act:'Slipped from position 28 to 40 while impressions grew to 700 and CTR fell to 0.29%. Restructure as a real pricing page + price FAQ: the demand is there, the ranking is not.',
+ kws:[["family photography prices dublin",10,6,31.5,8,"LC"],["family photography prices",10,107,38.4,3,"I"],["family photography pricing",10,106,34.6,0,"I"],["family photoshoot packages",10,98,44.5,4,"LC"],["family photographer prices",null,1,22,null,"I"]]},
 
 /* NEWBORN & BABY */
-{id:'c8',p:'nb',n:'Hub - Newborn photography Dublin',st:'faible',pr:1,pos:39,pimp:2360,
- url:'/newborn-photography-dublin/',urls:['/newborn-photography-dublin/ (2,360 imp)'],
- act:'The site\'s no. 1 priority: 170 searches/mo, KD only 9, page at position 39-69. Full hub rewrite + internal linking + local backlinks.',
- kws:[["newborn photography dublin",170,379,39.3,9,"LC"],["newborn photographer dublin",50,306,34.4,8,"LC"],["dublin newborn photographer",null,145,35.8,null,"LC"],["best newborn photographer dublin",null,133,44.4,null,"LC"],["newborn photoshoot dublin",null,73,47.5,null,"LC"],["newborn photography ireland",10,68,78.3,7,"LC"]]},
-{id:'c9',p:'nb',n:'Baby photographer Dublin',st:'faible',pr:1,pos:41,pimp:7114,
+{id:'c8',p:'nb',n:'Hub - Newborn photography Dublin',st:'faible',pr:1,pos:70,pimp:4207,
+ url:'/newborn-photography-dublin/',urls:['/newborn-photography-dublin/ (4,207 imp)'],
+ act:'The site\'s no. 1 priority: 170 searches/mo, KD 13, main keyword at position 39 and the page itself at 70. Full hub rewrite + internal linking + local backlinks.',
+ kws:[["newborn photography dublin",170,477,39.3,13,"LC"],["newborn photographer dublin",50,303,38.3,8,"LC"],["dublin newborn photographer",null,241,37.8,9,"LC"],["best newborn photographer dublin",null,199,43.3,null,"LC"],["newborn photoshoot dublin",null,49,48.7,null,"LC"],["newborn photography ireland",10,173,72.9,7,"LC"]]},
+{id:'c9',p:'nb',n:'Baby photographer Dublin',st:'faible',pr:1,pos:44,pimp:8906,
  url:'/dublin-baby-photography/',
- urls:['/dublin-baby-photography/ (5,406 imp)','/baby-photography-dublin/ (1,708 imp)'],
+ urls:['/dublin-baby-photography/ (6,926 imp)','/baby-photography-dublin/ (1,980 imp)'],
  cann:true,
- act:'Biggest impression pool on the site (7,100+) and 2 near-identical URLs competing. Merge, redirect, and clearly differentiate baby (3-12 months) vs newborn.',
- kws:[["baby photographer dublin",null,375,35.6,7,"LC"],["baby photography dublin",null,234,33.2,9,"LC"],["baby photography near me",140,5,40.8,8,"LC"],["dublin baby photographer",null,140,27,null,"LC"],["baby photos dublin",null,113,34.9,null,"LC"],["baby photoshoot dublin",null,90,41.3,null,"LC"]]},
-{id:'c10',p:'nb',n:'In-home newborn (service page)',st:'creer',pr:1,pos:13,pimp:75,
+ act:'Biggest impression pool on the site (8,900+) and 2 near-identical URLs competing. Merge, redirect, and clearly differentiate baby (3-12 months) vs newborn.',
+ kws:[["baby photographer dublin",null,422,37,8,"LC"],["baby photography dublin",null,224,32.5,8,"LC"],["baby photography near me",140,6,38,8,"LC"],["dublin baby photographer",null,120,29.8,null,"LC"],["baby photos dublin",null,208,33.1,6,"LC"],["baby photoshoot dublin",null,171,36.4,null,"LC"]]},
+{id:'c10',p:'nb',n:'In-home newborn (service page)',st:'creer',pr:1,pos:39,pimp:133,
  url:'/in-home-newborn-photography-dublin/ (to create)',
- urls:['/cozy-in-home-newborn-photos-in-inchicore-dublin-8/ (blog, pos 10.8)'],
- act:'The blog already ranks 12.7 for "in-home newborn session dublin" with no service page. Create the dedicated page: KD 1-3, and it is Aurélie\'s natural positioning against studios.',
- kws:[["in-home newborn session dublin",null,113,12.7,null,"LC"],["newborn photography at home",20,15,51.4,3,"LC"],["in home newborn photography",null,12,37.8,null,"LC"],["lifestyle newborn photography",10,12,62,1,"LC"]]},
-{id:'c11',p:'nb',n:'Natural newborn vs studio',st:'opt',pr:2,pos:15,pimp:350,
+ urls:['/cozy-in-home-newborn-photos-in-inchicore-dublin-8/ (blog, pos 9.7)'],
+ act:'The blog already ranks 10.3 for "in-home newborn session dublin" with no service page. Create the dedicated page: KD 1-2, and it is Aurélie\'s natural positioning against studios.',
+ kws:[["in-home newborn session dublin",null,106,10.3,null,"LC"],["newborn photography at home",20,105,47.9,2,"LC"],["in home newborn photography",10,102,38.1,2,"LC"],["lifestyle newborn photography",10,97,62.8,1,"LC"]]},
+{id:'c11',p:'nb',n:'Natural newborn vs studio',st:'opt',pr:2,pos:14,pimp:320,
  url:'/unposed-newborn-photography/',
  urls:['/unposed-newborn-photography/','/natural-newborn-photography-dublin/','/documentary-newborn-photography-vs-studio/'],
- act:'3 pages close to the top 10 on the "natural/unposed" angle. Clarify each page\'s role, cross-link them, and capture "studio" demand through comparison content.',
- kws:[["natural newborn photography dublin",null,102,19,null,"LC"],["newborn photography studio dublin",null,97,49,null,"LC"],["natural newborn photography",null,16,27.6,null,"LC"],["documentary newborn photography",null,14,11.6,null,"LC"],["unposed newborn photography",10,null,null,5,"LC"],["relaxed newborn photography",null,6,35.2,null,"LC"]]},
-{id:'c12',p:'nb',n:'Newborn + family session',st:'faible',pr:2,pos:44,pimp:716,
- url:'/newborn-photography-session-in-dublin/',urls:['/newborn-photography-session-in-dublin/ (716 imp)'],
- act:'Refocus this page on "newborn & family session": two keywords at 90 searches/mo, KD 6-8, and the angle fits Aurélie\'s documentary style.',
- kws:[["newborn family photoshoot",90,10,64.5,8,"LC"],["family with newborn photography",90,1,39,6,"LC"],["newborn and family photography",null,14,47.4,null,"LC"],["baby and family photoshoot",null,16,68.2,null,"LC"],["grandparents in newborn photo session",null,48,21.4,null,"I"]]},
-{id:'c13',p:'nb',n:'Newborn pricing',st:'creer',pr:2,pos:null,pimp:0,
+ act:'Roles are drifting apart: the unposed page sits at 14.3 and the vs-studio page at 12.5, but /natural-newborn-photography-dublin/ has collapsed to 56. Clarify each page\'s role, cross-link them, and capture "studio" demand through comparison content.',
+ kws:[["natural newborn photography dublin",null,100,19.4,null,"LC"],["newborn photography studio dublin",null,97,44.2,null,"LC"],["natural newborn photography",10,110,29.8,5,"LC"],["documentary newborn photography",null,31,11.5,null,"LC"],["unposed newborn photography",10,null,null,5,"LC"],["relaxed newborn photography",null,null,null,null,"LC"]]},
+{id:'c12',p:'nb',n:'Newborn + family session',st:'faible',pr:2,pos:44,pimp:725,
+ url:'/newborn-photography-session-in-dublin/',urls:['/newborn-photography-session-in-dublin/ (725 imp)'],
+ act:'Refocus this page on "newborn & family session": two keywords at 90 searches/mo, KD 6-9, and the angle fits Aurélie\'s documentary style.',
+ kws:[["newborn family photoshoot",90,10,53.7,9,"LC"],["family with newborn photography",90,4,34.8,6,"LC"],["newborn and family photography",10,103,45,9,"LC"],["baby and family photoshoot",null,26,66.7,null,"LC"],["grandparents in newborn photo session",null,65,21.5,null,"I"]]},
+{id:'c13',p:'nb',n:'Newborn pricing',st:'creer',pr:2,pos:46,pimp:0,
  url:'/newborn-photography-prices-dublin/ (to create)',urls:[],
- act:'No newborn pricing page although demand exists (270+ cumulative imp). Pricing page + what\'s included/options comparison.',
- kws:[["baby photography dublin prices",null,101,49.1,3,"I"],["newborn photography prices dublin",null,91,47,null,"I"],["affordable newborn photographer dublin",null,89,39.4,null,"LC"],["newborn photography prices",10,87,67.4,3,"I"],["newborn photography cost",null,6,51.2,null,"I"]]},
-{id:'c14',p:'nb',n:'Twins & baby siblings',st:'fort',pr:3,pos:12,pimp:8,
+ act:'No newborn pricing page although demand exists (520+ cumulative imp). Pricing page + what\'s included/options comparison.',
+ kws:[["baby photography dublin prices",null,96,37,2,"LC"],["newborn photography prices dublin",null,94,39.4,null,"I"],["affordable newborn photographer dublin",null,88,36.9,null,"LC"],["newborn photography prices",10,162,57.7,2,"I"],["newborn photography cost",10,81,53.9,2,"I"]]},
+{id:'c14',p:'nb',n:'Twins & baby siblings',st:'opt',pr:3,pos:15,pimp:11,
  url:'/in-home-twin-baby-photos-with-sibling/',urls:['/in-home-twin-baby-photos-with-sibling/'],
- act:'Niche covered, position 12. Low volume but differentiating; link from the newborn hub.',
- kws:[["twin newborn photography",10,null,null,5,"I"],["in home twin baby photos",null,8,12.1,null,"LC"]]},
+ act:'Niche covered, position 15. Low volume but differentiating; link from the newborn hub.',
+ kws:[["twin newborn photography",10,null,null,5,"I"],["in home twin baby photos",null,null,null,null,"LC"]]},
 
 /* MATERNITY */
-{id:'c15',p:'mat',n:'Hub - Maternity photography Dublin',st:'creer',pr:1,pos:57,pimp:430,
+{id:'c15',p:'mat',n:'Hub - Maternity photography Dublin',st:'creer',pr:1,pos:52,pimp:0,
  url:'/maternity-photography-dublin/ (to create)',urls:[],
- act:'A whole pillar with no service page: "maternity photo session" 260/mo KD 3, "pregnancy photoshoot" 170/mo KD 2. Near-zero competition, priority creation.',
- kws:[["maternity photo session",260,null,null,3,"LC"],["pregnancy photoshoot",170,null,null,2,"LC"],["maternity photoshoot dublin",50,1,49,3,"LC"],["maternity photographer dublin",20,37,53.9,4,"LC"],["maternity photography dublin",10,122,60.2,4,"LC"],["pregnancy photography dublin",10,49,58.3,4,"LC"],["dublin maternity photographer",null,58,40.6,null,"LC"],["baby bump photography dublin",null,87,61.3,4,"LC"],["fine art maternity photography dublin",null,66,63.6,null,"LC"]]},
-{id:'c16',p:'mat',n:'Outdoor maternity',st:'fort',pr:2,pos:10,pimp:373,
- url:'/outdoor-maternity-photos-in-dublin-with-a-toddler/',urls:['/outdoor-maternity-photos-in-dublin-with-a-toddler/ (373 imp, 7 clicks)'],
- act:'Position 7.2 on "outdoor maternity photoshoot dublin". Consolidate while waiting for the maternity hub, then link up to it.',
- kws:[["outdoor maternity photoshoot dublin",null,121,7.2,null,"LC"],["maternity photography outdoor",null,14,6.9,null,"LC"],["outdoor maternity photography",null,8,9,null,"LC"],["outdoor maternity photoshoot",null,2,21.5,null,"LC"]]},
-{id:'c17',p:'mat',n:'Maternity with a toddler',st:'fort',pr:3,pos:5,pimp:60,
+ act:'A whole pillar with no service page: "maternity photo session" 260/mo KD 2, "pregnancy photoshoot" 170/mo KD 2. Near-zero competition, priority creation.',
+ kws:[["maternity photo session",260,null,null,2,"LC"],["pregnancy photoshoot",170,null,null,2,"LC"],["maternity photoshoot dublin",70,null,null,3,"LC"],["maternity photographer dublin",20,113,52,4,"LC"],["maternity photography dublin",10,248,53.7,4,"LC"],["pregnancy photography dublin",10,5,88.4,4,"LC"],["dublin maternity photographer",null,84,38.7,null,"LC"],["baby bump photography dublin",null,86,56,4,"LC"],["fine art maternity photography dublin",null,86,57.1,null,"LC"]]},
+{id:'c16',p:'mat',n:'Outdoor maternity',st:'fort',pr:2,pos:10,pimp:498,
+ url:'/outdoor-maternity-photos-in-dublin-with-a-toddler/',urls:['/outdoor-maternity-photos-in-dublin-with-a-toddler/ (498 imp, 6 clicks)'],
+ act:'Page at position 9.8 with 6 clicks, main keyword at 11.3. Consolidate while waiting for the maternity hub, then link up to it.',
+ kws:[["outdoor maternity photoshoot dublin",null,101,11.3,null,"LC"],["maternity photography outdoor",10,97,8.7,2,"LC"],["outdoor maternity photography",10,81,10.6,2,"LC"],["outdoor maternity photoshoot",10,2,17,3,"LC"]]},
+{id:'c17',p:'mat',n:'Maternity with a toddler',st:'fort',pr:3,pos:10,pimp:0,
  url:'/outdoor-maternity-photos-in-dublin-with-a-toddler/',urls:['(covered by the outdoor maternity page)'],
- act:'Long tail already captured (positions 3-10). A dedicated paragraph is enough, no new page needed.',
- kws:[["maternity shoot with toddler",null,1,3,null,"I"],["maternity photoshoot with toddler",null,1,5,null,"I"],["pregnancy photoshoot with toddler",null,1,7,null,"I"],["maternity with toddler",null,1,10,null,"I"]]},
+ act:'Long tail already captured (positions 5-12). A dedicated paragraph is enough, no new page needed.',
+ kws:[["maternity shoot with toddler",null,null,null,null,"I"],["maternity photoshoot with toddler",null,1,5,null,"I"],["pregnancy photoshoot with toddler",null,24,11.8,null,"I"],["maternity with toddler",null,null,null,null,"I"]]},
 
 /* DOCUMENTARY */
-{id:'c19',p:'doc',n:'Documentary family photography',st:'opt',pr:2,pos:22,pimp:1509,
- url:'/documentary-family-photographer/',urls:['/documentary-family-photographer/ (1,509 imp)'],
- act:'Core of the positioning, 1,500 imp at position 22. Enrich (E-E-A-T, sample stories) to target the national top 10.',
- kws:[["documentary family photographer",null,324,23,null,"LC"],["documentary family photography",null,317,24.5,null,"LC"],["family documentary photography",null,214,23.7,null,"LC"],["documentary photography family",null,110,16.3,null,"LC"],["documentary style family photography",null,62,50.1,null,"LC"]]},
-{id:'c20',p:'doc',n:'Candid family photos',st:'opt',pr:2,pos:15,pimp:1634,
- url:'/candid-family-pictures/',urls:['/candid-family-pictures/ (1,634 imp)'],
- act:'Position 15.2 with 1,634 imp: on-page optimisation + links from the guides to break into the top 10.',
- kws:[["candid family photos",null,231,15.2,null,"I"],["candid family photography",null,201,26.4,null,"LC"],["candid family photo shoot",null,94,29.5,null,"LC"],["family candid photography",null,86,24.6,null,"LC"],["candid family pictures",null,29,12.6,null,"I"]]},
-{id:'c21',p:'doc',n:'Unposed vs lifestyle',st:'fort',pr:3,pos:11,pimp:725,
- url:'/unposed-vs-lifestyle-family-photos/',urls:['/unposed-vs-lifestyle-family-photos/ (725 imp)'],
- act:'Position 10.8, educational article that defines the style. Maintain; link to the documentary and candid pages.',
- kws:[["lifestyle documentary photography",null,50,19.5,null,"LC"],["lifestyle family photography",10,18,41.7,14,"LC"],["what is lifestyle family photography",null,4,14.5,null,"I"]]},
-{id:'c22',p:'doc',n:'Everyday life & child-led',st:'opt',pr:3,pos:14,pimp:1204,
+{id:'c19',p:'doc',n:'Documentary family photography',st:'opt',pr:2,pos:22,pimp:1458,
+ url:'/documentary-family-photographer/',urls:['/documentary-family-photographer/ (1,458 imp)'],
+ act:'Core of the positioning, 1,458 imp at position 22. Enrich (E-E-A-T, sample stories) to target the national top 10.',
+ kws:[["documentary family photographer",null,343,22,null,"LC"],["documentary family photography",null,341,25.1,null,"LC"],["family documentary photography",null,218,26.2,null,"LC"],["documentary photography family",null,68,22,null,"LC"],["documentary style family photography",null,76,48.3,null,"LC"]]},
+{id:'c20',p:'doc',n:'Candid family photos',st:'opt',pr:2,pos:16,pimp:1530,
+ url:'/candid-family-pictures/',urls:['/candid-family-pictures/ (1,530 imp)'],
+ act:'Position 16.2 with 1,530 imp: on-page optimisation + links from the guides to break into the top 10.',
+ kws:[["candid family photos",null,253,16.8,null,"I"],["candid family photography",null,236,27.3,null,"LC"],["candid family photo shoot",null,100,22.6,null,"LC"],["family candid photography",null,104,22.6,null,"LC"],["candid family pictures",null,27,12.9,null,"I"]]},
+{id:'c21',p:'doc',n:'Unposed vs lifestyle',st:'opt',pr:3,pos:15,pimp:438,
+ url:'/unposed-vs-lifestyle-family-photos/',urls:['/unposed-vs-lifestyle-family-photos/ (438 imp)'],
+ act:'Position 14.5, educational article that defines the style. Maintain; link to the documentary and candid pages.',
+ kws:[["lifestyle documentary photography",null,7,18.4,null,"LC"],["lifestyle family photography",10,107,40.9,14,"LC"],["what is lifestyle family photography",null,2,12,null,"I"]]},
+{id:'c22',p:'doc',n:'Everyday life & child-led',st:'opt',pr:3,pos:11,pimp:1078,
  url:'/everyday-family-moments-photography/',
  urls:['/everyday-family-moments-photography/','/child-led-photography/','/day-in-the-life-family-photography-dublin/','/documenting-your-family/'],
- act:'4 thematically close articles, all between positions 12 and 19. Organise them into a sub-silo ("everyday" hub) with cross-linking.',
- kws:[["day in the life photography ireland",null,44,19.7,null,"LC"],["child-led baby photography",null,19,15.8,null,"LC"],["storytelling family photography",null,16,21.1,null,"LC"],["family moments photography",null,43,11.9,null,"I"],["everyday moments photography",null,2,9,null,"I"]]},
+ act:'4 thematically close articles, all between positions 11 and 22. Organise them into a sub-silo ("everyday" hub) with cross-linking.',
+ kws:[["day in the life photography ireland",null,null,null,null,"LC"],["child-led baby photography",null,17,13.4,null,"LC"],["storytelling family photography",null,31,20.2,null,"LC"],["family moments photography",null,45,12,null,"I"],["everyday moments photography",null,4,11.8,null,"I"]]},
 
 /* LOCATIONS */
-{id:'c23',p:'loc',n:'Dublin 15 - Clonsilla / Castleknock / Blanchardstown',st:'fort',pr:2,pos:20,pimp:394,
- url:'/family-photographer-clonsilla-castleknock-blanchardstown/',urls:['/family-photographer-clonsilla-castleknock-blanchardstown/ (394 imp, 18 clicks!)'],
- act:'Best converting page on the site (CTR 4.6%). The template to replicate for other areas. Strengthen with client reviews and geotagged photos.',
+{id:'c23',p:'loc',n:'Dublin 15 - Clonsilla / Castleknock / Blanchardstown',st:'opt',pr:2,pos:28,pimp:440,
+ url:'/family-photographer-clonsilla-castleknock-blanchardstown/',urls:['/family-photographer-clonsilla-castleknock-blanchardstown/ (440 imp, 17 clicks)'],
+ act:'Top click driver after the home page: 17 clicks at CTR 3.9%. The template to replicate for other areas. Strengthen with client reviews and geotagged photos.',
  kws:[["family photographer castleknock",null,null,null,null,"LC"],["family photographer blanchardstown",null,null,null,null,"LC"],["family photographer clonsilla",null,null,null,null,"LC"]]},
-{id:'c24',p:'loc',n:'Sandymount & south beaches',st:'fort',pr:3,pos:8,pimp:139,
+{id:'c24',p:'loc',n:'Sandymount & south beaches',st:'fort',pr:3,pos:8,pimp:114,
  url:'/family-photographer-sandymount/',urls:['/family-photographer-sandymount/ (pos 8)','/sandymount-beach-family-photoshoot-dublin/'],
  act:'Position 8, good service page + photo story duo. Maintain.',
  kws:[["photographer sandymount",null,null,null,null,"LC"],["sandymount beach family photoshoot",null,null,null,null,"LC"],["dublin beach",null,1,45,null,"I"]]},
-{id:'c25',p:'loc',n:'City parks - St Stephen\'s Green & Memorial Gardens',st:'fort',pr:3,pos:13,pimp:165,
+{id:'c25',p:'loc',n:'City parks - St Stephen\'s Green & Memorial Gardens',st:'opt',pr:3,pos:10,pimp:130,
  url:'/st-stephens-green-family-photo-session/',urls:['/st-stephens-green-family-photo-session/','/family-photography-memorial-gardens-dublin/'],
- act:'Two geotagged photo stories at positions 12-13. Maintain; link to the family hub.',
- kws:[["st stephens green family photo session",null,1,8,null,"L"],["memorial photographs ireland",null,1,23,null,"I"]]},
-{id:'c26',p:'loc',n:'Lucan',st:'creer',pr:2,pos:26,pimp:0,
+ act:'Two geotagged photo stories at positions 10 and 14. Maintain; link to the family hub.',
+ kws:[["st stephens green family photo session",null,null,null,null,"L"],["memorial photographs ireland",null,null,null,null,"I"]]},
+{id:'c26',p:'loc',n:'Lucan',st:'creer',pr:2,pos:30,pimp:0,
  url:'/family-photographer-lucan/ (to create)',urls:[],
  act:'GSC shows real Lucan demand (family, newborn, maternity, in-home) with no page at all. Replicate the Dublin 15 template.',
- kws:[["in home photographer lucan",null,7,35.1,null,"LC"],["newborn photoshoot lucan",null,5,23.2,null,"LC"],["newborn photography lucan",null,4,15.5,null,"LC"],["in home photography lucan",null,4,18.3,null,"LC"],["family photoshoot lucan",null,3,55,null,"LC"],["maternity photoshoot lucan",null,2,6.5,null,"LC"]]},
+ kws:[["in home photographer lucan",null,10,47,null,"LC"],["newborn photoshoot lucan",null,8,25.9,null,"LC"],["newborn photography lucan",null,4,7.8,null,"LC"],["in home photography lucan",null,3,5,null,"LC"],["family photoshoot lucan",null,4,55.8,null,"LC"],["maternity photoshoot lucan",null,3,6.7,null,"LC"]]},
 {id:'c27',p:'loc',n:'Phoenix Park & St Anne\'s Park',st:'creer',pr:3,pos:null,pimp:0,
  url:'/family-photoshoot-phoenix-park/ (to create)',urls:[],
  act:'Dublin\'s no. 1 photo spots, zero dedicated pages. Short "location" pages with galleries from real sessions (St Anne\'s Park already appears in the site\'s photos).',
@@ -385,103 +386,103 @@ const C = [
  kws:[["family photoshoot howth",null,null,null,null,"LC"],["family photographer malahide",null,null,null,null,"LC"]]},
 
 /* OCCASIONS */
-{id:'c29',p:'occ',n:'Proposal photography',st:'opt',pr:2,pos:19,pimp:179,
- url:'/dublin-proposal-photographer/',urls:['/dublin-proposal-photographer/ (179 imp, 5 clicks, CTR 2.8%)'],
- act:'Already converts very well (12.5% CTR on the exact query). Optimise for "proposal photography dublin" and add romantic spots.',
- kws:[["proposal photography dublin",null,29,19.3,null,"LC"],["ireland proposal photography",null,11,58.1,null,"LC"],["proposal photography ireland",null,10,40.2,null,"LC"],["proposal photographer dublin",null,8,10,null,"LC"],["what to do near st stephens green for couples",null,5,52.6,null,"I"]]},
-{id:'c30',p:'occ',n:'Christening & baptism',st:'creer',pr:2,pos:57,pimp:0,
+{id:'c29',p:'occ',n:'Proposal photography',st:'opt',pr:2,pos:28,pimp:161,
+ url:'/dublin-proposal-photographer/',urls:['/dublin-proposal-photographer/ (161 imp, 2 clicks)'],
+ act:'Clicks have dried up: 0 on 30 imp at position 19.3, and the page has slipped to 27.5. Optimise for "proposal photography dublin" and add romantic spots.',
+ kws:[["proposal photography dublin",null,30,19.3,null,"LC"],["ireland proposal photography",null,11,58.1,null,"LC"],["proposal photography ireland",null,10,40.2,null,"LC"],["proposal photographer dublin",null,4,8.5,null,"LC"],["what to do near st stephens green for couples",null,null,null,null,"I"]]},
+{id:'c30',p:'occ',n:'Christening & baptism',st:'creer',pr:2,pos:48,pimp:0,
  url:'/christening-photographer-dublin/ (to create)',urls:[],
- act:'155 cumulative impressions, no page. A recurring market in Ireland with low competition: service page + gallery.',
- kws:[["dublin christening photography",null,43,61.9,null,"LC"],["baptism photographer dublin",null,39,53.5,null,"LC"],["christening photographer dublin",null,37,59.7,null,"LC"],["religious milestone photographer dublin",null,36,34.8,null,"LC"]]},
-{id:'c31',p:'occ',n:'First birthday & milestones',st:'creer',pr:3,pos:44,pimp:0,
+ act:'176 cumulative impressions, no page. A recurring market in Ireland with low competition: service page + gallery.',
+ kws:[["dublin christening photography",null,29,58.2,null,"LC"],["baptism photographer dublin",null,63,49.2,null,"LC"],["christening photographer dublin",null,35,59.1,null,"LC"],["religious milestone photographer dublin",null,49,32.6,null,"LC"]]},
+{id:'c31',p:'occ',n:'First birthday & milestones',st:'creer',pr:3,pos:41,pimp:0,
  url:'/first-birthday-photoshoot-dublin/ (to create)',urls:[],
- act:'Real GSC demand (46 imp on "1st birthday photoshoot dublin"), to be treated in the documentary spirit (no studio cake smash).',
- kws:[["1st birthday photoshoot dublin",null,46,46,null,"LC"],["milestone photography dublin",null,3,32.3,null,"LC"],["first birthday photography dublin",null,2,32.5,null,"LC"],["milestone photoshoot dublin",null,2,43,null,"LC"]]},
-{id:'c32',p:'occ',n:'Mini sessions',st:'creer',pr:2,pos:19,pimp:0,
+ act:'Real GSC demand (62 imp on "1st birthday photoshoot dublin"), to be treated in the documentary spirit (no studio cake smash).',
+ kws:[["1st birthday photoshoot dublin",null,62,41.7,null,"LC"],["milestone photography dublin",null,2,32,null,"LC"],["first birthday photography dublin",null,2,32.5,null,"LC"],["milestone photoshoot dublin",null,4,41.8,null,"LC"]]},
+{id:'c32',p:'occ',n:'Mini sessions',st:'creer',pr:2,pos:23,pimp:0,
  url:'/mini-sessions-dublin/ (to create)',urls:[],
- act:'105 impressions at position 19 with no dedicated page. Evergreen page + seasonal dates; strong demand before Christmas.',
- kws:[["mini sessions dublin",null,105,19.4,null,"LC"],["how long is a mini photo session",null,15,27.8,null,"I"],["photography mini sessions",null,1,12,null,"LC"]]},
-{id:'c33',p:'occ',n:'Preschool & creche photographer',st:'fort',pr:3,pos:9,pimp:9,
+ act:'100 cumulative impressions ("mini sessions dublin" at position 22) and no dedicated page. Evergreen page + seasonal dates; strong demand before Christmas.',
+ kws:[["mini sessions dublin",null,89,22,null,"LC"],["how long is a mini photo session",null,11,30,null,"I"],["photography mini sessions",10,null,null,3,"LC"]]},
+{id:'c33',p:'occ',n:'Preschool & creche photographer',st:'fort',pr:3,pos:10,pimp:7,
  url:'/preschool-photographer-dublin/',urls:['/preschool-photographer-dublin/ (CTR 22%)'],
- act:'B2B niche with strong clicks (CTR 22-33%). Maintain; consider direct outreach to creches.',
- kws:[["preschool photographer",null,3,9.7,null,"LC"],["preschool photography",null,1,12,null,"LC"]]},
-{id:'c34',p:'occ',n:'Tourists & holidays in Dublin',st:'opt',pr:3,pos:19,pimp:129,
+ act:'B2B niche, tiny volume but 14% CTR. Maintain; consider direct outreach to creches.',
+ kws:[["preschool photographer",null,2,12,null,"LC"],["preschool photography",10,1,12,10,"LC"]]},
+{id:'c34',p:'occ',n:'Tourists & holidays in Dublin',st:'opt',pr:3,pos:20,pimp:191,
  url:'/vacation-photographer-dublin-fun-relaxed-family-photo-sessions/',
  urls:['/vacation-photographer-dublin-fun-relaxed-family-photo-sessions/','/book-family-photo-shoot-visiting-dublin/'],
  act:'Two pages on the "photographer during my trip" intent. Consolidate and target "vacation photographer dublin".',
  kws:[["vacation photographer dublin",null,null,null,null,"LC"],["family photoshoot dublin holiday",null,null,null,null,"LC"],["family photographer dublin tourist",null,null,null,null,"LC"]]},
-{id:'c35',p:'occ',n:'Seasonal sessions',st:'opt',pr:3,pos:35,pimp:349,
+{id:'c35',p:'occ',n:'Seasonal sessions',st:'faible',pr:3,pos:53,pimp:203,
  url:'/autumn-family-photo-session-in-dublin/',
  urls:['/autumn-family-photo-session-in-dublin/','/how-to-plan-a-christmas-family-photo-session-at-home/','/spring-family-photography-session-in-dublin/'],
  act:'Seasonal editorial calendar already started. Refresh each page 6-8 weeks before its season; add mother\'s/father\'s day.',
- kws:[["autumn family photoshoot dublin",null,14,46.4,null,"LC"],["father day photoshoot dublin",null,4,18,null,"LC"],["how to take christmas photos at home",null,3,63.7,null,"I"],["mother day photoshoot dublin",null,2,23,null,"LC"],["easter family photoshoot dublin",null,2,77.5,null,"LC"]]},
+ kws:[["autumn family photoshoot dublin",null,9,50.1,null,"LC"],["father day photoshoot dublin",null,1,8,null,"LC"],["how to take christmas photos at home",null,null,null,null,"I"],["mother day photoshoot dublin",null,1,5,null,"LC"],["easter family photoshoot dublin",null,3,81,null,"LC"]]},
 
 /* GUIDES */
-{id:'c36',p:'gui',n:'Preparing your session',st:'opt',pr:2,pos:19,pimp:687,
+{id:'c36',p:'gui',n:'Preparing your session',st:'opt',pr:2,pos:22,pimp:654,
  url:'/prepare-family-photoshoot/',
  urls:['/prepare-family-photoshoot/','/what-to-expect-during-dublin-family-photo-session/','/prepare-your-home-for-a-family-photo-session/','/tips-to-help-your-family-feel-comfortable-during-a-photo-shoot/'],
  act:'4 overlapping articles. Turn them into one pillar "checklist" guide + redirect the redundant ones; link to the family hub.',
- kws:[["family photo session checklist",null,28,21.6,null,"I"],["what to expect family photoshoot",null,22,27,null,"I"],["prepare kids for photoshoot",null,17,19.4,null,"I"],["preparing for a family photoshoot",null,12,26.1,null,"I"],["how to prepare for a family photoshoot",null,11,21.8,null,"I"]]},
-{id:'c37',p:'gui',n:'Natural poses',st:'fort',pr:2,pos:10,pimp:1516,
- url:'/best-family-photo-poses-that-actually-feel-natural/',urls:['/best-family-photo-poses-that-actually-feel-natural/ (1,516 imp, 8 clicks)'],
- act:'Position 9.7 on a big article. Push into the top 5: list-format featured snippet, optimised images, FAQ.',
- kws:[["photo 4 poses",null,45,19.9,null,"I"],["natural kid poses",null,14,20.9,null,"I"],["best family poses",null,5,13.6,null,"I"],["fun family poses for pictures",null,2,28,null,"I"],["family pic poses",null,2,14,null,"I"]]},
-{id:'c38',p:'gui',n:'What to wear',st:'faible',pr:2,pos:56,pimp:99,
+ kws:[["family photo session checklist",null,18,21.3,null,"I"],["what to expect family photoshoot",null,16,28,null,"I"],["prepare kids for photoshoot",null,18,19.6,null,"I"],["preparing for a family photoshoot",null,15,25.5,null,"I"],["how to prepare for a family photoshoot",null,8,23.6,null,"I"]]},
+{id:'c37',p:'gui',n:'Natural poses',st:'opt',pr:2,pos:11,pimp:924,
+ url:'/best-family-photo-poses-that-actually-feel-natural/',urls:['/best-family-photo-poses-that-actually-feel-natural/ (924 imp, 7 clicks)'],
+ act:'Position 11.3 on a big article (924 imp, 7 clicks). Push into the top 5: list-format featured snippet, optimised images, FAQ.',
+ kws:[["photo 4 poses",null,null,null,null,"I"],["natural kid poses",null,1,13,null,"I"],["best family poses",null,4,14.5,null,"I"],["fun family poses for pictures",null,2,28,null,"I"],["family pic poses",null,2,14,null,"I"]]},
+{id:'c38',p:'gui',n:'What to wear',st:'faible',pr:2,pos:66,pimp:30,
  url:'/what-to-wear-for-a-photo-session/',urls:['/what-to-wear-for-a-photo-session/ (pos 56)'],
- act:'Universal topic, page at position 56: full rewrite with visual examples by season and colour palettes.',
- kws:[["what to wear for photos",null,34,84.9,null,"I"],["what to wear for a family photo shoot outside",10,2,93,4,"I"],["what to wear in photos",null,6,66.5,null,"I"],["clothes for photo session",null,4,68,null,"I"],["accessories for family photos",null,2,32.5,null,"I"]]},
-{id:'c39',p:'gui',n:'When to book / best time',st:'opt',pr:3,pos:16,pimp:674,
+ act:'Universal topic, page down to position 66 with impressions collapsing to 30. Full rewrite with visual examples by season and colour palettes.',
+ kws:[["what to wear for photos",null,9,82.4,null,"I"],["what to wear for a family photo shoot outside",10,null,null,4,"I"],["what to wear in photos",null,2,66.5,null,"I"],["clothes for photo session",null,4,68,null,"I"],["accessories for family photos",null,3,30,null,"I"]]},
+{id:'c39',p:'gui',n:'When to book / best time',st:'opt',pr:3,pos:17,pimp:517,
  url:'/best-time-of-day-for-a-family-photo-shoot/',
- urls:['/best-time-of-day-for-a-family-photo-shoot/ (505 imp)','/the-best-time-of-year-to-book-a-family-photoshoot-in-dublin/','/how-often-to-get-family-photos/'],
+ urls:['/best-time-of-day-for-a-family-photo-shoot/ (388 imp)','/the-best-time-of-year-to-book-a-family-photoshoot-in-dublin/','/how-often-to-get-family-photos/'],
  act:'Complementary trio (time of day / season / frequency). Link them as a series and push the "time of day" page into the top 10.',
- kws:[["best time of day for family photos",null,32,31.3,null,"I"],["how often book family photos",null,33,11.2,null,"I"],["best time for family photos",null,30,35.2,null,"I"],["best time to take family photos",null,8,41,null,"I"]]},
-{id:'c40',p:'gui',n:'Session length & after the shoot',st:'fort',pr:3,pos:10,pimp:1870,
+ kws:[["best time of day for family photos",null,31,32.8,null,"I"],["how often book family photos",null,20,11,null,"I"],["best time for family photos",null,25,36.7,null,"I"],["best time to take family photos",null,4,84.5,null,"I"]]},
+{id:'c40',p:'gui',n:'Session length & after the shoot',st:'opt',pr:3,pos:11,pimp:1403,
  url:'/how-long-does-a-family-photo-session-take/',
- urls:['/how-long-does-a-family-photo-session-take/ (1,725 imp, pos 9.6)','/what-to-expect-after-your-family-photo-session/','/what-to-do-after-your-photo-session-in-dublin/'],
- act:'Position 9.6 on 1,725 imp. Add a "delivery time" FAQ (real GSC queries) to lock in the snippet.',
- kws:[["how long does a photoshoot take",null,64,13.4,null,"I"],["how long does a family photoshoot take",null,28,15.8,null,"I"],["how long is a photoshoot",null,11,3.9,null,"I"],["how long do family photos take",null,11,7.8,null,"I"],["how long does it take to get family photos back",null,10,11.6,null,"I"]]},
-{id:'c41',p:'gui',n:'Pricing guide for Ireland',st:'creer',pr:2,pos:null,pimp:0,
+ urls:['/how-long-does-a-family-photo-session-take/ (1,268 imp)','/what-to-expect-after-your-family-photo-session/','/what-to-do-after-your-photo-session-in-dublin/'],
+ act:'Position 10.6 on 1,268 imp. Add a "delivery time" FAQ (real GSC queries) to lock in the snippet.',
+ kws:[["how long does a photoshoot take",null,51,15.9,null,"I"],["how long does a family photoshoot take",null,24,8.4,null,"I"],["how long is a photoshoot",null,2,11,null,"I"],["how long do family photos take",null,11,10.1,null,"I"],["how long does it take to get family photos back",null,9,10.6,null,"I"]]},
+{id:'c41',p:'gui',n:'Pricing guide for Ireland',st:'creer',pr:2,pos:74,pimp:0,
  url:'/family-photography-prices-ireland-guide/ (to create)',urls:[],
  act:'Guide article "how much does a family photographer cost in Ireland": captures informational demand and feeds the pricing page through internal links.',
- kws:[["how much should family photos cost",10,null,null,0,"I"],["how much are family photo shoots",10,null,null,0,"I"],["average cost of family photos",null,5,78.2,null,"I"],["family photo session prices",null,2,28,null,"I"],["how much do family photos cost",null,1,92,null,"I"]]},
-{id:'c42',p:'gui',n:'Grandparents: tips & photo sharing',st:'fort',pr:2,pos:7,pimp:221,
+ kws:[["how much should family photos cost",10,null,null,0,"I"],["how much are family photo shoots",10,null,null,0,"I"],["average cost of family photos",null,6,78.8,null,"I"],["family photo session prices",null,1,28,null,"I"],["how much do family photos cost",null,1,92,null,"I"]]},
+{id:'c42',p:'gui',n:'Grandparents: tips & photo sharing',st:'fort',pr:2,pos:6,pimp:233,
  url:'/why-you-need-a-family-photo-for-grandparents-in-your-gallery/',
- urls:['/why-you-need-a-family-photo-for-grandparents-in-your-gallery/','/mom-in-family-pictures/ (180 imp, pos 8.4)'],
- act:'Unexpected gem: positions 5.9-8.4 on 850+ cumulative imp. Build a real grandparents sub-silo (photo sharing, gift ideas) and link to the multi-generation session.',
- kws:[["how to photography for grandparents",null,274,8.4,null,"I"],["photography tips for grandparents",null,248,5.9,null,"I"],["share pictures with grandparents",null,174,35.3,null,"I"],["grandparent photo sharing",null,154,32.5,null,"I"],["including grandparents in photos",null,31,15.6,null,"I"],["grandparent photo session",null,22,14.7,null,"I"]]},
-{id:'c43',p:'gui',n:'Kids at ease (shy, stressed)',st:'fort',pr:3,pos:11,pimp:1000,
+ urls:['/why-you-need-a-family-photo-for-grandparents-in-your-gallery/','/mom-in-family-pictures/ (201 imp)'],
+ act:'Unexpected gem: pages at positions 6.1 and 7.9 on 930+ cumulative imp. Build a real grandparents sub-silo (photo sharing, gift ideas) and link to the multi-generation session.',
+ kws:[["how to photography for grandparents",null,184,9.1,null,"I"],["photography tips for grandparents",null,147,7.3,null,"I"],["share pictures with grandparents",null,173,25.7,null,"I"],["grandparent photo sharing",null,153,22.1,null,"I"],["including grandparents in photos",null,20,13.9,null,"I"],["grandparent photo session",null,23,13.7,null,"I"]]},
+{id:'c43',p:'gui',n:'Kids at ease (shy, stressed)',st:'opt',pr:3,pos:14,pimp:837,
  url:'/kid-friendly-family-photo-sessions/',
- urls:['/kid-friendly-family-photo-sessions/ (722 imp)','/tips-to-get-your-child-ready/','/5-common-misconceptions-about-family-sessions/','/stress-free-family-photography-dublin/','/help-my-house-is-messy-can-we-still-do-photos-at-home/'],
- act:'A well-ranked "parent objections" article cluster (positions 9-12). Structure the linking towards the family hub and the preparation page.',
- kws:[["best family photography sessions for shy kids",null,15,9.1,null,"I"],["why family photo sessions with kids are stressful",null,13,9.2,null,"I"],["prepare kids for family photos",null,5,20.8,null,"I"],["child won't look at camera for pictures",null,1,3,null,"I"]]},
-{id:'c44',p:'gui',n:'Pets in family photos',st:'fort',pr:3,pos:11,pimp:284,
- url:'/pets-in-family-photos/',urls:['/pets-in-family-photos/ (284 imp)'],
- act:'Position 10.5, differentiating topic. Maintain.',
- kws:[["how can i incorporate my pets into our family photography session?",null,86,14.5,null,"I"]]},
-{id:'c45',p:'gui',n:'Better holiday photos',st:'fort',pr:3,pos:13,pimp:185,
+ urls:['/kid-friendly-family-photo-sessions/ (481 imp)','/tips-to-get-your-child-ready/','/5-common-misconceptions-about-family-sessions/','/stress-free-family-photography-dublin/','/help-my-house-is-messy-can-we-still-do-photos-at-home/'],
+ act:'A "parent objections" article cluster mostly at positions 8-14, with the stress-free page lagging at 43. Structure the linking towards the family hub and the preparation page.',
+ kws:[["best family photography sessions for shy kids",null,16,9.2,null,"I"],["why family photo sessions with kids are stressful",null,2,8,null,"I"],["prepare kids for family photos",null,6,21,null,"I"],["child won't look at camera for pictures",null,1,3,null,"I"]]},
+{id:'c44',p:'gui',n:'Pets in family photos',st:'opt',pr:3,pos:12,pimp:250,
+ url:'/pets-in-family-photos/',urls:['/pets-in-family-photos/ (250 imp)'],
+ act:'Position 11.9, differentiating topic. Maintain.',
+ kws:[["how can i incorporate my pets into our family photography session?",null,94,14.5,null,"I"]]},
+{id:'c45',p:'gui',n:'Better holiday photos',st:'opt',pr:3,pos:15,pimp:121,
  url:'/how-to-take-great-vacation-photos/',urls:['/how-to-take-great-vacation-photos/'],
- act:'Positions 11-13. Natural bridge to the tourist offer: link to "vacation photographer dublin".',
- kws:[["how to take great vacation photos",null,93,11.3,null,"I"],["vacation photo quality",null,3,27,null,"I"],["how to take vacation pictures",null,2,16,null,"I"]]},
-{id:'c46',p:'gui',n:'Why professional photos (gift, legacy)',st:'fort',pr:3,pos:12,pimp:645,
+ act:'Page at position 14.6, main query at 11.7. Natural bridge to the tourist offer: link to "vacation photographer dublin".',
+ kws:[["how to take great vacation photos",null,57,11.7,null,"I"],["vacation photo quality",null,3,27,null,"I"],["how to take vacation pictures",null,1,20,null,"I"]]},
+{id:'c46',p:'gui',n:'Why professional photos (gift, legacy)',st:'opt',pr:3,pos:10,pimp:625,
  url:'/family-photos-are-the-best-gift/',
  urls:['/family-photos-are-the-best-gift/ (pos 9.6)','/why-professional-family-photos-are-worth-the-investment/','/why-childhood-photos-matter/','/50-reasons-to-book-your-next-family-photoshoot/'],
  act:'Well-ranked reassurance content. Link systematically to pricing and contact.',
- kws:[["family photo quality",null,7,13,null,"I"],["what to do with family photos",null,11,42.2,null,"I"],["why childhood photos matter",null,null,null,null,"I"]]},
-{id:'c49',p:'gui',n:'Dublin with kids (TOFU)',st:'opt',pr:3,pos:35,pimp:338,
+ kws:[["family photo quality",null,7,13,null,"I"],["what to do with family photos",null,10,42.7,null,"I"],["why childhood photos matter",null,null,null,null,"I"]]},
+{id:'c49',p:'gui',n:'Dublin with kids (TOFU)',st:'faible',pr:3,pos:38,pimp:856,
  url:'/kid-friendly-activities-dublin/',
- urls:['/kid-friendly-activities-dublin/ (284 imp)','/moving-to-dublin-with-kids/ (pos 13.1)'],
- act:'470 cumulative searches/mo, KD 14-19: big local awareness lever. Rebuild the activities article (up-to-date listicle, map) and link to the location pages.',
- kws:[["things to do in dublin with kids",260,38,57.8,14,"I"],["things to do with toddlers in dublin",210,23,44.8,19,"LC"],["dublin with kids",null,29,56.9,null,"I"],["kid friendly dublin",null,27,45,null,"I"],["family friendly dublin attractions",null,21,46.7,null,"I"],["moving to dublin with family",null,10,26.2,null,"I"]]},
+ urls:['/kid-friendly-activities-dublin/ (817 imp)','/moving-to-dublin-with-kids/ (pos 13.1)'],
+ act:'470 cumulative searches/mo, KD 10-20: big local awareness lever. Rebuild the activities article (up-to-date listicle, map) and link to the location pages.',
+ kws:[["things to do in dublin with kids",260,65,56.8,10,"I"],["things to do with toddlers in dublin",210,56,41.8,20,"LC"],["dublin with kids",null,61,56.6,14,"I"],["kid friendly dublin",null,48,45.3,null,"I"],["family friendly dublin attractions",null,30,46,null,"I"],["moving to dublin with family",null,6,26.8,null,"I"]]},
 
 /* PRINTS */
-{id:'c47',p:'pri',n:'Photo prints in Dublin',st:'opt',pr:2,pos:20,pimp:147,
- url:'/photography-prints-dublin/',urls:['/photography-prints-dublin/ (132 imp)'],
- act:'Position 19.7: optimise for "photo prints dublin" and showcase the products (fine art prints, boxes). Direct upsell.',
- kws:[["dublin photography prints",null,15,31.7,null,"LC"],["dublin photography print",null,11,31.2,null,"LC"],["photo prints dublin",null,3,13.7,null,"LC"],["printing family photos",null,3,9.3,null,"I"]]},
+{id:'c47',p:'pri',n:'Photo prints in Dublin',st:'opt',pr:2,pos:17,pimp:117,
+ url:'/photography-prints-dublin/',urls:['/photography-prints-dublin/ (117 imp)'],
+ act:'Position 17.1: optimise for "photo prints dublin" and showcase the products (fine art prints, boxes). Direct upsell.',
+ kws:[["dublin photography prints",null,15,28.9,null,"LC"],["dublin photography print",null,7,28.4,null,"LC"],["photo prints dublin",null,3,13.7,null,"LC"],["printing family photos",null,null,null,null,"I"]]},
 {id:'c48',p:'pri',n:'Albums & wall art',st:'creer',pr:3,pos:null,pimp:0,
  url:'/family-photo-albums-and-wall-art/ (to create)',urls:[],
  act:'Complete the products pillar: "family photo album" 30/mo + wall display queries. A "print vs digital" article as support.',
- kws:[["family photo album",30,null,null,22,"I"],["how to display family photos in your home",10,null,null,16,"I"],["how to decorate a wall with family photos",10,null,null,29,"I"],["photo prints vs digital files",null,null,null,null,"I"]]}
+ kws:[["family photo album",30,null,null,22,"I"],["how to display family photos in your home",10,null,null,23,"I"],["how to decorate a wall with family photos",10,null,null,29,"I"],["photo prints vs digital files",null,null,null,null,"I"]]}
 ];
 
 /* recommended internal links (source -> target) */
@@ -636,7 +637,7 @@ function tipHtml(c){
   return `<b>${c.n}</b><div class="m">${P[pIdx[c.p]].n}</div>
   <div class="m" style="margin-top:4px">Pilot keyword: <b style="color:var(--ink-1)">${c.main}</b></div>
   <div class="m">IE volume: <b style="color:var(--ink-1)">${c.vol?c.vol.toLocaleString('en-IE')+'/mo':'n/a'}</b>
-   · GSC imp.: ${(c.imp+(c.pimp||0)).toLocaleString('en-IE')}
+   · GSC imp.: ${(c.pimp||0).toLocaleString('en-IE')} pages / ${c.imp.toLocaleString('en-IE')} queries
    ${c.pos?` · Pos. ${c.pos}`:''} ${c.kd!=null?` · KD ${c.kd}`:''}</div>
   <div class="m" style="margin-top:3px">${ST_LABEL[c.st]} · Priority ${c.pr}${c.cann?' · <span style="color:#d03b3b">cannibalisation</span>':''}</div>`;
 }
@@ -656,8 +657,10 @@ function renderPanel(){
     <div class="meta"><span class="pdot" style="background:${pilColor(c.p)}"></span>${P[pIdx[c.p]].n}
       · Priority <b>${c.pr}</b>${c.cann?' · <b style="color:#d03b3b">cannibalisation detected</b>':''}<br>
       IE volume: <b>${c.vol?c.vol.toLocaleString('en-IE')+'/mo':'not available (long tail)'}</b>
-      · GSC impressions: <b>${(c.imp+(c.pimp||0)).toLocaleString('en-IE')}</b>
-      ${c.pos?` · Avg position: <b>${c.pos}</b>`:''} ${c.kd!=null?` · Avg KD: <b>${c.kd}</b>`:''}</div>
+      ${c.pos?` · Page position: <b>${c.pos}</b>`:''} ${c.kd!=null?` · Avg KD: <b>${c.kd}</b>`:''}<br>
+      <span title="Two separate GSC views of the same 3 months, shown apart because adding them would double count">GSC 10 May - 9 Aug 2026:
+      <b>${(c.pimp||0).toLocaleString('en-IE')}</b> imp. on the cluster pages
+      · <b>${c.imp.toLocaleString('en-IE')}</b> imp. on its tracked queries</span></div>
     <div class="act">${c.act}</div>
     <div class="meta"><b>Target page:</b> ${pathLink(c.url)}</div>
     ${c.urls && c.urls.length ? `<div class="urls"><b>Existing URLs:</b><br>${c.urls.map(u=>pathLink(u, c.cann?'#d03b3b':null)).join('<br>')}</div>`:''}
@@ -771,7 +774,7 @@ function renderSun(){
 /* ---------- TABLE ---------- */
 function renderTable(){
   const f = filtered().slice().sort((x,y)=>{
-    const get=c=>({w:c.w,vol:c.vol,imp:c.imp+(c.pimp||0),pos:c.pos??999,kd:c.kd??-1,pr:c.pr,n:c.n.toLowerCase(),st:['fort','opt','faible','creer'].indexOf(c.st)})[sortKey];
+    const get=c=>({w:c.w,vol:c.vol,imp:c.imp,pimp:c.pimp||0,pos:c.pos??999,kd:c.kd??-1,pr:c.pr,n:c.n.toLowerCase(),st:['fort','opt','faible','creer'].indexOf(c.st)})[sortKey];
     const a=get(x),b=get(y);
     return (a>b?1:a<b?-1:0)*sortDir;
   });
@@ -782,8 +785,9 @@ function renderTable(){
       <th data-k="n">Cluster / target page ${arr('n')}</th>
       <th>Main keyword</th>
       <th class="num" data-k="vol">IE vol. ${arr('vol')}</th>
-      <th class="num" data-k="imp">GSC imp. ${arr('imp')}</th>
-      <th class="num" data-k="pos">Pos. ${arr('pos')}</th>
+      <th class="num" data-k="pimp" title="GSC impressions on the cluster pages, 10 May to 9 Aug 2026">Page imp. ${arr('pimp')}</th>
+      <th class="num" data-k="imp" title="GSC impressions on the cluster tracked queries, same period">Query imp. ${arr('imp')}</th>
+      <th class="num" data-k="pos" title="Average GSC position of the target page">Pos. ${arr('pos')}</th>
       <th class="num" data-k="kd">KD ${arr('kd')}</th>
       <th class="num" data-k="pr">Prio ${arr('pr')}</th>
     </tr></thead>
@@ -793,7 +797,8 @@ function renderTable(){
           <span style="color:var(--ink-3);font-size:11px">${c.url}</span></td>
       <td>${c.main}</td>
       <td class="num">${c.vol?c.vol.toLocaleString('en-IE'):'-'}</td>
-      <td class="num">${(c.imp+(c.pimp||0)).toLocaleString('en-IE')}</td>
+      <td class="num">${(c.pimp||0).toLocaleString('en-IE')}</td>
+      <td class="num">${c.imp.toLocaleString('en-IE')}</td>
       <td class="num">${c.pos??'-'}</td>
       <td class="num">${c.kd??'-'}</td>
       <td class="num prio">P${c.pr}</td>
