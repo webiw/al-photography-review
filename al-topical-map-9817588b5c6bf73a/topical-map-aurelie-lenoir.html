@@ -36,6 +36,22 @@
   .tile .ic { width:10px; height:10px; border-radius:3px; display:inline-block; }
   .tile .val { font-size:26px; font-weight:700; margin-top:4px; }
   .tile .hint { font-size:11px; color:var(--ink-3); margin-top:2px; }
+  .track { display:flex; flex-wrap:wrap; align-items:center; gap:20px;
+    background:color-mix(in srgb, var(--ink-1) 5%, var(--surface-1));
+    border:1px solid var(--border); border-radius:12px; padding:12px 14px; margin:0 0 16px; }
+  .track .head { font-size:11.5px; color:var(--ink-2); }
+  .track .head b { color:var(--ink-1); }
+  .track .spark { display:flex; align-items:center; gap:7px; }
+  .track .yax { display:flex; flex-direction:column; justify-content:space-between;
+    height:52px; font-size:9.5px; color:var(--ink-3); text-align:right; }
+  .track table { border-collapse:collapse; font-size:11.5px; }
+  .track th { font-weight:600; color:var(--ink-3); font-size:10px; text-transform:uppercase;
+    letter-spacing:.04em; padding:0 0 3px 16px; text-align:right; }
+  .track th:first-child { text-align:left; padding-left:0; }
+  .track td { padding:1px 0 1px 16px; text-align:right; white-space:nowrap; color:var(--ink-1); }
+  .track td:first-child { text-align:left; padding-left:0; color:var(--ink-2); }
+  .track .up { color:#0ca30c; font-weight:600; }
+  .track .note { font-size:10.5px; color:var(--ink-3); flex-basis:100%; margin-top:-2px; }
 
   /* controls */
   .controls { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:10px; }
@@ -166,6 +182,8 @@
   </header>
 
   <div class="tiles" id="tiles"></div>
+
+  <div class="track" id="track"></div>
 
   <div class="controls">
     <input type="search" id="q" placeholder="Search a keyword or page...">
@@ -576,6 +594,48 @@ function filtered(){
 }
 
 /* ---------- tiles ---------- */
+/* ---------- rank tracking SE Ranking, baseline kickoff 26/06 ---------- */
+const TRACK = {
+  start:'26 Jun', end:'12 Aug',
+  /* position moyenne des 100 positions suivies, 1 point par jour, 26/06 -> 12/08 */
+  pos:[46,48,52,53,49,50,55,51,51,52,52,50,51,49,49,49,48,48,48,49,50,50,49,47,48,46,46,46,47,45,45,46,46,46,46,47,47,47,47,48,47,48,47,47,48,46,46,42],
+  rows:[
+    ['Avg. position',   '50.4', '47.0', '46', '42'],
+    ['Family group',    '35.9', '31.3', '29', '23'],
+    ['Keywords in top 10','4.3',  '5.3',  '5',  '7']
+  ]
+};
+
+function renderTrack(){
+  const d=TRACK.pos, n=d.length, W=250, H=52, P=3;
+  const lo=Math.min(...d), hi=Math.max(...d);
+  /* axe Y INVERSE : meilleure position (valeur basse) vers le haut */
+  const x=i=>P+i*(W-2*P)/(n-1);
+  const y=v=>P+(v-lo)*(H-2*P)/(hi-lo);
+  const solid=d.slice(0,n-1).map((v,i)=>(i?'L':'M')+x(i).toFixed(1)+' '+y(v).toFixed(1)).join(' ');
+  const tail='M'+x(n-2).toFixed(1)+' '+y(d[n-2]).toFixed(1)+' L'+x(n-1).toFixed(1)+' '+y(d[n-1]).toFixed(1);
+  const dots=d.map((v,i)=>`<circle cx="${x(i).toFixed(1)}" cy="${y(v).toFixed(1)}" r="6" fill="transparent"><title>${v}</title></circle>`).join('');
+  $('#track').innerHTML=`
+    <div class="head">Since kickoff<br><b>${TRACK.start} to ${TRACK.end}</b><br>50 keywords, daily</div>
+    <div class="spark">
+      <div class="yax"><span>${lo}</span><span>${hi}</span></div>
+      <svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img"
+           aria-label="Average tracked position, ${d[0]} on ${TRACK.start} to ${d[n-1]} on ${TRACK.end}, better is higher">
+        <path d="${solid}" fill="none" stroke="#0ca30c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="${tail}" fill="none" stroke="#0ca30c" stroke-width="2" stroke-dasharray="3 2" opacity=".55"/>
+        <circle cx="${x(n-1).toFixed(1)}" cy="${y(d[n-1]).toFixed(1)}" r="3.5" fill="var(--surface-1)" stroke="#0ca30c" stroke-width="2"/>
+        ${dots}
+      </svg>
+    </div>
+    <table>
+      <tr><th>Progress</th><th>7-day avg</th><th>Day to day</th></tr>
+      ${TRACK.rows.map(r=>`<tr><td>${r[0]}</td>
+        <td>${r[1]} <span class="up">&#8594; ${r[2]}</span></td>
+        <td>${r[3]} <span class="up">&#8594; ${r[4]}</span></td></tr>`).join('')}
+    </table>
+    <div class="note">Average tracked position, higher is better. Dashed end = 12 Aug, still in progress.</div>`;
+}
+
 function renderTiles(){
   const f = filtered();
   const count = st => f.filter(c=>c.st===st).length;
@@ -794,7 +854,11 @@ function renderTable(){
     <tbody>${f.map(c=>`<tr class="row" data-c="${c.id}">
       <td><span class="st" style="--stc:${stColor(c.st)};--sti:${ST_ICON[c.st]}">${ST_LABEL[c.st]}</span></td>
       <td><span class="pdot" style="background:${pilColor(c.p)}"></span><b>${c.n}</b>${c.cann?' <span style="color:#d03b3b;font-size:10.5px;font-weight:600">⚠ cannib.</span>':''}<br>
-          <span style="color:var(--ink-3);font-size:11px">${c.url}</span></td>
+          <span style="color:var(--ink-3);font-size:11px">${c.url}</span>${(()=>{
+            const ql=q.toLowerCase().trim(); if(!ql) return '';
+            const hits=(c.urls||[]).filter(u=>u!==c.url && u.toLowerCase().includes(ql));
+            return hits.length?`<br><span style="color:var(--ink-2);font-size:11px">&#8627; ${hits.join('<br>&#8627; ')}</span>`:'';
+          })()}</td>
       <td>${c.main}</td>
       <td class="num">${c.vol?c.vol.toLocaleString('en-IE'):'-'}</td>
       <td class="num">${(c.pimp||0).toLocaleString('en-IE')}</td>
@@ -959,7 +1023,7 @@ function renderView(){
   if(view==='tab') renderTable();
   if(view==='net') renderNet();
 }
-function renderAll(){ renderTiles(); renderLegend(); renderCrumb(); renderView(); renderPanel(); }
+function renderAll(){ renderTiles(); renderTrack(); renderLegend(); renderCrumb(); renderView(); renderPanel(); }
 
 $('#nclu').textContent = C.length;
 document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active', b.dataset.v===view));
