@@ -568,7 +568,7 @@ function filtered(){
     if(fSt && c.st!==fSt) return false;
     if(fPr && String(c.pr)!==fPr) return false;
     if(ql){
-      const hay = (c.n+' '+c.url+' '+c.kws.map(k=>k[0]).join(' ')).toLowerCase();
+      const hay = (c.n+' '+c.url+' '+(c.urls||[]).join(' ')+' '+c.kws.map(k=>k[0]).join(' ')).toLowerCase();
       if(!hay.includes(ql)) return false;
     }
     return true;
