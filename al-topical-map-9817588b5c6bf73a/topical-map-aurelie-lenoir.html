@@ -618,7 +618,7 @@ function filtered(){
 const TRACK = {
   start:'26 Jun', end:'12 Aug',
   shot:'assets/seranking-groups-2026-08-12.png',
-  live:'https://online.seranking.com/guest.html?site_id=12507641&amp;hv=0&amp;hash=f0ce5418&amp;sections%5B0%5D=rankings&amp;sections%5B1%5D=analytics&amp;sections%5B2%5D=competitors',
+  live:'https://online.seranking.com/admin.site.rankings.site_id-12507641.html#/detailed?ref=project_select_clicked&amp;update=true&amp;columns_group_mode=day&amp;datesList=2026-06-26,2026-08-12&amp;compare_mode=true&amp;page=1',
   /* position moyenne des 100 positions suivies, 1 point par jour, 26/06 -> 12/08 */
   pos:[46,48,52,53,49,50,55,51,51,52,52,50,51,49,49,49,48,48,48,49,50,50,49,47,48,46,46,46,47,45,45,46,46,46,46,47,47,47,47,48,47,48,47,47,48,46,46,42],
   rows:[
@@ -660,7 +660,7 @@ function renderTrack(){
          alt="SE Ranking group positions, 26 Jun compared with 12 Aug"
          onerror="this.closest('.shot').style.display='none'"></a>` : ''}
     <div class="note">Average tracked position, higher is better. Dashed end = 12 Aug, still in progress.
-      ${TRACK.live ? `<a class="live" href="${TRACK.live}" target="_blank" rel="noopener">Open live rankings &#8594;</a>` : ''}</div>`;
+      ${TRACK.live ? `<a class="live" href="${TRACK.live}" target="_blank" rel="noopener">SE Ranking detail &#8594;</a>` : ''}</div>`;
   const sl=$('#shotlink');
   if(sl) sl.addEventListener('click',e=>{ e.preventDefault();
     $('#lboximg').src=TRACK.shot; $('#lbox').classList.add('on'); });
