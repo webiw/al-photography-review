@@ -52,6 +52,7 @@
   .track td:first-child { text-align:left; padding-left:0; color:var(--ink-2); }
   .track .up { color:#0ca30c; font-weight:600; }
   .track .note { font-size:10.5px; color:var(--ink-3); flex-basis:100%; margin-top:-2px; }
+  mark { background:color-mix(in srgb,#fab219 38%,transparent); color:inherit; border-radius:3px; padding:0 2px; }
 
   /* controls */
   .controls { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:10px; }
@@ -723,7 +724,11 @@ function renderPanel(){
       · <b>${c.imp.toLocaleString('en-IE')}</b> imp. on its tracked queries</span></div>
     <div class="act">${c.act}</div>
     <div class="meta"><b>Target page:</b> ${pathLink(c.url)}</div>
-    ${c.urls && c.urls.length ? `<div class="urls"><b>Existing URLs:</b><br>${c.urls.map(u=>pathLink(u, c.cann?'#d03b3b':null)).join('<br>')}</div>`:''}
+    ${c.urls && c.urls.length ? `<div class="urls"><b>Existing URLs:</b><br>${c.urls.map(u=>{
+      const ql=q.toLowerCase().trim();
+      const link=pathLink(u, c.cann?'#d03b3b':null);
+      return (ql && u.toLowerCase().includes(ql)) ? `<mark>${link}</mark>` : link;
+    }).join('<br>')}</div>`:''}
     <table>
       <thead><tr><th>Keyword</th><th class="num">IE vol.</th><th class="num">Imp.</th><th class="num">Pos.</th><th class="num">KD</th><th>Intent</th></tr></thead>
       <tbody>${c.kws.map(k=>`<tr><td>${k[0]}</td><td class="num">${k[1]!=null?k[1]:'-'}</td><td class="num">${k[2]!=null?k[2]:'-'}</td><td class="num">${k[3]!=null?k[3]:'-'}</td><td class="num">${k[4]!=null?k[4]:'-'}</td><td>${intentCell(k[5])}</td></tr>`).join('')}</tbody>
@@ -1023,7 +1028,11 @@ function renderView(){
   if(view==='tab') renderTable();
   if(view==='net') renderNet();
 }
-function renderAll(){ renderTiles(); renderTrack(); renderLegend(); renderCrumb(); renderView(); renderPanel(); }
+function renderAll(){
+  const f=filtered();
+  if(q.trim() && f.length===1) selected=f[0].id;
+  renderTiles(); renderTrack(); renderLegend(); renderCrumb(); renderView(); renderPanel();
+}
 
 $('#nclu').textContent = C.length;
 document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active', b.dataset.v===view));
