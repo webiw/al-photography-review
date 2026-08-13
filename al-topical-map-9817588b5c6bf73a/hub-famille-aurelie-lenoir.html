@@ -104,31 +104,44 @@
   @media print{ body{background:#fff;} .q,.move,.hstat,table.kpi{break-inside:avoid;} }
 </style>
 <style>
-  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px;}
-  .col{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;}
-  .col h3{font-size:15px;font-weight:700;margin-bottom:2px;}
-  .col .who{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600;}
-  .col ul{list-style:none;margin-top:12px;}
-  .col li{position:relative;padding:7px 0 7px 20px;font-size:14px;color:var(--ink-2);border-top:1px solid var(--hair);}
-  .col li:first-child{border-top:none;}
-  .col li:before{content:"";position:absolute;left:2px;top:14px;width:6px;height:6px;border-radius:50%;background:var(--blue);}
-  .col li b{color:var(--ink-1);font-weight:600;}
-  ol.tpl{counter-reset:s;list-style:none;margin-top:6px;}
-  ol.tpl li{counter-increment:s;position:relative;padding:9px 0 9px 34px;font-size:14px;color:var(--ink-2);border-top:1px solid var(--hair);}
-  ol.tpl li:before{content:counter(s);position:absolute;left:0;top:8px;width:22px;height:22px;border-radius:50%;
-    background:var(--blue);color:#fff;font-size:11.5px;font-weight:700;display:flex;align-items:center;justify-content:center;}
-  ol.tpl li b{color:var(--ink-1);font-weight:600;}
-  .note{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--opt);
-    border-radius:0 12px 12px 0;padding:14px 18px;font-size:14px;color:var(--ink-2);margin-top:14px;}
-  table.mini{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:6px;}
-  table.mini th{text-align:left;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);
-    font-weight:600;padding:0 10px 7px 0;border-bottom:1px solid var(--hair);}
-  table.mini td{padding:8px 10px 8px 0;border-bottom:1px solid var(--hair);color:var(--ink-2);}
+  h1{font-size:34px;}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:30px 0 8px;}
+  @media(max-width:820px){ .split{grid-template-columns:1fr;} }
+  .side{background:var(--card);border:1px solid var(--border);border-top:4px solid var(--accent);
+    border-radius:16px;padding:20px 22px 22px;}
+  .side.us{--accent:var(--blue);}
+  .side.you{--accent:var(--strong);}
+  .side .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--accent);}
+  .side h3{font-size:19px;font-weight:750;letter-spacing:-.01em;margin:4px 0 2px;}
+  .side .when{font-size:12.5px;color:var(--ink-3);margin-bottom:14px;}
+  .side ol{counter-reset:i;list-style:none;}
+  .side li{counter-increment:i;position:relative;padding:11px 0 11px 32px;
+    border-top:1px solid var(--hair);font-size:14.5px;color:var(--ink-1);line-height:1.45;}
+  .side li:before{content:counter(i);position:absolute;left:0;top:11px;width:21px;height:21px;
+    border-radius:50%;background:var(--accent);color:#fff;font-size:11px;font-weight:700;
+    display:flex;align-items:center;justify-content:center;}
+  .side li s{color:var(--ink-3);font-size:13px;display:block;margin-top:2px;
+    text-decoration:none;font-weight:400;}
+  table.mini{width:100%;border-collapse:collapse;font-size:13.5px;}
+  table.mini th{text-align:left;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--ink-3);font-weight:600;padding:0 10px 7px 0;border-bottom:1px solid var(--hair);}
+  table.mini td{padding:7px 10px 7px 0;border-bottom:1px solid var(--hair);color:var(--ink-2);}
   table.mini td.n{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-1);}
-  table.mini tr.hub td{color:var(--ink-1);font-weight:600;}
+  table.mini tr.hub td{color:var(--ink-1);font-weight:700;}
   .tblwrap{overflow-x:auto;}
-  .lead + .lead{margin-top:11px;}
-  footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--hair);font-size:12px;color:var(--ink-3);}
+  .kicker{font-size:14px;color:var(--ink-2);margin-top:10px;}
+  .kicker b{color:var(--ink-1);}
+  ol.tpl{counter-reset:s;list-style:none;columns:2;column-gap:26px;}
+  @media(max-width:820px){ ol.tpl{columns:1;} }
+  ol.tpl li{counter-increment:s;position:relative;padding:7px 0 7px 26px;font-size:13.5px;
+    color:var(--ink-2);break-inside:avoid;}
+  ol.tpl li:before{content:counter(s);position:absolute;left:0;top:8px;width:17px;height:17px;
+    border-radius:50%;background:var(--ink-3);color:var(--card);font-size:10px;font-weight:700;
+    display:flex;align-items:center;justify-content:center;}
+  ol.tpl li b{color:var(--ink-1);font-weight:600;}
+  footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--hair);
+    font-size:11.5px;color:var(--ink-3);}
 </style>
 </head>
 <body>
@@ -160,22 +173,44 @@
 </script>
 
 <div class="wrap">
-  <div class="kick">Aur&eacute;lie Lenoir Photography &#183; SEO</div>
+  <div class="kick">Aur&eacute;lie Lenoir Photography &#183; SEO &#183; First move</div>
   <h1>Fixing the family hub</h1>
-  <p class="lead">Six of your pages are competing with each other for the same searches.
-  Nobody wins that fight, including you. This is the one fix that needs no new writing, so we
-  are doing it first, and it becomes the template for everything that follows.</p>
+  <p class="lead">Six of your pages compete for the same searches. Fixing that needs no new
+  writing, so it goes first. Here is who does what.</p>
 
-  <div class="hero">
-    <div class="hstat"><div class="n">6</div><div class="l">of your pages compete for<br>&quot;family photographer dublin&quot;</div></div>
-    <div class="hstat"><div class="n">6,124</div><div class="l">impressions already there,<br>split between them</div></div>
-    <div class="hstat"><div class="n">1</div><div class="l">page Google prefers,<br>on all five key searches</div></div>
+  <div class="split">
+    <div class="side us">
+      <span class="tag">We do</span>
+      <h3>Webiwant</h3>
+      <div class="when">This week. Nothing needed from you.</div>
+      <ol>
+        <li>Retitle the guide around &quot;family photographer dublin&quot;</li>
+        <li>Give the Dublin Family Photoshoot page its own search
+            <s>and sharpen it towards booking</s></li>
+        <li>Retune four other pages so they stop competing
+            <s>none of them gets deleted</s></li>
+        <li>Link them all to the hub</li>
+        <li>Record today&#39;s numbers
+            <s>so the change can be proved in 8 weeks</s></li>
+      </ol>
+    </div>
+    <div class="side you">
+      <span class="tag">You do</span>
+      <h3>Aur&eacute;lie</h3>
+      <div class="when">At your pace. Start with the first one.</div>
+      <ol>
+        <li>Two paragraphs about you, for the top of the hub
+            <s>what you tell a family before a session</s></li>
+        <li>Gather your maternity material
+            <s>photos, what mothers ask you: your next page</s></li>
+        <li>Fix three image captions
+            <s>they are in French or mention Paris, we send the list</s></li>
+        <li>Add your photo to your author profile</li>
+      </ol>
+    </div>
   </div>
 
-  <h2 class="sec">What Google already tells us</h2>
-  <p class="lead">We checked each of your five money searches in Search Console and looked at
-  which page comes up. The same one wins every time, and it takes five of the six clicks they
-  generate. That settles which page becomes the hub, with no guesswork.</p>
+  <h2 class="sec">Why the guide becomes the hub</h2>
   <div class="tblwrap">
   <table class="mini">
     <tr><th>Page</th><th style="text-align:right">Impressions</th><th style="text-align:right">Clicks</th><th style="text-align:right">Position</th></tr>
@@ -187,84 +222,32 @@
     <tr><td>How to Choose The Best Family Photographer</td><td class="n">39</td><td class="n">0</td><td class="n">16.7</td></tr>
   </table>
   </div>
-  <div class="note"><b>Nothing you wrote gets deleted.</b> The guide becomes the hub because
-  Google already treats it that way. Every other page keeps its content and gets its own
-  job, so they stop competing with each other instead of disappearing.</div>
+  <p class="kicker">On all five key searches, Google already puts the guide first, and it takes
+  <b>five of the six clicks</b> they generate. <b>Nothing gets deleted:</b> every other page
+  keeps its content and gets its own job.</p>
 
-  <h2 class="sec">Your Dublin Family Photoshoot page, specifically</h2>
-  <p class="lead">This one deserves a word, because it is the page with the clearest sales
-  message on the site: the documentary approach, your life as it is. That angle exists nowhere
-  else, so we are keeping it.</p>
-  <p class="lead">Its problem is not that it competes with the guide. Its problem is that
-  Google puts it on page 7, which means nobody ever reads it. So instead of folding it away,
-  we give it a search of its own. People type two different things: <b>family
-  photographer</b> when they look for a person to hire, and <b>family photoshoot</b> when they
-  think about the session itself. The guide takes the first, your Dublin Family Photoshoot page
-  takes the second, and we sharpen it towards what people want at that moment: what is
-  included, how a session runs, how to book.</p>
-  <div class="tblwrap">
-  <table class="mini">
-    <tr><th>Page</th><th>Searches it goes after</th><th style="text-align:right">Monthly</th></tr>
-    <tr class="hub"><td>The guide, as hub</td><td>family photographer dublin, dublin family photographer, family photographers dublin</td><td class="n">630</td></tr>
-    <tr class="hub"><td>Dublin Family Photoshoot</td><td>family photoshoot dublin, family photoshoot packages, family photoshoot at home</td><td class="n">110</td></tr>
-  </table>
-  </div>
-  <div class="note">Two pages going after 740 searches a month, instead of one page going
-  after 630. If in two months Google still insists on showing only one of them, we will move
-  your best paragraphs up into the hub, so your writing ends up on the page people actually
-  reach rather than on page 7.</div>
-
-  <h2 class="sec">Who does what</h2>
-  <div class="cols">
-    <div class="col">
-      <div class="who">We handle it</div>
-      <h3>This week, nothing needed from you</h3>
-      <ul>
-        <li><b>Retitle the guide</b> around &quot;family photographer dublin&quot;, the phrase people actually type.</li>
-        <li><b>Give the Dublin Family Photoshoot page its own search</b> to go after, and sharpen it towards booking. It keeps every word you wrote.</li>
-        <li><b>Retune the other four pages</b> so they stop competing, without deleting any of them.</li>
-        <li><b>Link them all to the hub</b> with consistent wording, so Google sees one clear answer.</li>
-        <li><b>Record today&#39;s numbers</b>, so the change can be proved in eight weeks.</li>
-      </ul>
-    </div>
-    <div class="col">
-      <div class="who">Over to you</div>
-      <h3>In parallel, at your pace</h3>
-      <ul>
-        <li><b>Two paragraphs about you</b> for the top of the hub, in your own words: what you tell a family before a session. Nobody can write this for you.</li>
-        <li><b>Gather your maternity material</b>: photos you love, what mothers ask you, what surprises them. That page is the biggest opening on the site.</li>
-        <li><b>Three image captions to fix</b>, currently in French or mentioning Paris. We will send the list.</li>
-        <li><b>Add your photo to your author profile</b>, which shows a grey silhouette today.</li>
-      </ul>
-    </div>
-  </div>
-
-  <h2 class="sec">The template you will reuse</h2>
-  <p class="lead">Once the hub is done it becomes your model. Every service page you write
-  next follows these eight points, so you never face a blank page.</p>
+  <h2 class="sec">The template you reuse for the next page</h2>
   <ol class="tpl">
-    <li><b>Title</b>: the search phrase first, then your name. Keep it short.</li>
-    <li><b>A headline that sounds human</b>, not the title repeated.</li>
-    <li><b>Two sentences about you</b>, in the first person.</li>
-    <li><b>What actually happens during a session</b>, including how long it takes.</li>
-    <li><b>The areas you cover</b>, named.</li>
-    <li><b>Something you have really lived on this kind of session.</b> One true detail. This is the part competitors cannot copy, and the part that earns trust.</li>
-    <li><b>A link to your prices</b> and a clear way to get in touch.</li>
-    <li><b>Three to five links</b> to your own articles on the same theme.</li>
+    <li><b>Title</b>: search phrase first, then your name</li>
+    <li><b>A headline that sounds human</b></li>
+    <li><b>Two sentences about you</b>, first person</li>
+    <li><b>What happens during a session</b>, and how long</li>
+    <li><b>The areas you cover</b>, named</li>
+    <li><b>Something you really lived</b> on this kind of session</li>
+    <li><b>Prices</b> and a way to get in touch</li>
+    <li><b>Three to five links</b> to your own articles</li>
   </ol>
-  <div class="note">What to avoid, because it reads as generic: superlatives, agency phrasing,
-  and any sentence that could sit on any photographer website.</div>
+  <p class="kicker">Avoid what reads as generic: superlatives, agency phrasing, any sentence
+  that could sit on any photographer website.</p>
 
-  <h2 class="sec">How we will know it worked</h2>
-  <p class="lead">We noted today&#39;s position on the five searches and on all six pages, and
-  we check the same numbers in six to eight weeks. Your keywords have been tracked daily since
-  26 June, so the direction shows well before then. Consolidation usually moves positions
-  within four to eight weeks, while a brand new page takes longer. That is exactly why we
-  start here.</p>
+  <h2 class="sec">Checkpoint</h2>
+  <p class="kicker">Same numbers again in <b>6 to 8 weeks</b>. Your keywords are tracked daily
+  since 26 June, so the direction shows earlier. Consolidation moves positions in 4 to 8
+  weeks, a brand new page takes longer: that is why we start here.</p>
 
   <footer>
-    Search Console data 10 May to 9 August 2026, per-query check run on 12 August 2026.
-    Keyword positions tracked daily since 26 June 2026 on the Irish market.
+    Search Console 10 May to 9 August 2026, per-query check 12 August 2026.
+    Positions tracked daily since 26 June 2026, Irish market.
   </footer>
 </div>
 
