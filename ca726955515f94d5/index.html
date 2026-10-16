@@ -1,0 +1,220 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex"><title>Point SEO Mois 3 - Aurélie Lenoir Photography</title><link href="assets/fonts.css" rel="stylesheet"><style>
+  :root{
+    --paper:#fbf7ef;--cream:#fffdf8;--ink:#2f2a25;--dark:#24211e;--muted:#74695d;--line:#e2d6c6;
+    --sage:#6f7d68;--sage-dark:#43513e;--sage-soft:#dce3d5;--clay:#9c674d;--clay-soft:#ead8cb;--gold:#c6a15b;
+    --shadow:0 18px 55px rgba(66,48,33,.12);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;background:#d8d2c9}
+  body{margin:0;color:var(--ink);font-family:'Arsenal',Arial,sans-serif;background:#d8d2c9}
+  a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}
+  img{display:block;max-width:100%}
+  h1,h2,h3{font-family:'Bellefair',Georgia,serif;font-weight:400;line-height:1.03;margin:0}
+  p{margin:0}
+
+  .screen-tools{position:fixed;z-index:100;right:18px;top:16px;display:flex;gap:8px;align-items:center;font-size:15px}
+  .screen-tools button,.screen-tools span{border:1px solid rgba(255,255,255,.55);background:rgba(38,35,31,.86);color:#fff;padding:9px 13px}
+  .screen-tools button{cursor:pointer;font:inherit}
+  .screen-tools button:hover{background:var(--clay)}
+  .progress{position:fixed;bottom:0;left:0;height:4px;background:var(--clay);z-index:100;transition:width .2s}
+
+  .slide{position:relative;width:1600px;height:900px;zoom:var(--scale,1);margin:0 auto 18px;overflow:hidden;background:var(--paper);isolation:isolate;box-shadow:var(--shadow)}
+  .slide::before{content:"";position:absolute;inset:0;z-index:-2;background:
+    radial-gradient(circle at 92% 8%,rgba(198,161,91,.11),transparent 23%),linear-gradient(135deg,rgba(255,253,248,.9),rgba(251,247,239,.98))}
+  .photo-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;filter:brightness(.42) saturate(.9)}
+  .slide-inner{height:100%;padding:110px 92px 70px;display:flex;flex-direction:column}
+  .slide-top{display:flex;justify-content:space-between;align-items:flex-start;gap:28px;margin-bottom:34px}
+  .eyebrow{display:block;font-size:15px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:12px}
+  .slide-number{font-size:14px;color:var(--muted);letter-spacing:.08em}
+  .slide h2{font-size:62px;max-width:1330px;color:var(--dark)}
+  .lead{font-size:26px;line-height:1.35;color:var(--muted);max-width:1300px}
+  .content{flex:1;min-height:0;display:flex;flex-direction:column;gap:26px}
+  .source{position:absolute;left:92px;right:160px;bottom:26px;color:var(--muted);font-size:14px;line-height:1.25}
+  .client-logo{position:absolute;z-index:4;top:22px;left:92px;width:145px;height:58px;object-fit:contain;object-position:left center}
+  .agency-logo{position:absolute;z-index:4;right:25px;bottom:23px;width:83px;height:auto;opacity:.62}
+  .cover .client-logo,.cover .agency-logo,.closing .client-logo,.closing .agency-logo{filter:invert(1);opacity:.84}
+
+  .cover,.closing{color:#fffaf2;background:#2c2824}
+  .cover::before,.closing::before{z-index:-1;background:linear-gradient(90deg,rgba(29,24,20,.62),rgba(29,24,20,.2) 78%,transparent)}
+  .cover .slide-inner,.closing .slide-inner{justify-content:center;padding-top:115px;padding-bottom:90px}
+  .cover .eyebrow,.closing .eyebrow,.cover .slide-number,.closing .slide-number{color:rgba(255,250,242,.82)}
+  .cover h1{font-size:108px;max-width:1150px;color:#fffaf2}
+  .cover .lead{color:rgba(255,250,242,.9);font-size:36px;max-width:900px;margin-top:26px}
+  .pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+  .pill{padding:10px 16px;border:1px solid rgba(255,250,242,.46);background:rgba(35,30,25,.32);font-size:21px}
+
+  .card{border:1px solid var(--line);background:rgba(255,253,248,.94);padding:28px 30px;min-width:0}
+  .card h3{font-size:36px;color:var(--dark);margin-bottom:12px}
+  .card p,.card li{font-size:24px;line-height:1.38;color:var(--muted)}
+  .card ul{margin:6px 0 0;padding-left:22px}.card li{margin-bottom:8px}
+  .card.accent{border-top:4px solid var(--sage)}.card.clay{border-top:4px solid var(--clay)}
+  .tag{display:inline-flex;padding:6px 10px;background:var(--sage-soft);color:var(--sage-dark);font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+  .tag.clay{background:var(--clay-soft);color:#714834}
+  .grid{display:grid;gap:22px}.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .shot{border:1px solid var(--line);background:#fff;padding:10px;box-shadow:0 14px 36px rgba(60,42,25,.10)}
+  .shot img{width:100%;height:auto}
+  .callout{padding:18px 24px;border-left:4px solid var(--sage);background:var(--sage-soft);font-size:24px;line-height:1.35;color:var(--sage-dark)}
+  .gain{color:var(--sage-dark);font-weight:700}
+
+  table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:var(--cream);font-size:26px}
+  th{background:#f2e9dc;color:var(--sage-dark);font-size:16px;letter-spacing:.08em;text-transform:uppercase;text-align:left;padding:16px 20px}
+  td{padding:18px 20px;border-top:1px solid var(--line)}
+  td.num{font-family:'Bellefair',Georgia,serif;font-size:32px;color:var(--muted);text-align:center}
+  th.c{text-align:center}
+  td.now{color:var(--sage-dark);font-size:40px}
+  tr.key td{background:#eff3eb}tr.key td:first-child{font-weight:700}
+
+  /* slide 2 hub */
+  .hub{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:auto auto;gap:26px 70px;align-items:center;margin-top:10px}
+  .node{border:1px solid var(--line);background:var(--cream);padding:24px 26px;position:relative}
+  .node b{font-family:'Bellefair',Georgia,serif;font-weight:400;font-size:36px;display:block;color:var(--dark)}
+  .node span{font-size:21px;color:var(--muted)}
+  .node.main{background:var(--sage-soft);border-color:#c5d0bd}
+  .node.arrow::after{content:"→";position:absolute;right:-56px;top:50%;transform:translateY(-50%);font-size:44px;color:var(--sage)}
+  .articles{grid-column:1 / span 3;display:flex;gap:14px;flex-wrap:wrap;align-items:center;padding-top:22px;border-top:1px dashed var(--line)}
+  .articles .lbl{font-size:20px;font-weight:700;color:var(--clay);letter-spacing:.06em;text-transform:uppercase;margin-right:8px}
+  .articles span:not(.lbl){padding:9px 14px;border:1px solid var(--line);background:#fff;font-size:20px;color:var(--muted)}
+  .kw{display:inline-block;padding:14px 26px;background:var(--dark);color:#fffaf2;font-family:'Bellefair',Georgia,serif;font-size:40px}
+
+  /* slide 3 bars */
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:60px;flex:1;align-items:end}
+  .stat h3{font-size:92px;color:var(--sage-dark);margin-bottom:6px}
+  .stat p{font-size:26px;color:var(--muted);margin-bottom:26px}
+  .bars{display:flex;gap:34px;align-items:flex-end;height:330px;border-bottom:2px solid var(--line);padding:0 10px}
+  .bar{flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+  .bar i{display:block;background:#d9cfc1}
+  .bar.now i{background:var(--sage)}
+  .bar em{font-style:normal;font-size:20px;color:var(--muted);text-align:center;margin-top:10px;order:2}
+  .bar strong{font-family:'Bellefair',Georgia,serif;font-weight:400;font-size:30px;text-align:center;color:var(--muted);margin-bottom:8px}
+  .bar.now strong{color:var(--sage-dark)}
+
+  /* slide 4 pages */
+  .pages-layout{display:grid;grid-template-columns:1.35fr .65fr;gap:34px;flex:1;align-items:center}
+  .page-row{display:grid;grid-template-columns:1fr 210px;align-items:center;padding:20px 24px;border-top:1px solid var(--line);background:rgba(255,253,248,.75)}
+  .page-row:first-child{border-top:0}
+  .page-row b{font-size:27px;display:block}.page-row span{font-size:19px;color:var(--muted)}
+  .page-row strong{font-family:'Bellefair',Georgia,serif;font-weight:400;font-size:46px;color:var(--sage-dark);text-align:right}
+  .page-row strong.txt{font-family:'Arsenal',Arial,sans-serif;font-size:24px;font-weight:700}
+  .home-tile{background:var(--sage-soft);border:1px solid #c5d0bd;padding:32px}
+  .home-tile .tag{background:#fff}
+  .home-tile h3{font-size:40px;margin-bottom:22px}
+  .home-tile div{padding:16px 0;border-top:1px solid #c5d0bd}
+  .home-tile div span{display:block;font-size:20px;color:var(--sage-dark)}
+  .home-tile div strong{font-family:'Bellefair',Georgia,serif;font-weight:400;font-size:52px;color:var(--sage-dark)}
+
+  /* image + text layouts */
+  .split{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;flex:1}
+  .split.rev{grid-template-columns:.85fr 1.15fr}
+  .chips{display:flex;flex-wrap:wrap;gap:12px}
+  .chips span{padding:13px 18px;background:var(--cream);border:1px solid var(--line);border-left:4px solid var(--sage);font-size:23px;color:var(--ink)}
+  .stack{display:flex;flex-direction:column;gap:16px}
+  .stack .chips span{flex:1 1 100%}
+
+  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .kpis div{border-top:2px solid var(--line);padding-top:14px}
+  .kpis strong{font-family:'Bellefair',Georgia,serif;font-weight:400;font-size:76px;color:var(--sage-dark);display:block;line-height:1}
+  .kpis span{font-size:22px;color:var(--muted)}
+
+  /* slide 11 dots */
+  .dots{display:grid;grid-template-columns:repeat(7,1fr);gap:22px;max-width:1150px}.dot{font-size:21px!important}
+  .dot{aspect-ratio:1;border-radius:50%;display:grid;place-items:center;font-size:17px;font-weight:700;text-align:center;line-height:1.1;padding:8px}
+  .dot.ok{background:var(--sage-soft);color:var(--sage-dark)}
+  .dot.done{background:var(--sage);color:#fff}
+  .dot.next{background:var(--clay-soft);color:#714834}
+  .legend{display:flex;gap:30px;font-size:22px;color:var(--muted);margin-top:8px}
+  .legend i{display:inline-block;width:18px;height:18px;border-radius:50%;vertical-align:-2px;margin-right:8px}
+
+  /* slide 12 routes */
+  .routes{display:grid;gap:14px}
+  .route{display:grid;grid-template-columns:1fr 70px 1fr;align-items:center}
+  .route>div{border:1px solid var(--line);padding:16px 24px;background:var(--cream)}
+  .route b{font-size:24px;display:block}.route span{font-size:19px;color:var(--muted)}
+  .route i{text-align:center;font-style:normal;font-size:40px;color:var(--sage)}
+  .route .target{background:var(--sage-soft)}
+  .bottom-row{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:center}
+  .big-kpi{display:flex;align-items:center;gap:18px;padding:14px 26px;background:var(--clay-soft);border:1px solid #d8bca9}
+  .big-kpi strong{font-family:'Bellefair',Georgia,serif;font-weight:400;font-size:64px;color:var(--clay);line-height:1}
+  .big-kpi span{font-size:22px;color:#704a38}
+
+  /* slide 13 netlinking */
+  .links{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .link-card{border:1px solid var(--line);background:var(--cream);padding:18px;display:flex;flex-direction:column;gap:14px}
+  .link-card .shot{padding:6px;box-shadow:none}
+  .link-card .metric{display:flex;gap:10px}
+  .link-card .metric span{flex:1;padding:10px;background:#f4e9dc;border:1px solid #dfcbb9;color:var(--clay);font-weight:700;text-align:center;font-size:22px}
+  .link-card a{font-size:17px;color:var(--sage-dark);overflow-wrap:anywhere;line-height:1.3}
+  .link-card b{font-size:22px}
+
+  /* slide 14 gbp */
+  .gbp{display:grid;grid-template-columns:1fr .95fr .62fr;gap:22px;align-items:start}
+  .gbp .shot img{max-height:420px;width:auto;margin:0 auto}
+
+  .closing h2{font-size:82px;color:#fffaf2;max-width:1200px}
+  .closing-list{display:grid;gap:12px;margin-top:34px;max-width:900px}
+  .closing-list span{padding:14px 20px;border:1px solid rgba(255,250,242,.42);background:rgba(35,30,25,.38);font-size:26px}
+
+  @media(max-width:1100px){body{overflow-x:auto}.screen-tools{display:none}}
+  @page{size:1600px 900px;margin:0}
+  @media print{
+    html,body{margin:0!important;padding:0!important;background:#fff!important}
+    body{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+    .screen-tools,.progress{display:none!important}
+    .slide{zoom:1!important;margin:0!important;box-shadow:none!important;break-after:page;page-break-after:always;break-inside:avoid}
+    .slide:last-child{break-after:auto;page-break-after:auto}
+    a{text-decoration:none}
+  }
+#slide-9 .content,#slide-11 .content{justify-content:center}#slide-6 .split{grid-template-columns:1.35fr .65fr}
+.callout.review{max-width:1150px}.callout.review a{font-weight:700}
+</style></head><body><nav class="screen-tools" aria-label="Navigation"><button onclick="go(-1)" aria-label="Précédente">←</button><span id="counter">1 / 13</span><button onclick="go(1)" aria-label="Suivante">→</button><button onclick="document.documentElement.requestFullscreen?.()">Plein écran</button><button onclick="window.print()">Imprimer / PDF</button></nav><main>
+
+<!-- 1 -->
+<section class="slide cover" id="slide-1"><img class="client-logo" src="assets/cropped-logo_aureliel.png" alt="Aurélie Lenoir Photography"><img class="agency-logo" src="assets/webiwant-logo.svg" alt="Webiwant"><img class="photo-bg" src="assets/cover.jpg" alt=""><div class="slide-inner"><div class="slide-top"><div><span class="eyebrow">Point SEO · Octobre 2026</span><h1>Point SEO<br>Mois 3</h1></div><span class="slide-number">01 / 13</span></div><p class="lead">Les pages Newborn, Baby, Family au centre du travail du mois</p><div class="pills"><span class="pill">16 septembre - 16 octobre 2026</span></div></div></section>
+
+
+<!-- 3 -->
+<section class="slide" id="slide-3"><img class="client-logo" src="assets/cropped-logo_aureliel.png" alt="Aurélie Lenoir Photography"><img class="agency-logo" src="assets/webiwant-logo.svg" alt="Webiwant"><div class="slide-inner"><div class="slide-top"><div><span class="eyebrow">Google Search Console</span><h2>Plus de visites depuis Google</h2></div><span class="slide-number">02 / 13</span></div><div class="content"><div class="stats"><div class="stat"><h3>+34 %</h3><p>de clics depuis Google</p><div class="bars"><div class="bar"><i style="height:75%"></i><em>28 jours précédents</em></div><div class="bar now"><i style="height:100%"></i><em>28 derniers jours</em></div></div></div><div class="stat"><h3>×2,3</h3><p>de taux de clic</p><div class="bars"><div class="bar"><strong>0,40 %</strong><i style="height:43%"></i><em>Période précédente</em></div><div class="bar now"><strong>0,92 %</strong><i style="height:100%"></i><em>28 derniers jours</em></div></div></div></div></div></div><p class="source">Google Search Console · recherche Web · 28 derniers jours jusqu'au 13 octobre, comparés à la période précédente.</p></section>
+
+<!-- 4 -->
+<section class="slide" id="slide-4"><img class="client-logo" src="assets/cropped-logo_aureliel.png" alt="Aurélie Lenoir Photography"><img class="agency-logo" src="assets/webiwant-logo.svg" alt="Webiwant"><div class="slide-inner"><div class="slide-top"><div><span class="eyebrow">Pages qui progressent</span><h2>Les pages Family et Baby<br>gagnent des clics</h2></div><span class="slide-number">03 / 13</span></div><div class="content"><div class="pages-layout"><div><div class="page-row"><div><b>Accueil</b><span>Family Photographer Dublin</span></div><strong>+67 %</strong></div><div class="page-row"><div><b>Family photographer Clonsilla</b><span>Castleknock · Blanchardstown</span></div><strong>+40 %</strong></div><div class="page-row"><div><b>Dublin Baby Portraits</b><span>Récit Baby</span></div><strong>×3</strong></div><div class="page-row"><div><b>Everyday family moments</b><span>Article Family</span></div><strong class="txt">Premiers clics</strong></div></div><div class="home-tile"><span class="tag">Accueil</span><h3>Plus cliquée,<br>mieux placée</h3><div><span>Taux de clic</span><strong>1,3 % → 6,1 %</strong></div><div><span>Position moyenne</span><strong>31 → 21</strong></div></div></div></div></div><p class="source">Google Search Console · clics des 28 derniers jours contre les 28 précédents. Accueil : 3 mois jusqu'au 12 septembre, puis 28 jours jusqu'au 13 octobre.</p></section>
+
+<!-- 5 -->
+<section class="slide" id="slide-5"><img class="client-logo" src="assets/cropped-logo_aureliel.png" alt="Aurélie Lenoir Photography"><img class="agency-logo" src="assets/webiwant-logo.svg" alt="Webiwant"><div class="slide-inner"><div class="slide-top"><div><span class="eyebrow">SE Ranking · Google Dublin</span><h2>« Dublin family photographer »<br>et ses variantes remontent</h2></div><span class="slide-number">04 / 13</span></div><div class="content"><table><thead><tr><th>Mot-clé</th><th class="c">26 juin</th><th class="c">14 sept</th><th class="c">16 oct</th><th class="c">Depuis le lancement</th></tr></thead><tbody><tr class="key"><td>dublin family photographer</td><td class="num">26</td><td class="num">18</td><td class="num now">15</td><td class="num gain">+11 places</td></tr><tr><td>family photoshoot dublin</td><td class="num">23</td><td class="num">16</td><td class="num now">12</td><td class="num gain">+11 places</td></tr><tr><td>outdoor family photography</td><td class="num">29</td><td class="num">21</td><td class="num now">15</td><td class="num gain">+14 places</td></tr><tr><td>family photography dublin</td><td class="num">10</td><td class="num">14</td><td class="num now">8</td><td class="num gain">+2 places</td></tr><tr><td>lifestyle family photography</td><td class="num">38</td><td class="num">51</td><td class="num now">21</td><td class="num gain">+17 places</td></tr></tbody></table></div></div><p class="source">Position Google, moteur géolocalisé Dublin. Plus le chiffre est bas, mieux c'est.</p></section>
+
+<!-- 6 -->
+<section class="slide" id="slide-6"><img class="client-logo" src="assets/cropped-logo_aureliel.png" alt="Aurélie Lenoir Photography"><img class="agency-logo" src="assets/webiwant-logo.svg" alt="Webiwant"><div class="slide-inner"><div class="slide-top"><div><span class="eyebrow">Recherche de marque</span><h2>La fiche Google commence<br>à s'afficher</h2></div><span class="slide-number">05 / 13</span></div><div class="content"><div class="split"><div class="shot"><img src="assets/serp-marque-crop.png" alt="Résultat Google pour Aurélie Lenoir Photography avec liens annexes"></div><div class="stack"><p class="lead">Sur la recherche « Aurélie Lenoir Photography », la fiche Google s'affiche à droite des résultats.</p><div class="callout">Pas encore à chaque recherche, mais le signal apparaît.</div><p class="lead" style="font-size:22px">Sous le site : Dublin Baby Portraits, Services, Newborn photography Dublin.</p></div></div></div></div></section>
+
+<!-- 7 -->
+<section class="slide" id="slide-7"><img class="client-logo" src="assets/cropped-logo_aureliel.png" alt="Aurélie Lenoir Photography"><img class="agency-logo" src="assets/webiwant-logo.svg" alt="Webiwant"><div class="slide-inner"><div class="slide-top"><div><span class="eyebrow">Accueil · publiée</span><h2>Page d'accueil refondue</h2></div><span class="slide-number">06 / 13</span></div><div class="content"><div class="split"><div class="shot"><img src="assets/home-planning.png" alt="Bloc Planning your family photoshoot in Dublin"></div><div class="stack"><div class="chips"><span>Introduction retravaillée</span><span>Offres remontées</span><span>Bloc « Planning your family photoshoot in Dublin »</span><span>Formulaire plus visible</span><span>Boutons harmonisés</span><span>Title et meta optimisés</span></div></div></div></div></div></section>
+
+<!-- 8 -->
+<section class="slide" id="slide-8"><img class="client-logo" src="assets/cropped-logo_aureliel.png" alt="Aurélie Lenoir Photography"><img class="agency-logo" src="assets/webiwant-logo.svg" alt="Webiwant"><div class="slide-inner"><div class="slide-top"><div><span class="eyebrow">Newborn · Baby · In-home</span><h2>Des pages services plus claires</h2></div><span class="slide-number">07 / 13</span></div><div class="content"><div class="split"><div class="shot"><img src="assets/baby-at-a-glance.png" alt="Bloc Your baby session at a glance"></div><div class="stack"><article class="card accent"><span class="tag">Baby et Newborn</span><p>Offres clarifiées, blocs pratiques, CTA et liens entre services.</p></article><article class="card clay"><span class="tag clay">In-home Family Session · à valider</span><p>Nouveau H1, récapitulatif « Your session at a glance », FAQ et maillage.</p></article></div></div></div></div></section>
+
+<!-- 9 -->
+<section class="slide" id="slide-9" style="--x:0"><img class="client-logo" src="assets/cropped-logo_aureliel.png" alt="Aurélie Lenoir Photography"><img class="agency-logo" src="assets/webiwant-logo.svg" alt="Webiwant"><div class="slide-inner"><div class="slide-top"><div><span class="eyebrow">Technique</span><h2>Un site plus lisible<br>et plus rapide sur mobile</h2></div><span class="slide-number">08 / 13</span></div><div class="content"><div class="grid cols-2"><article class="card accent"><h3>Fils d'Ariane</h3><p>Sur toutes les pages, avec un balisage Rank Math vérifié.</p></article><article class="card accent"><h3>Mobile</h3><p>Image principale et carrousel de l'accueil stabilisés.</p></article></div><div class="kpis"><div><strong>97/100</strong><span>Score mobile</span></div><div><strong>0</strong><span>Décalage visuel (CLS)</span></div><div><strong>2,5 s</strong><span>Affichage de l'image principale (LCP)</span></div></div></div></div><p class="source">Test PageSpeed après correction. Les résultats varient d'un test à l'autre.</p></section>
+
+
+<!-- 11 -->
+<section class="slide" id="slide-11"><img class="client-logo" src="assets/cropped-logo_aureliel.png" alt="Aurélie Lenoir Photography"><img class="agency-logo" src="assets/webiwant-logo.svg" alt="Webiwant"><div class="slide-inner"><div class="slide-top"><div><span class="eyebrow">Contenus</span><h2>Des textes plus naturels</h2></div><span class="slide-number">09 / 13</span></div><div class="content"><p class="lead">14 articles Family mesurés, 3 humanisés et publiés. 6 classés par priorité pour la suite, le guide Family en premier.</p><div class="dots"><div class="dot ok">OK</div><div class="dot ok">OK</div><div class="dot ok">OK</div><div class="dot ok">OK</div><div class="dot ok">OK</div><div class="dot done">Publié</div><div class="dot done">Publié</div><div class="dot done">Publié</div><div class="dot next">Guide<br>Family</div><div class="dot next">2</div><div class="dot next">3</div><div class="dot next">4</div><div class="dot next">5</div><div class="dot next">6</div></div><div class="legend"><span><i style="background:var(--sage-soft)"></i>Conservés en l'état</span><span><i style="background:var(--sage)"></i>Humanisés</span><span><i style="background:var(--clay-soft)"></i>À retravailler, par priorité</span></div><div class="callout review">Guide Family humanisé, à relire par Aurélie : <a href="https://webiw.github.io/al-photography-review/al-diff-05c7af26c4235d4c/diff-humanisation-ultimate-guide-2026-10-16.html" target="_blank" rel="noopener">voir l'avant / après ↗</a></div></div></div></section>
+
+<!-- 12 -->
+<section class="slide" id="slide-12"><img class="client-logo" src="assets/cropped-logo_aureliel.png" alt="Aurélie Lenoir Photography"><img class="agency-logo" src="assets/webiwant-logo.svg" alt="Webiwant"><div class="slide-inner"><div class="slide-top"><div><span class="eyebrow">Maillage interne</span><h2>Du maillage à chaque étape</h2></div><span class="slide-number">10 / 13</span></div><div class="content"><p class="lead">À chaque article humanisé et chaque page créée, des liens internes ajoutés ou corrigés.</p><div class="routes"><div class="route"><div><b>Kid-friendly family photo sessions</b><span>Lien « More info about my family photo sessions »</span></div><i>→</i><div class="target"><b>In-home Family Session</b><span>Page service</span></div></div><div class="route"><div><b>Kid-friendly family photo sessions</b><span>Bouton « See Sessions info &amp; pricing »</span></div><i>→</i><div class="target"><b>Tarifs Family</b><span>Accès direct</span></div></div><div class="route"><div><b>Outdoor maternity with a toddler</b><span>Mot « newborn »</span></div><i>→</i><div class="target"><b>Newborn photography Dublin</b><span>Nouveau lien</span></div></div><div class="route"><div><b>Outdoor maternity with a toddler</b><span>« Sandymount Beach »</span></div><i>→</i><div class="target"><b>Family photographer Sandymount</b><span>Nouveau lien</span></div></div></div><p class="lead" style="font-size:23px">Outil de maillage installé, pages classées par importance.</p></div></div></section>
+
+<!-- 13 -->
+<section class="slide" id="slide-13"><img class="client-logo" src="assets/cropped-logo_aureliel.png" alt="Aurélie Lenoir Photography"><img class="agency-logo" src="assets/webiwant-logo.svg" alt="Webiwant"><div class="slide-inner"><div class="slide-top"><div><span class="eyebrow">Netlinking</span><h2>De nouvelles pages partenaires</h2></div><span class="slide-number">11 / 13</span></div><div class="content"><p class="lead">Prospection et suivi poursuivis, angles d'articles invités préparés pour Vacation Photography.</p><div class="links"><article class="link-card"><b>50 and Rising</b><div class="metric"><span>DA 13</span><span>PA 18</span></div><a href="https://50andrising.com/travelling-solo-after-50-how-to-tell-the-story-of-your-trip-through-photography" target="_blank" rel="noopener">50andrising.com/travelling-solo-after-50-how-to-tell-the-story-of-your-trip-through-photography ↗</a></article><article class="link-card"><b>Cuddle Fairy</b><div class="metric"><span>DA 29</span><span>PA 25</span></div><a href="https://cuddlefairy.com/post/why-the-messy-ordinary-photos-often-become-the-ones-you-treasure-most" target="_blank" rel="noopener">cuddlefairy.com/post/why-the-messy-ordinary-photos-often-become-the-ones-you-treasure-most ↗</a></article><article class="link-card"><b>Sports in Bars</b><div class="metric"><span>DA 12</span><span>PA 19</span></div><a href="https://sports-in-bars.ie/partners" target="_blank" rel="noopener">sports-in-bars.ie/partners ↗</a></article></div><div class="grid cols-3"><div class="shot"><img src="assets/dapa-1.png" alt="DA PA 50andrising.com"></div><div class="shot"><img src="assets/dapa-2.png" alt="DA PA cuddlefairy.com"></div><div class="shot"><img src="assets/dapa-3.png" alt="DA PA sports-in-bars.ie"></div></div></div></div></section>
+
+<!-- 14 -->
+<section class="slide" id="slide-14"><img class="client-logo" src="assets/cropped-logo_aureliel.png" alt="Aurélie Lenoir Photography"><img class="agency-logo" src="assets/webiwant-logo.svg" alt="Webiwant"><div class="slide-inner"><div class="slide-top"><div><span class="eyebrow">Google Business Profile</span><h2>Une fiche plus complète</h2></div><span class="slide-number">12 / 13</span></div><div class="content"><div class="gbp"><div class="shot"><img src="assets/gbp-services.png" alt="Services de la fiche Google"></div><div class="stack"><div class="shot"><img src="assets/gbp-service-baby.png" alt="Détail du service Baby photography"></div><div class="chips"><span>Fiche et visibilité analysées</span><span>Services détaillés, avec prix de départ</span></div></div><div class="stack"><div class="shot"><img src="assets/gbp-update.png" alt="Premier Update sur la fiche"></div><div class="callout" style="font-size:21px">Premier Update publié : séances famille à domicile. Ensuite, un par semaine, lié à une page service.</div></div></div></div></div></section>
+
+<!-- 15 -->
+<section class="slide closing" id="slide-15"><img class="client-logo" src="assets/cropped-logo_aureliel.png" alt="Aurélie Lenoir Photography"><img class="agency-logo" src="assets/webiwant-logo.svg" alt="Webiwant"><img class="photo-bg" src="assets/closing.jpg" alt=""><div class="slide-inner"><div class="slide-top"><div><span class="eyebrow">Prochaines étapes</span><h2>Mois 4</h2></div><span class="slide-number">13 / 13</span></div><div class="closing-list"><span>Valider In-home Family Session</span><span>Publier le guide Family humanisé, puis les 5 articles suivants</span><span>Un Update Google Business Profile par semaine</span></div></div></section>
+
+</main><div class="progress" aria-hidden="true"></div><script>
+const slides=[...document.querySelectorAll('.slide')];
+function resize(){document.documentElement.style.setProperty('--scale',Math.min(innerWidth/1600,innerHeight/900));}
+function idx(){let near=0,best=Infinity;slides.forEach((s,i)=>{const d=Math.abs(s.getBoundingClientRect().top);if(d<best){best=d;near=i}});return near;}
+function go(delta){slides[Math.max(0,Math.min(slides.length-1,idx()+delta))].scrollIntoView({behavior:'smooth',block:'start'});}
+function status(){const i=idx();document.getElementById('counter').textContent=(i+1)+' / '+slides.length;document.querySelector('.progress').style.width=((i+1)/slides.length*100)+'%';}
+addEventListener('resize',resize);addEventListener('scroll',status,{passive:true});
+addEventListener('keydown',e=>{if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();go(1)}if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();go(-1)}});
+resize();status();
+</script></body></html>
