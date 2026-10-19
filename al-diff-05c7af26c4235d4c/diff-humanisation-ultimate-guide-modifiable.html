@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" data-version="f6976627">
+<html lang="fr" data-version="f6976627" data-sb-url="https://udaqlmpojtluxslshpje.supabase.co" data-sb-key="sb_publishable_AbvG8RA-ZEFhI10uz8aJPA_mZHgSrMU" data-sb-token="aa375739848f56ec68b532a896220a9b">
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
@@ -18,6 +18,7 @@ h1{font-size:1.25rem;margin:0}
 .help b{color:var(--ink);font-weight:600}
 .actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 #count{font-size:.92rem;color:var(--mute)}
+.sync{font-size:.85rem;color:var(--mute);margin-left:12px}
 button{font:inherit;font-size:.92rem;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:7px 12px;cursor:pointer}
 button:hover{border-color:#c4c9d0;background:var(--soft)}
 button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
@@ -63,7 +64,7 @@ ins{background:var(--ins-bg);text-decoration:none}
 <span class="legend">Dans « En ligne », <del>rouge barré</del> = retiré. Dans « Nouveau », <ins>vert</ins> = nouveau par rapport à « En ligne », ce que tu écris compris. Lignes grises = titres, inchangés.</span></p>
 </header>
 <div class="bar"><div class="bar-in">
-<span id="count" aria-live="polite"></span>
+<span><span id="count" aria-live="polite"></span><span id="sync" class="sync" aria-live="polite"></span></span>
 <div class="actions">
 <button type="button" id="copy">Copier mes remarques</button>
 <button type="button" id="dl" class="primary">Télécharger ma version</button>
@@ -143,6 +144,10 @@ ins{background:var(--ins-bg);text-decoration:none}
   var KEY = "texte-propose-v2-" + root.getAttribute("data-version");
   var rows = [].slice.call(document.querySelectorAll("tr[data-id]"));
   var count = document.getElementById("count");
+  var syncEl = document.getElementById("sync");
+  var cfg = { url: root.getAttribute("data-sb-url"), key: root.getAttribute("data-sb-key"), token: root.getAttribute("data-sb-token") };
+  // Online saving only on the shared page: a downloaded file (data-saved) never writes to the database.
+  var sync = !!(cfg.url && cfg.key && cfg.token) && !root.hasAttribute("data-saved");
   var hasHL = !!(window.CSS && CSS.highlights && window.Highlight);
   var hl = hasHL ? new Highlight() : null;
   var ranges = {};
@@ -247,12 +252,65 @@ ins{background:var(--ins-bg);text-decoration:none}
     } catch (e) {}
   }
 
+  // ---- Online saving (Supabase, three functions guarded by the article token) ----
+  var DKEY = KEY + "-dirty", dirty = {}, seq = {}, timers = {}, offline = false;
+  try { JSON.parse(localStorage.getItem(DKEY) || "[]").forEach(function(id){ dirty[id] = true; }); } catch (e) {}
+  function rowById(id){ return document.querySelector('tr[data-id="' + id + '"]'); }
+  function setDirty(id, on){
+    if (on) dirty[id] = true; else delete dirty[id];
+    try { localStorage.setItem(DKEY, JSON.stringify(Object.keys(dirty))); } catch (e) {}
+  }
+  function status(){
+    if (!syncEl || !sync) return;
+    syncEl.textContent = offline ? "Hors connexion : gardé dans ce navigateur" : Object.keys(dirty).length ? "Enregistrement…" : "Enregistré en ligne";
+  }
+  function rpc(fn, args){
+    return fetch(cfg.url + "/rest/v1/rpc/" + fn, {
+      method: "POST", headers: {"apikey": cfg.key, "Content-Type": "application/json"}, body: JSON.stringify(args)
+    }).then(function(r){ if (!r.ok) throw new Error(r.status); return r.status === 204 ? null : r.json(); });
+  }
+  function push(row){
+    var id = row.getAttribute("data-id"), c = row.querySelector(".edit"), mine = seq[id];
+    var p = isTouched(c)
+      ? rpc("review_save", {p_token: cfg.token, p_block: +id, p_note: norm(c.textContent)})
+      : rpc("review_delete", {p_token: cfg.token, p_block: +id});
+    return p.then(function(){ offline = false; if (seq[id] === mine) setDirty(id, false); status(); },
+                  function(){ offline = true; status(); });
+  }
+  function schedulePush(row){
+    if (!sync) return;
+    var id = row.getAttribute("data-id");
+    seq[id] = (seq[id] || 0) + 1;
+    setDirty(id, true); status();
+    clearTimeout(timers[id]);
+    timers[id] = setTimeout(function(){ push(row); }, 800);
+  }
+  function initSync(){
+    if (!sync) return;
+    if (syncEl) syncEl.textContent = "Connexion…";
+    var pending = Object.keys(dirty).map(rowById).filter(Boolean).map(push);
+    Promise.all(pending).then(function(){ return rpc("review_load", {p_token: cfg.token}); }).then(function(list){
+      var onServer = {};
+      list.forEach(function(n){
+        var id = String(n.block), row = rowById(id);
+        onServer[id] = true;
+        if (!row || dirty[id]) return;
+        var c = row.querySelector(".edit");
+        if (document.activeElement === c || norm(c.textContent) === n.note) return;
+        c.textContent = n.note; refresh(row); paint(row);
+      });
+      rows.forEach(function(r){ var id = r.getAttribute("data-id"); if (!onServer[id] && !dirty[id] && isTouched(r.querySelector(".edit"))) push(r); });
+      offline = false; update(); save(); status();
+    }).catch(function(){ offline = true; status(); });
+    window.addEventListener("online", function(){ Object.keys(dirty).map(rowById).filter(Boolean).forEach(push); });
+  }
+
   restore();
   rows.forEach(function(row){
     var c = row.querySelector(".edit");
     if (hasHL) c.textContent = norm(c.textContent);
     refresh(row); paint(row);
-    c.addEventListener("input", function(){ refresh(row); paint(row); update(); save(); });
+    c.addEventListener("input", function(){ refresh(row); paint(row); update(); save(); schedulePush(row); });
     c.addEventListener("blur", function(){ paint(row); });
     c.addEventListener("keydown", function(e){ if (e.key === "Enter") e.preventDefault(); });
     c.addEventListener("paste", function(e){
@@ -262,10 +320,11 @@ ins{background:var(--ins-bg);text-decoration:none}
     });
     row.querySelector(".reset").addEventListener("click", function(){
       c.textContent = c.getAttribute("data-orig");
-      refresh(row); paint(row); update(); save();
+      refresh(row); paint(row); update(); save(); schedulePush(row);
     });
   });
   update();
+  initSync();
 
   document.getElementById("dl").addEventListener("click", function(){
     root.setAttribute("data-saved", "1");
