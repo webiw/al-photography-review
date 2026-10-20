@@ -66,7 +66,6 @@ ins{background:var(--ins-bg);text-decoration:none}
 <div class="bar"><div class="bar-in">
 <span><span id="count" aria-live="polite"></span><span id="sync" class="sync" aria-live="polite"></span></span>
 <div class="actions">
-<button type="button" id="copy">Copier mes remarques</button>
 <button type="button" id="dl" class="primary">Télécharger ma version</button>
 </div>
 </div></div>
@@ -335,23 +334,6 @@ ins{background:var(--ins-bg);text-decoration:none}
     a.download = "guide-family-texte-annote.html";
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
-  });
-
-  document.getElementById("copy").addEventListener("click", function(){
-    var lines = rows.filter(function(r){ return isTouched(r.querySelector(".edit")); }).map(function(r){
-      return "Bloc " + r.getAttribute("data-id") + " (" + r.querySelector(".t").textContent + ") : " + norm(r.querySelector(".edit").textContent);
-    });
-    var txt = lines.length ? lines.join("\n\n") : "Aucune modification.";
-    var btn = this, label = btn.textContent;
-    function done(){ btn.textContent = "Copié"; setTimeout(function(){ btn.textContent = label; }, 1500); }
-    function fallback(){
-      var ta = document.createElement("textarea");
-      ta.value = txt; document.body.appendChild(ta); ta.select();
-      try { document.execCommand("copy"); done(); } catch (e) {}
-      ta.remove();
-    }
-    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, fallback);
-    else fallback();
   });
 })();
 
