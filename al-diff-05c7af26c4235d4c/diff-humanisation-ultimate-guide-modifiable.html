@@ -24,6 +24,9 @@ button:hover{border-color:#c4c9d0;background:var(--soft)}
 button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
 button.primary:hover{background:#1d4ed8}
 button:focus-visible,td.edit:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+a.btn{font:inherit;font-size:.92rem;border:1px solid var(--line);border-radius:8px;padding:7px 12px;color:var(--ink);text-decoration:none}
+a.btn:hover{background:var(--soft)}
+a.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 main{max-width:1180px;margin:0 auto;padding:16px}
 table{border-collapse:collapse;width:100%}
 th{font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;color:var(--mute);text-align:left;padding:6px 10px}
@@ -43,7 +46,7 @@ ins{background:var(--ins-bg);text-decoration:none}
 @media (max-width:780px){
   thead{display:none}
   .actions{width:100%}
-  .actions button{flex:1}
+  .actions button,.actions .btn{flex:1;text-align:center}
   table,tbody,tr,td{display:block;width:100%}
   td.live::before,td.edit::before{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--mute);margin-bottom:4px}
   td.live::before{content:"En ligne"}
@@ -66,6 +69,7 @@ ins{background:var(--ins-bg);text-decoration:none}
 <div class="bar"><div class="bar-in">
 <span><span id="count" aria-live="polite"></span><span id="sync" class="sync" aria-live="polite"></span></span>
 <div class="actions">
+<a class="btn" id="orig" href="https://aurelielenoirphotography.com/ultimate-guide-to-family-photography-in-dublin/" target="_blank" rel="noopener">Article en ligne ↗</a>
 <button type="button" id="dl" class="primary">Télécharger ma version</button>
 </div>
 </div></div>
