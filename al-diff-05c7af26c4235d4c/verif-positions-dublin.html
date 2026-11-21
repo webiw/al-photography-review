@@ -2,20 +2,23 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vérification positions Google Dublin - Aurélie Lenoir (19/11/2026)</title>
+<title>Suivi positions Google Dublin (Serper 19/11 vs 20/11 + écart SE Ranking) - Aurélie Lenoir</title>
 <style>
-  :root { --bg:#f8fafc; --card:#ffffff; --border:#e2e8f0; --text:#0f172a; --muted:#64748b; --accent:#2563eb; --ok:#15803d; --okbg:#dcfce7; --mid:#b45309; --midbg:#fef3c7; }
+  :root { --bg:#f8fafc; --card:#ffffff; --border:#e2e8f0; --text:#0f172a; --muted:#64748b; --accent:#2563eb; --ok:#15803d; --okbg:#dcfce7; --mid:#b45309; --midbg:#fef3c7; --bad:#b91c1c; --badbg:#fee2e2; --sr:#6d28d9; --srbg:#f3e8ff; }
   * { box-sizing:border-box; }
   body { margin:0; padding:24px; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); }
-  .wrap { max-width:1200px; margin:0 auto; }
+  .wrap { max-width:1440px; margin:0 auto; }
   h1 { font-size:20px; margin:0 0 6px; }
-  .sub { color:var(--muted); font-size:13px; margin:0 0 18px; }
-  .bar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; background:var(--card); border:1px solid var(--border); padding:12px 14px; border-radius:10px; margin-bottom:16px; position:sticky; top:10px; z-index:10; box-shadow:0 2px 8px rgba(15,23,42,.04); }
+  .sub { color:var(--muted); font-size:13px; margin:0 0 14px; }
+  .stats { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:14px; }
+  .stat { background:var(--card); border:1px solid var(--border); border-radius:9px; padding:9px 13px; font-size:12px; color:var(--muted); }
+  .stat strong { display:block; font-size:16px; color:var(--text); margin-top:2px; }
+  .bar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; background:var(--card); border:1px solid var(--border); padding:11px 13px; border-radius:10px; margin-bottom:16px; position:sticky; top:10px; z-index:10; box-shadow:0 2px 8px rgba(15,23,42,.04); }
   .bar label { font-size:13px; color:var(--muted); font-weight:600; }
   select, input[type=search] { padding:7px 10px; border:1px solid var(--border); border-radius:7px; font-size:13px; background:#fff; }
-  .btn { padding:7px 11px; border:1px solid var(--border); border-radius:7px; background:#fff; color:var(--text); font-size:13px; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:5px; }
+  .btn { padding:7px 10px; border:1px solid var(--border); border-radius:7px; background:#fff; color:var(--text); font-size:13px; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:5px; }
   .btn:hover { background:#f1f5f9; }
   .btn.primary { background:var(--accent); color:#fff; border-color:var(--accent); }
   .btn.primary:hover { background:#1d4ed8; }
@@ -23,15 +26,23 @@
   .btn.sm { padding:4px 8px; font-size:12px; }
   .spacer { flex:1; }
   table { width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--border); border-radius:10px; overflow:hidden; font-size:13px; }
-  th, td { padding:9px 11px; border-bottom:1px solid var(--border); text-align:left; vertical-align:middle; }
-  th { background:#f1f5f9; font-size:12px; color:#334155; font-weight:700; }
+  th, td { padding:9px 10px; border-bottom:1px solid var(--border); text-align:left; vertical-align:middle; }
+  th { background:#f1f5f9; font-size:12px; color:#334155; font-weight:700; white-space:nowrap; }
   tr:hover td { background:#f8fafc; }
-  .num { text-align:right; font-variant-numeric:tabular-nums; }
+  .num { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
   .badge { display:inline-block; padding:2px 8px; border-radius:999px; font-weight:700; font-size:12px; }
   .b-top10 { background:var(--okbg); color:var(--ok); }
   .b-top20 { background:var(--midbg); color:var(--mid); }
   .b-other { background:#f1f5f9; color:#475569; }
+  .pill { display:inline-flex; align-items:center; gap:3px; padding:2px 7px; border-radius:6px; font-size:12px; font-weight:700; }
+  .p-up { background:var(--okbg); color:var(--ok); }
+  .p-down { background:var(--badbg); color:var(--bad); }
+  .p-flat { background:#f1f5f9; color:var(--muted); font-weight:600; }
+  .p-warn { background:var(--srbg); color:var(--sr); }
+  .rank-cell { display:inline-flex; align-items:center; gap:6px; justify-content:flex-end; }
   .url { font-family:ui-monospace,Consolas,monospace; font-size:12px; color:#334155; word-break:break-all; }
+  .url-note { display:block; font-size:11px; color:var(--mid); margin-top:2px; }
+  .url-sr { display:block; font-size:11px; color:var(--sr); margin-top:2px; }
   .actions { display:flex; gap:6px; white-space:nowrap; }
   .toast { position:fixed; bottom:20px; right:20px; background:#0f172a; color:#fff; padding:9px 14px; border-radius:8px; font-size:13px; opacity:0; transition:opacity .2s; pointer-events:none; }
   .toast.show { opacity:1; }
@@ -39,37 +50,51 @@
 </head>
 <body>
 <div class="wrap">
-  <h1>Vérification rapide des positions Google (Desktop Dublin) - 19/11/2026</h1>
-  <p class="sub">Ouvre cette page dans Chrome en navigation privée : chaque clic sur « Ouvrir » lance Google Dublin directement dans un nouvel onglet privé (sans personnalisation).</p>
+  <h1>Positions Google Dublin (Serper Desktop) - 19/11 vs 20/11/2026 + écart SE Ranking</h1>
+  <p class="sub">Ouvre cette page dans Chrome en navigation privée : chaque clic sur « Ouvrir » lance Google Dublin dans un nouvel onglet privé. La colonne <strong>20/11</strong> affiche la progression/régression façon SE Ranking (vs 19/11), et les deux colonnes de droite comparent avec <strong>SE Ranking Desktop Dublin (19/11 complet)</strong>.</p>
+
+  <div class="stats">
+    <div class="stat">Classés Top ~50 (48 actifs)<strong>30 / 48 (hier : 28)</strong></div>
+    <div class="stat">Top 10 Serper (20/11)<strong>2 (hier : 3 | SR 19/11 : 9)</strong></div>
+    <div class="stat">Top 20 Serper (20/11)<strong>12 (hier : 13)</strong></div>
+    <div class="stat">Quartiers locaux #1-#2<strong>4 / 4</strong></div>
+    <div class="stat">SE Ranking à +/-3 places du réel<strong>5 / 26</strong></div>
+    <div class="stat">Changements d'URL Serper (24 h)<strong>3 mots-clés</strong></div>
+  </div>
 
   <div class="bar">
     <label for="loc">Zone :</label>
     <select id="loc">
       <option value="dublin_city" selected>Dublin City (County Dublin, IE)</option>
-      <option value="dublin">Dublin (exact Serper)</option>
+      <option value="dublin">Dublin (County Dublin, IE)</option>
       <option value="blanchardstown">Blanchardstown (Dublin 15)</option>
     </select>
 
-    <button class="btn active" data-filter="local">Quartiers #1-#2 (4)</button>
-    <button class="btn" data-filter="top22">Top 22 suivis (15)</button>
-    <button class="btn" data-filter="ranked">Classés Top 50 (28)</button>
+    <button class="btn active" data-filter="top22">Top 22 + Quartiers (17)</button>
+    <button class="btn" data-filter="local">Quartiers #1-#2 (4)</button>
+    <button class="btn" data-filter="ranked">Classés Top 50 (30)</button>
+    <button class="btn" data-filter="gaps">Gros écarts SE Ranking (26)</button>
+    <button class="btn" data-filter="flips">URL modifiée (3)</button>
     <button class="btn" data-filter="active">Tous actifs (48)</button>
     <button class="btn" data-filter="all">Tous + KO (56)</button>
 
     <input type="search" id="q" placeholder="Filtrer un mot-clé...">
     <div class="spacer"></div>
-    <button class="btn primary" id="openTop3">Ouvrir Top 10 + Quartiers</button>
+    <button class="btn primary" id="openTop">Ouvrir les Top 10 (20/11)</button>
   </div>
 
   <table>
     <thead>
       <tr>
-        <th class="num">Serper</th>
+        <th class="num">Serper 19/11</th>
+        <th class="num">Serper 20/11 (évolution)</th>
+        <th class="num">SE Ranking 19/11</th>
+        <th class="num">Écart Serper vs SR</th>
         <th>Mot-clé</th>
         <th>Groupe</th>
         <th class="num">Vol</th>
-        <th>URL classée (Serper)</th>
-        <th>Actions (Google neutre)</th>
+        <th>URL réelle (20/11)</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody id="tbody"></tbody>
@@ -78,9 +103,9 @@
 <div class="toast" id="toast">URL copiée</div>
 
 <script>
-const ROWS = [{"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "newborn photographer dublin", "volume": 50, "rank": null, "depth": 45, "url": "-", "page": null}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "family photographer dublin", "volume": 170, "rank": null, "depth": 46, "url": "-", "page": null}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "dublin family photographer", "volume": 170, "rank": null, "depth": 47, "url": "-", "page": null}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "baby photographer dublin", "volume": 0, "rank": 15, "depth": 15, "url": "/dublin-baby-photography/", "page": 2}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "family photography dublin", "volume": 20, "rank": 40, "depth": 40, "url": "/home-family-session-dublin/", "page": 4}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "newborn photography dublin", "volume": 140, "rank": 41, "depth": 41, "url": "/newborn-photography-dublin/", "page": 5}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "family photographers dublin", "volume": 170, "rank": 29, "depth": 29, "url": "/", "page": 3}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "family photoshoot dublin", "volume": 90, "rank": 19, "depth": 19, "url": "/ultimate-guide-to-family-photography-in-dublin/", "page": 2}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "baby photoshoot dublin", "volume": 0, "rank": 42, "depth": 42, "url": "/newborn-photography-dublin/", "page": 5}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "newborn photography ireland", "volume": 10, "rank": null, "depth": 47, "url": "-", "page": null}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "newborn photography north dublin", "volume": 10, "rank": null, "depth": 47, "url": "-", "page": null}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "family portraits dublin", "volume": 20, "rank": 35, "depth": 35, "url": "/dublin-family-photoshoot/", "page": 4}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "family portrait dublin", "volume": 20, "rank": 39, "depth": 39, "url": "/dublin-family-photoshoot/", "page": 4}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "baby photos dublin", "volume": 0, "rank": 39, "depth": 39, "url": "/baby-photography-dublin/", "page": 4}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "dublin newborn photographer", "volume": 0, "rank": null, "depth": 48, "url": "-", "page": null}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "best newborn photographer dublin", "volume": 10, "rank": null, "depth": 49, "url": "-", "page": null}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "best family photographer dublin", "volume": 10, "rank": 12, "depth": 12, "url": "/ultimate-guide-to-family-photography-in-dublin/", "page": 2}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "photoshoot locations dublin", "volume": 10, "rank": 22, "depth": 22, "url": "/ultimate-guide-to-family-photography-in-dublin/", "page": 3}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "family photographer near me", "volume": 30, "rank": null, "depth": 46, "url": "-", "page": null}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "baby photography dublin", "volume": 0, "rank": 44, "depth": 44, "url": "/baby-photography-dublin/", "page": 5}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "outdoor family photoshoot dublin", "volume": 0, "rank": 17, "depth": 17, "url": "/ultimate-guide-to-family-photography-in-dublin/", "page": 2}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "vacation photographer dublin", "volume": 0, "rank": 15, "depth": 15, "url": "/vacation-photographer-dublin-fun-relaxed-family-photo-sessions/", "page": 2}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "newborn photography", "volume": 170, "rank": null, "depth": 46, "url": "-", "page": null}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "newborn photographer near me", "volume": 40, "rank": null, "depth": 46, "url": "-", "page": null}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "newborn photoshoot", "volume": 480, "rank": null, "depth": 42, "url": "-", "page": null}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "newborn photography prices", "volume": 10, "rank": null, "depth": 45, "url": "-", "page": null}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "newborn photography at home", "volume": 10, "rank": null, "depth": 45, "url": "-", "page": null}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "in home newborn photography", "volume": 10, "rank": 44, "depth": 44, "url": "/newborn-photography-dublin/", "page": 5}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "natural newborn photography", "volume": 10, "rank": 44, "depth": 44, "url": "/natural-newborn-photography-dublin/", "page": 5}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "newborn and family photography", "volume": 10, "rank": 35, "depth": 35, "url": "/newborn-photography-dublin/", "page": 4}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "in-home newborn session dublin", "volume": 0, "rank": 6, "depth": 6, "url": "/newborn-photography-dublin/", "page": 1}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "unposed newborn photography", "volume": 10, "rank": 7, "depth": 7, "url": "/unposed-newborn-photography/", "page": 1}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "documentary newborn photography", "volume": 10, "rank": 8, "depth": 8, "url": "/documentary-newborn-photography-vs-studio/", "page": 1}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "newborn family photoshoot", "volume": 90, "rank": null, "depth": 38, "url": "-", "page": null}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "family with newborn photography", "volume": 90, "rank": null, "depth": 44, "url": "-", "page": null}, {"group": "Family Service", "is_ko": false, "is_local": false, "keyword": "family photography", "volume": 50, "rank": 16, "depth": 16, "url": "/ultimate-guide-to-family-photography-in-dublin/", "page": 2}, {"group": "Family Service", "is_ko": false, "is_local": false, "keyword": "family photographer", "volume": 50, "rank": null, "depth": 47, "url": "-", "page": null}, {"group": "Family Service", "is_ko": false, "is_local": false, "keyword": "family photoshoot at home", "volume": 10, "rank": 21, "depth": 21, "url": "/prepare-your-home-for-a-family-photo-session/", "page": 3}, {"group": "Family Service", "is_ko": false, "is_local": false, "keyword": "outdoor family photography", "volume": 10, "rank": 16, "depth": 16, "url": "/inspiring-outdoor-activities-for-your-family-photo-session/", "page": 2}, {"group": "Family Service", "is_ko": false, "is_local": false, "keyword": "family photography prices", "volume": 10, "rank": 37, "depth": 37, "url": "/family-photography-pricing/", "page": 4}, {"group": "Family Service", "is_ko": false, "is_local": false, "keyword": "family portrait photography", "volume": 10, "rank": null, "depth": 40, "url": "-", "page": null}, {"group": "Family Service", "is_ko": false, "is_local": false, "keyword": "extended family photoshoot", "volume": 10, "rank": null, "depth": 39, "url": "-", "page": null}, {"group": "Family Service", "is_ko": false, "is_local": false, "keyword": "documentary family photographer", "volume": 10, "rank": 15, "depth": 15, "url": "/documentary-family-photographer/", "page": 2}, {"group": "Family Service", "is_ko": false, "is_local": false, "keyword": "documentary family photography", "volume": 10, "rank": 16, "depth": 16, "url": "/documentary-family-photographer/", "page": 2}, {"group": "Family Service", "is_ko": false, "is_local": false, "keyword": "day in the life photography ireland", "volume": 0, "rank": 12, "depth": 12, "url": "/day-in-the-life-family-photography-dublin/", "page": 2}, {"group": "Transactional Intent", "is_ko": false, "is_local": false, "keyword": "newborn photography cost", "volume": 10, "rank": null, "depth": 45, "url": "-", "page": null}, {"group": "Transactional Intent", "is_ko": false, "is_local": false, "keyword": "family photoshoot packages", "volume": 10, "rank": null, "depth": 45, "url": "-", "page": null}, {"group": "Transactional Intent", "is_ko": false, "is_local": false, "keyword": "family photography pricing", "volume": 10, "rank": 33, "depth": 33, "url": "/family-photography-pricing/", "page": 4}, {"group": "KO for Aurélie", "is_ko": true, "is_local": false, "keyword": "lifestyle newborn photography", "volume": 10, "rank": null, "depth": 45, "url": "-", "page": null}, {"group": "KO for Aurélie", "is_ko": true, "is_local": false, "keyword": "posed newborn photography", "volume": 10, "rank": null, "depth": 45, "url": "-", "page": null}, {"group": "KO for Aurélie", "is_ko": true, "is_local": false, "keyword": "lifestyle family photography", "volume": 10, "rank": 38, "depth": 38, "url": "/day-in-the-life-family-photography-dublin/", "page": 4}, {"group": "KO for Aurélie", "is_ko": true, "is_local": false, "keyword": "maternity photography outdoor", "volume": 10, "rank": 16, "depth": 16, "url": "/outdoor-maternity-photos-in-dublin-with-a-toddler/", "page": 2}, {"group": "Local quartiers Dublin", "is_ko": false, "is_local": true, "keyword": "family photographer blanchardstown", "volume": 0, "rank": 1, "depth": 10, "url": "/family-photographer-clonsilla-castleknock-blanchardstown/", "page": 1}, {"group": "Local quartiers Dublin", "is_ko": false, "is_local": true, "keyword": "family photographer clonsilla", "volume": 0, "rank": 1, "depth": 10, "url": "/family-photographer-clonsilla-castleknock-blanchardstown/", "page": 1}, {"group": "Local quartiers Dublin", "is_ko": false, "is_local": true, "keyword": "family photographer sandymount", "volume": 0, "rank": 1, "depth": 10, "url": "/family-photographer-sandymount/", "page": 1}, {"group": "Local quartiers Dublin", "is_ko": false, "is_local": true, "keyword": "family photographer castleknock", "volume": 0, "rank": 2, "depth": 10, "url": "/family-photographer-clonsilla-castleknock-blanchardstown/", "page": 1}];
+const ROWS = [{"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "newborn photographer dublin", "volume": 50, "rank19": null, "depth19": 45, "rank20": 40, "depth20": 40, "delta": null, "sr19": 12, "sr_diff": -28, "url19": "-", "url20": "/newborn-photography-dublin/", "url_sr": "/newborn-photography-session-in-dublin/", "url_changed": false, "page20": 4}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "family photographer dublin", "volume": 170, "rank19": null, "depth19": 46, "rank20": 32, "depth20": 32, "delta": null, "sr19": 40, "sr_diff": 8, "url19": "-", "url20": "/", "url_sr": "/stress-free-family-photography-dublin/", "url_changed": false, "page20": 4}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "dublin family photographer", "volume": 170, "rank19": null, "depth19": 47, "rank20": 12, "depth20": 12, "delta": null, "sr19": 33, "sr_diff": 21, "url19": "-", "url20": "/ultimate-guide-to-family-photography-in-dublin/", "url_sr": "/book-family-photo-shoot-visiting-dublin/", "url_changed": false, "page20": 2}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "baby photographer dublin", "volume": 0, "rank19": 15, "depth19": 15, "rank20": null, "depth20": 46, "delta": null, "sr19": 46, "sr_diff": null, "url19": "/dublin-baby-photography/", "url20": "-", "url_sr": "/newborn-photography-dublin/", "url_changed": false, "page20": null}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "family photography dublin", "volume": 20, "rank19": 40, "depth19": 40, "rank20": 42, "depth20": 42, "delta": -2, "sr19": 32, "sr_diff": -10, "url19": "/home-family-session-dublin/", "url20": "/home-family-session-dublin/", "url_sr": "/ultimate-guide-to-family-photography-in-dublin/", "url_changed": false, "page20": 5}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "newborn photography dublin", "volume": 140, "rank19": 41, "depth19": 41, "rank20": null, "depth20": 48, "delta": null, "sr19": 14, "sr_diff": null, "url19": "/newborn-photography-dublin/", "url20": "-", "url_sr": "/newborn-photography-session-in-dublin/", "url_changed": false, "page20": null}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "family photographers dublin", "volume": 170, "rank19": 29, "depth19": 29, "rank20": 34, "depth20": 34, "delta": -5, "sr19": 2, "sr_diff": -32, "url19": "/", "url20": "/", "url_sr": "/stress-free-family-photography-dublin/", "url_changed": false, "page20": 4}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "family photoshoot dublin", "volume": 90, "rank19": 19, "depth19": 19, "rank20": 18, "depth20": 18, "delta": 1, "sr19": 36, "sr_diff": 18, "url19": "/ultimate-guide-to-family-photography-in-dublin/", "url20": "/ultimate-guide-to-family-photography-in-dublin/", "url_sr": "/stress-free-family-photography-dublin/", "url_changed": false, "page20": 2}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "baby photoshoot dublin", "volume": 0, "rank19": 42, "depth19": 42, "rank20": 44, "depth20": 44, "delta": -2, "sr19": 10, "sr_diff": -34, "url19": "/newborn-photography-dublin/", "url20": "/newborn-photography-dublin/", "url_sr": "/newborn-photography-session-in-dublin/", "url_changed": false, "page20": 5}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "newborn photography ireland", "volume": 10, "rank19": null, "depth19": 47, "rank20": null, "depth20": 48, "delta": null, "sr19": 17, "sr_diff": null, "url19": "-", "url20": "-", "url_sr": "/newborn-photography-session-in-dublin/", "url_changed": false, "page20": null}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "newborn photography north dublin", "volume": 10, "rank19": null, "depth19": 47, "rank20": 48, "depth20": 48, "delta": null, "sr19": null, "sr_diff": null, "url19": "-", "url20": "/newborn-photography-dublin/", "url_sr": "/newborn-photography-dublin/", "url_changed": false, "page20": 5}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "family portraits dublin", "volume": 20, "rank19": 35, "depth19": 35, "rank20": null, "depth20": 43, "delta": null, "sr19": 21, "sr_diff": null, "url19": "/dublin-family-photoshoot/", "url20": "-", "url_sr": "/dublin-family-photoshoot/", "url_changed": false, "page20": null}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "family portrait dublin", "volume": 20, "rank19": 39, "depth19": 39, "rank20": 39, "depth20": 39, "delta": 0, "sr19": 10, "sr_diff": -29, "url19": "/dublin-family-photoshoot/", "url20": "/dublin-family-photoshoot/", "url_sr": "/book-family-photo-shoot-visiting-dublin/", "url_changed": false, "page20": 4}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "baby photos dublin", "volume": 0, "rank19": 39, "depth19": 39, "rank20": 38, "depth20": 38, "delta": 1, "sr19": 10, "sr_diff": -28, "url19": "/baby-photography-dublin/", "url20": "/baby-photography-dublin/", "url_sr": "/newborn-photography-session-in-dublin/", "url_changed": false, "page20": 4}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "dublin newborn photographer", "volume": 0, "rank19": null, "depth19": 48, "rank20": 33, "depth20": 33, "delta": null, "sr19": 22, "sr_diff": -11, "url19": "-", "url20": "/newborn-photography-dublin/", "url_sr": "/natural-newborn-photography-dublin/", "url_changed": false, "page20": 4}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "best newborn photographer dublin", "volume": 10, "rank19": null, "depth19": 49, "rank20": 48, "depth20": 48, "delta": null, "sr19": 31, "sr_diff": -17, "url19": "-", "url20": "/newborn-photography-dublin/", "url_sr": "/natural-newborn-photography-dublin/", "url_changed": false, "page20": 5}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "best family photographer dublin", "volume": 10, "rank19": 12, "depth19": 12, "rank20": 13, "depth20": 13, "delta": -1, "sr19": 13, "sr_diff": 0, "url19": "/ultimate-guide-to-family-photography-in-dublin/", "url20": "/ultimate-guide-to-family-photography-in-dublin/", "url_sr": "/stress-free-family-photography-dublin/", "url_changed": false, "page20": 2}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "photoshoot locations dublin", "volume": 10, "rank19": 22, "depth19": 22, "rank20": null, "depth20": 45, "delta": null, "sr19": null, "sr_diff": null, "url19": "/ultimate-guide-to-family-photography-in-dublin/", "url20": "-", "url_sr": "-", "url_changed": false, "page20": null}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "family photographer near me", "volume": 30, "rank19": null, "depth19": 46, "rank20": null, "depth20": 48, "delta": null, "sr19": 16, "sr_diff": null, "url19": "-", "url20": "-", "url_sr": "/ultimate-guide-to-family-photography-in-dublin/", "url_changed": false, "page20": null}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "baby photography dublin", "volume": 0, "rank19": 44, "depth19": 44, "rank20": 41, "depth20": 41, "delta": 3, "sr19": 12, "sr_diff": -29, "url19": "/baby-photography-dublin/", "url20": "/baby-photography-dublin/", "url_sr": "/newborn-photography-session-in-dublin/", "url_changed": false, "page20": 5}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "outdoor family photoshoot dublin", "volume": 0, "rank19": 17, "depth19": 17, "rank20": 12, "depth20": 12, "delta": 5, "sr19": 18, "sr_diff": 6, "url19": "/ultimate-guide-to-family-photography-in-dublin/", "url20": "/ultimate-guide-to-family-photography-in-dublin/", "url_sr": "/ultimate-guide-to-family-photography-in-dublin/", "url_changed": false, "page20": 2}, {"group": "Geo-Targeted Dublin/Ireland", "is_ko": false, "is_local": false, "keyword": "vacation photographer dublin", "volume": 0, "rank19": 15, "depth19": 15, "rank20": 14, "depth20": 14, "delta": 1, "sr19": null, "sr_diff": null, "url19": "/vacation-photographer-dublin-fun-relaxed-family-photo-sessions/", "url20": "/vacation-photographer-dublin-fun-relaxed-family-photo-sessions/", "url_sr": "/vacation-photographer-dublin-fun-relaxed-family-photo-sessions/", "url_changed": false, "page20": 2}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "newborn photography", "volume": 170, "rank19": null, "depth19": 46, "rank20": null, "depth20": 44, "delta": null, "sr19": null, "sr_diff": null, "url19": "-", "url20": "-", "url_sr": "/natural-newborn-photography-dublin/", "url_changed": false, "page20": null}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "newborn photographer near me", "volume": 40, "rank19": null, "depth19": 46, "rank20": null, "depth20": 47, "delta": null, "sr19": 38, "sr_diff": null, "url19": "-", "url20": "-", "url_sr": "/dublin-baby-photography/", "url_changed": false, "page20": null}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "newborn photoshoot", "volume": 480, "rank19": null, "depth19": 42, "rank20": null, "depth20": 42, "delta": null, "sr19": 15, "sr_diff": null, "url19": "-", "url20": "-", "url_sr": "/newborn-photography-session-in-dublin/", "url_changed": false, "page20": null}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "newborn photography prices", "volume": 10, "rank19": null, "depth19": 45, "rank20": null, "depth20": 45, "delta": null, "sr19": null, "sr_diff": null, "url19": "-", "url20": "-", "url_sr": "/newborn-photography-dublin/", "url_changed": false, "page20": null}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "newborn photography at home", "volume": 10, "rank19": null, "depth19": 45, "rank20": null, "depth20": 45, "delta": null, "sr19": null, "sr_diff": null, "url19": "-", "url20": "-", "url_sr": "/natural-newborn-photography-dublin/", "url_changed": false, "page20": null}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "in home newborn photography", "volume": 10, "rank19": 44, "depth19": 44, "rank20": 32, "depth20": 32, "delta": 12, "sr19": 23, "sr_diff": -9, "url19": "/newborn-photography-dublin/", "url20": "/baby-photography-dublin/", "url_sr": "/natural-newborn-photography-dublin/", "url_changed": true, "page20": 4}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "natural newborn photography", "volume": 10, "rank19": 44, "depth19": 44, "rank20": 40, "depth20": 40, "delta": 4, "sr19": null, "sr_diff": null, "url19": "/natural-newborn-photography-dublin/", "url20": "/natural-newborn-photography-dublin/", "url_sr": "/newborn-photography-session-in-dublin/", "url_changed": false, "page20": 4}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "newborn and family photography", "volume": 10, "rank19": 35, "depth19": 35, "rank20": null, "depth20": 45, "delta": null, "sr19": 23, "sr_diff": null, "url19": "/newborn-photography-dublin/", "url20": "-", "url_sr": "/dublin-family-photoshoot/", "url_changed": false, "page20": null}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "in-home newborn session dublin", "volume": 0, "rank19": 6, "depth19": 6, "rank20": 12, "depth20": 12, "delta": -6, "sr19": 14, "sr_diff": 2, "url19": "/newborn-photography-dublin/", "url20": "/cozy-in-home-newborn-photos-in-inchicore-dublin-8/", "url_sr": "/cozy-in-home-newborn-photos-in-inchicore-dublin-8/", "url_changed": true, "page20": 2}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "unposed newborn photography", "volume": 10, "rank19": 7, "depth19": 7, "rank20": 6, "depth20": 6, "delta": 1, "sr19": 6, "sr_diff": 0, "url19": "/unposed-newborn-photography/", "url20": "/unposed-newborn-photography/", "url_sr": "/newborn-photography-dublin/", "url_changed": false, "page20": 1}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "documentary newborn photography", "volume": 10, "rank19": 8, "depth19": 8, "rank20": 9, "depth20": 9, "delta": -1, "sr19": 8, "sr_diff": -1, "url19": "/documentary-newborn-photography-vs-studio/", "url20": "/documentary-newborn-photography-vs-studio/", "url_sr": "/documentary-newborn-photography-vs-studio/", "url_changed": false, "page20": 1}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "newborn family photoshoot", "volume": 90, "rank19": null, "depth19": 38, "rank20": null, "depth20": 40, "delta": null, "sr19": 30, "sr_diff": null, "url19": "-", "url20": "-", "url_sr": "/natural-newborn-photography-dublin/", "url_changed": false, "page20": null}, {"group": "Newborn Service", "is_ko": false, "is_local": false, "keyword": "family with newborn photography", "volume": 90, "rank19": null, "depth19": 44, "rank20": 40, "depth20": 40, "delta": null, "sr19": 26, "sr_diff": -14, "url19": "-", "url20": "/newborn-photography-dublin/", "url_sr": "/newborn-photography-dublin/", "url_changed": false, "page20": 4}, {"group": "Family Service", "is_ko": false, "is_local": false, "keyword": "family photography", "volume": 50, "rank19": 16, "depth19": 16, "rank20": null, "depth20": 45, "delta": null, "sr19": 19, "sr_diff": null, "url19": "/ultimate-guide-to-family-photography-in-dublin/", "url20": "-", "url_sr": "/dublin-family-photoshoot/", "url_changed": false, "page20": null}, {"group": "Family Service", "is_ko": false, "is_local": false, "keyword": "family photographer", "volume": 50, "rank19": null, "depth19": 47, "rank20": null, "depth20": 46, "delta": null, "sr19": 10, "sr_diff": null, "url19": "-", "url20": "-", "url_sr": "/home-family-session-dublin/", "url_changed": false, "page20": null}, {"group": "Family Service", "is_ko": false, "is_local": false, "keyword": "family photoshoot at home", "volume": 10, "rank19": 21, "depth19": 21, "rank20": 12, "depth20": 12, "delta": 9, "sr19": 4, "sr_diff": -8, "url19": "/prepare-your-home-for-a-family-photo-session/", "url20": "/prepare-your-home-for-a-family-photo-session/", "url_sr": "/home-family-session-dublin/", "url_changed": false, "page20": 2}, {"group": "Family Service", "is_ko": false, "is_local": false, "keyword": "outdoor family photography", "volume": 10, "rank19": 16, "depth19": 16, "rank20": 22, "depth20": 22, "delta": -6, "sr19": 17, "sr_diff": -5, "url19": "/inspiring-outdoor-activities-for-your-family-photo-session/", "url20": "/ultimate-guide-to-family-photography-in-dublin/", "url_sr": "/ultimate-guide-to-family-photography-in-dublin/", "url_changed": true, "page20": 3}, {"group": "Family Service", "is_ko": false, "is_local": false, "keyword": "family photography prices", "volume": 10, "rank19": 37, "depth19": 37, "rank20": 29, "depth20": 29, "delta": 8, "sr19": null, "sr_diff": null, "url19": "/family-photography-pricing/", "url20": "/family-photography-pricing/", "url_sr": "/home-family-session-dublin/", "url_changed": false, "page20": 3}, {"group": "Family Service", "is_ko": false, "is_local": false, "keyword": "family portrait photography", "volume": 10, "rank19": null, "depth19": 40, "rank20": null, "depth20": 42, "delta": null, "sr19": 34, "sr_diff": null, "url19": "-", "url20": "-", "url_sr": "/dublin-family-photoshoot/", "url_changed": false, "page20": null}, {"group": "Family Service", "is_ko": false, "is_local": false, "keyword": "extended family photoshoot", "volume": 10, "rank19": null, "depth19": 39, "rank20": null, "depth20": 38, "delta": null, "sr19": null, "sr_diff": null, "url19": "-", "url20": "-", "url_sr": "/home-family-session-dublin/", "url_changed": false, "page20": null}, {"group": "Family Service", "is_ko": false, "is_local": false, "keyword": "documentary family photographer", "volume": 10, "rank19": 15, "depth19": 15, "rank20": 14, "depth20": 14, "delta": 1, "sr19": 16, "sr_diff": 2, "url19": "/documentary-family-photographer/", "url20": "/documentary-family-photographer/", "url_sr": "/documentary-family-photographer/", "url_changed": false, "page20": 2}, {"group": "Family Service", "is_ko": false, "is_local": false, "keyword": "documentary family photography", "volume": 10, "rank19": 16, "depth19": 16, "rank20": 18, "depth20": 18, "delta": -2, "sr19": 13, "sr_diff": -5, "url19": "/documentary-family-photographer/", "url20": "/documentary-family-photographer/", "url_sr": "/dublin-family-photoshoot/", "url_changed": false, "page20": 2}, {"group": "Family Service", "is_ko": false, "is_local": false, "keyword": "day in the life photography ireland", "volume": 0, "rank19": 12, "depth19": 12, "rank20": 14, "depth20": 14, "delta": -2, "sr19": 4, "sr_diff": -10, "url19": "/day-in-the-life-family-photography-dublin/", "url20": "/day-in-the-life-family-photography-dublin/", "url_sr": "/day-in-the-life-family-photography-dublin/", "url_changed": false, "page20": 2}, {"group": "Transactional Intent", "is_ko": false, "is_local": false, "keyword": "newborn photography cost", "volume": 10, "rank19": null, "depth19": 45, "rank20": null, "depth20": 45, "delta": null, "sr19": 22, "sr_diff": null, "url19": "-", "url20": "-", "url_sr": "/newborn-photography-dublin/", "url_changed": false, "page20": null}, {"group": "Transactional Intent", "is_ko": false, "is_local": false, "keyword": "family photoshoot packages", "volume": 10, "rank19": null, "depth19": 45, "rank20": 39, "depth20": 39, "delta": null, "sr19": 64, "sr_diff": 25, "url19": "-", "url20": "/home-family-session-dublin/", "url_sr": "/dublin-family-photoshoot/", "url_changed": false, "page20": 4}, {"group": "Transactional Intent", "is_ko": false, "is_local": false, "keyword": "family photography pricing", "volume": 10, "rank19": 33, "depth19": 33, "rank20": 33, "depth20": 33, "delta": 0, "sr19": 29, "sr_diff": -4, "url19": "/family-photography-pricing/", "url20": "/family-photography-pricing/", "url_sr": "/home-family-session-dublin/", "url_changed": false, "page20": 4}, {"group": "KO for Aurélie", "is_ko": true, "is_local": false, "keyword": "lifestyle newborn photography", "volume": 10, "rank19": null, "depth19": 45, "rank20": null, "depth20": 45, "delta": null, "sr19": 15, "sr_diff": null, "url19": "-", "url20": "-", "url_sr": "/natural-newborn-photography-dublin/", "url_changed": false, "page20": null}, {"group": "KO for Aurélie", "is_ko": true, "is_local": false, "keyword": "posed newborn photography", "volume": 10, "rank19": null, "depth19": 45, "rank20": null, "depth20": 45, "delta": null, "sr19": 35, "sr_diff": null, "url19": "-", "url20": "-", "url_sr": "/natural-newborn-photography-dublin/", "url_changed": false, "page20": null}, {"group": "KO for Aurélie", "is_ko": true, "is_local": false, "keyword": "lifestyle family photography", "volume": 10, "rank19": 38, "depth19": 38, "rank20": 37, "depth20": 37, "delta": 1, "sr19": 18, "sr_diff": -19, "url19": "/day-in-the-life-family-photography-dublin/", "url20": "/day-in-the-life-family-photography-dublin/", "url_sr": "/stress-free-family-photography-dublin/", "url_changed": false, "page20": 4}, {"group": "KO for Aurélie", "is_ko": true, "is_local": false, "keyword": "maternity photography outdoor", "volume": 10, "rank19": 16, "depth19": 16, "rank20": 16, "depth20": 16, "delta": 0, "sr19": 3, "sr_diff": -13, "url19": "/outdoor-maternity-photos-in-dublin-with-a-toddler/", "url20": "/outdoor-maternity-photos-in-dublin-with-a-toddler/", "url_sr": "/outdoor-maternity-photos-in-dublin-with-a-toddler/", "url_changed": false, "page20": 2}, {"group": "Local quartiers Dublin", "is_ko": false, "is_local": true, "keyword": "family photographer blanchardstown", "volume": 0, "rank19": 1, "depth19": 10, "rank20": 1, "depth20": 10, "delta": 0, "sr19": null, "sr_diff": null, "url19": "/family-photographer-clonsilla-castleknock-blanchardstown/", "url20": "/family-photographer-clonsilla-castleknock-blanchardstown/", "url_sr": "-", "url_changed": false, "page20": 1}, {"group": "Local quartiers Dublin", "is_ko": false, "is_local": true, "keyword": "family photographer clonsilla", "volume": 0, "rank19": 1, "depth19": 10, "rank20": 1, "depth20": 10, "delta": 0, "sr19": null, "sr_diff": null, "url19": "/family-photographer-clonsilla-castleknock-blanchardstown/", "url20": "/family-photographer-clonsilla-castleknock-blanchardstown/", "url_sr": "-", "url_changed": false, "page20": 1}, {"group": "Local quartiers Dublin", "is_ko": false, "is_local": true, "keyword": "family photographer sandymount", "volume": 0, "rank19": 1, "depth19": 10, "rank20": 2, "depth20": 10, "delta": -1, "sr19": null, "sr_diff": null, "url19": "/family-photographer-sandymount/", "url20": "/family-photographer-sandymount/", "url_sr": "-", "url_changed": false, "page20": 1}, {"group": "Local quartiers Dublin", "is_ko": false, "is_local": true, "keyword": "family photographer castleknock", "volume": 0, "rank19": 2, "depth19": 10, "rank20": 2, "depth20": 10, "delta": 0, "sr19": null, "sr_diff": null, "url19": "/family-photographer-clonsilla-castleknock-blanchardstown/", "url20": "/family-photographer-clonsilla-castleknock-blanchardstown/", "url_sr": "-", "url_changed": false, "page20": 1}];
 const UULES = {"dublin_city": "w+CAIQICIhRHVibGluIENpdHksQ291bnR5IER1YmxpbixJcmVsYW5k", "dublin": "w+CAIQICIcRHVibGluLENvdW50eSBEdWJsaW4sSXJlbGFuZA", "blanchardstown": "w+CAIQICIkQmxhbmNoYXJkc3Rvd24sQ291bnR5IER1YmxpbixJcmVsYW5k"};
-let filterMode = "local";
+let filterMode = "top22";
 
 function buildGoogleUrl(keyword, locKey, startOffset) {
   const params = new URLSearchParams({
@@ -106,18 +131,57 @@ function copyText(text) {
   navigator.clipboard.writeText(text).then(() => showToast("URL copiée dans le presse-papiers"));
 }
 
+function badgeHtml(rank, depth) {
+  const cls = rank !== null && rank <= 10 ? "b-top10" : (rank !== null && rank <= 20 ? "b-top20" : "b-other");
+  const label = rank !== null ? String(rank) : (">" + depth);
+  return '<span class="badge ' + cls + '">' + label + '</span>';
+}
+
+function deltaPillHtml(r) {
+  if (r.rank19 === null && r.rank20 !== null) return '<span class="pill p-up">▲ NEW</span>';
+  if (r.rank19 !== null && r.rank20 === null) return '<span class="pill p-down">▼ OUT</span>';
+  if (r.delta === null) return '<span class="pill p-flat">=</span>';
+  if (r.delta > 0) return '<span class="pill p-up">▲ +' + r.delta + '</span>';
+  if (r.delta < 0) return '<span class="pill p-down">▼ ' + r.delta + '</span>';
+  return '<span class="pill p-flat">= 0</span>';
+}
+
+function srDiffHtml(r) {
+  if (r.is_local) return '<span class="pill p-flat">non suivi</span>';
+  if (r.sr19 === null && r.rank20 === null) return '<span class="pill p-flat">= absent</span>';
+  if (r.sr19 === null && r.rank20 !== null) return '<span class="pill p-up">SR absent (réel #' + r.rank20 + ')</span>';
+  if (r.sr19 !== null && r.rank20 === null) {
+    if (r.sr19 <= 40) return '<span class="pill p-down">SR gonflé (#' + r.sr19 + ' vs &gt;' + r.depth20 + ')</span>';
+    return '<span class="pill p-flat">hors Top 50</span>';
+  }
+  const diff = r.sr19 - r.rank20; // negative => SR is lower number (overestimates), positive => Serper is better
+  if (Math.abs(diff) <= 3) return '<span class="pill p-flat">≈ ' + (diff > 0 ? '+' + diff : diff) + '</span>';
+  if (diff < 0) return '<span class="pill p-down">SR +' + Math.abs(diff) + ' trop haut</span>';
+  return '<span class="pill p-up">Réel +' + diff + ' meilleur</span>';
+}
+
+function isBigGap(r) {
+  if (r.is_ko || r.is_local || r.sr19 === null) return false;
+  if (r.rank20 === null) return r.sr19 <= 40;
+  return Math.abs(r.sr19 - r.rank20) >= 10;
+}
+
 function filteredRows() {
   const q = document.getElementById("q").value.trim().toLowerCase();
   let list = ROWS.filter(r => {
     if (filterMode === "local") return r.is_local;
-    if (filterMode === "top22") return !r.is_ko && !r.is_local && r.rank !== null && r.rank <= 22;
-    if (filterMode === "ranked") return !r.is_ko && !r.is_local && r.rank !== null;
+    if (filterMode === "top22") return r.is_local || (!r.is_ko && r.rank20 !== null && r.rank20 <= 22);
+    if (filterMode === "ranked") return !r.is_ko && !r.is_local && r.rank20 !== null;
+    if (filterMode === "gaps") return isBigGap(r);
+    if (filterMode === "flips") return !r.is_ko && r.url_changed;
     if (filterMode === "active") return !r.is_ko && !r.is_local;
     return true;
   });
-  if (q) list = list.filter(r => r.keyword.toLowerCase().includes(q) || r.url.toLowerCase().includes(q));
+  if (q) list = list.filter(r => r.keyword.toLowerCase().includes(q) || r.url20.toLowerCase().includes(q) || r.url19.toLowerCase().includes(q) || (r.url_sr || "").toLowerCase().includes(q));
   if (filterMode === "local" || filterMode === "top22" || filterMode === "ranked") {
-    list.sort((a, b) => (a.rank ?? 999) - (b.rank ?? 999));
+    list.sort((a, b) => (a.rank20 ?? 999) - (b.rank20 ?? 999));
+  } else if (filterMode === "gaps") {
+    list.sort((a, b) => Math.abs((b.sr19 ?? 99) - (b.rank20 ?? 55)) - Math.abs((a.sr19 ?? 99) - (a.rank20 ?? 55)));
   }
   return list;
 }
@@ -129,23 +193,27 @@ function render() {
   tbody.innerHTML = "";
   for (const r of list) {
     const tr = document.createElement("tr");
-    const badgeClass = r.rank !== null && r.rank <= 10 ? "b-top10" : (r.rank !== null && r.rank <= 20 ? "b-top20" : "b-other");
-    const rankLabel = r.rank !== null ? String(r.rank) : (">" + r.depth);
     const urlP1 = buildGoogleUrl(r.keyword, locKey, 0);
-    const pageStart = r.page && r.page > 1 ? (r.page - 1) * 10 : 0;
+    const pageStart = r.page20 && r.page20 > 1 ? (r.page20 - 1) * 10 : 0;
     const urlDirect = buildGoogleUrl(r.keyword, locKey, pageStart);
+    const prevNote = (r.url_changed || (r.url20 === "-" && r.url19 !== "-")) ? `<span class="url-note">Serper 19/11 : ${r.url19}</span>` : "";
+    const srUrlNote = (!r.is_local && r.url_sr && r.url_sr !== "-" && r.url_sr !== r.url20) ? `<span class="url-sr">SE Ranking : ${r.url_sr}</span>` : "";
+    const srCell = r.is_local ? '<span class="pill p-flat">-</span>' : (r.sr19 !== null ? badgeHtml(r.sr19, 100) : '<span class="badge b-other">-</span>');
 
     tr.innerHTML = `
-      <td class="num"><span class="badge ${badgeClass}">${rankLabel}</span></td>
+      <td class="num">${badgeHtml(r.rank19, r.depth19)}</td>
+      <td class="num"><div class="rank-cell">${badgeHtml(r.rank20, r.depth20)} ${deltaPillHtml(r)}</div></td>
+      <td class="num">${srCell}</td>
+      <td class="num">${srDiffHtml(r)}</td>
       <td><strong>${r.keyword}</strong></td>
       <td>${r.group}</td>
       <td class="num">${r.volume}</td>
-      <td class="url">${r.url}</td>
+      <td class="url">${r.url20}${prevNote}${srUrlNote}</td>
       <td>
         <div class="actions">
           <a class="btn sm primary" href="${urlP1}" target="_blank" rel="noopener">Ouvrir P1</a>
-          ${pageStart > 0 ? `<a class="btn sm" href="${urlDirect}" target="_blank" rel="noopener">Page ${r.page}</a>` : ""}
-          <button class="btn sm copy-btn" type="button">Copier URL</button>
+          ${pageStart > 0 ? `<a class="btn sm" href="${urlDirect}" target="_blank" rel="noopener">Page ${r.page20}</a>` : ""}
+          <button class="btn sm copy-btn" type="button">Copier</button>
         </div>
       </td>
     `;
@@ -164,10 +232,10 @@ document.querySelectorAll("[data-filter]").forEach(btn => {
 });
 document.getElementById("loc").addEventListener("change", render);
 document.getElementById("q").addEventListener("input", render);
-document.getElementById("openTop3").addEventListener("click", () => {
+document.getElementById("openTop").addEventListener("click", () => {
   const locKey = document.getElementById("loc").value;
-  ROWS.filter(r => !r.is_ko && r.rank !== null && r.rank <= 10)
-      .sort((a, b) => a.rank - b.rank)
+  ROWS.filter(r => !r.is_ko && r.rank20 !== null && r.rank20 <= 10)
+      .sort((a, b) => a.rank20 - b.rank20)
       .forEach(r => window.open(buildGoogleUrl(r.keyword, locKey, 0), "_blank", "noopener"));
 });
 render();
